@@ -204,35 +204,93 @@ search_cheats() {
         fi
     done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
     
-    for template_file in "$TEMPLATES_DIR"/*.txt; do
-        if [[ -f "$template_file" ]]; then
-            local topic=$(basename "$template_file" .txt)
-            local found=false
-            
-            # Search in template content with translations
-            while IFS= read -r line; do
-                # Substitute translations in the line
-                local substituted_line="$line"
-                while [[ "$substituted_line" =~ \{([^}]+)\} ]]; do
-                    local key="${BASH_REMATCH[1]}"
-                    local value="${translations[$key]:-\{$key\}}"
-                    substituted_line="${substituted_line//\{$key\}/$value}"
-                done
-                
-                # Check if line contains query
-                if echo "$substituted_line" | grep -qi "$query"; then
-                    if [[ "$found" == false ]]; then
-                        echo -e "${CYAN}${BOLD}$topic:${NC}"
-                        found=true
-                    fi
-                    echo "$substituted_line"
-                fi
-            done < "$template_file" | head -3
-            
-            if [[ "$found" == true ]]; then
-                echo ""
-            fi
+    # Find matching keys first
+    local matching_keys=()
+    for key in "${!translations[@]}"; do
+        if echo "$key" | grep -qi "$query" || echo "${translations[$key]}" | grep -qi "$query"; then
+            matching_keys+=("$key")
         fi
+    done
+    
+    # Group keys by topic
+    declare -A topic_matches
+    for key in "${matching_keys[@]}"; do
+        local topic=""
+        case "$key" in
+            git_*) topic="git" ;;
+            docker_*) topic="docker" ;;
+            bash_*) topic="bash" ;;
+            vim_*) topic="vim" ;;
+            *) continue ;;
+        esac
+        
+        if [[ -n "$topic" ]]; then
+            topic_matches["$topic"]="${topic_matches[$topic]} $key"
+        fi
+    done
+    
+    # Show results for each topic
+    for topic in "${!topic_matches[@]}"; do
+        echo -e "${CYAN}${BOLD}$topic:${NC}"
+        local keys=(${topic_matches[$topic]})
+        local count=0
+        
+        for key in "${keys[@]}"; do
+            if [[ $count -ge 3 ]]; then
+                break
+            fi
+            
+            # Find the command in template
+            local template_file="$TEMPLATES_DIR/$topic.txt"
+            if [[ -f "$template_file" ]]; then
+                local found_command=false
+                while IFS= read -r line; do
+                    if [[ "$line" =~ \{$key\} ]]; then
+                        # Substitute the key
+                        local substituted_line="${line//\{$key\}/${translations[$key]}}"
+                        
+                        # If this is a description line, find the command above it
+                        if [[ "$line" =~ ^\> ]]; then
+                            # Look for the command line above this description
+                            local command_line=$(grep -B1 "^$line$" "$template_file" | head -1)
+                            if [[ "$command_line" =~ ^\$ ]]; then
+                                local substituted_command="${command_line//\{$key\}/${translations[$key]}}"
+                                echo "$substituted_command"
+                            fi
+                        fi
+                        
+                        echo "$substituted_line"
+                        found_command=true
+                        break
+                    fi
+                done < "$template_file"
+                
+                # If we didn't find the key in descriptions, look for it in commands
+                if [[ "$found_command" == false ]]; then
+                    while IFS= read -r line; do
+                        if [[ "$line" =~ \{$key\} ]]; then
+                            local substituted_line="${line//\{$key\}/${translations[$key]}}"
+                            echo "$substituted_line"
+                            
+                            # Show next line if it's a description
+                            local next_line=$(grep -A1 "^$line$" "$template_file" | tail -1)
+                            if [[ "$next_line" =~ ^\> ]]; then
+                                local substituted_next_line="$next_line"
+                                while [[ "$substituted_next_line" =~ \{([^}]+)\} ]]; do
+                                    local next_key="${BASH_REMATCH[1]}"
+                                    local next_value="${translations[$next_key]:-\{$next_key\}}"
+                                    substituted_next_line="${substituted_next_line//\{$next_key\}/$next_value}"
+                                done
+                                echo "$substituted_next_line"
+                            fi
+                            break
+                        fi
+                    done < "$template_file"
+                fi
+            fi
+            count=$((count + 1))
+        done
+        echo ""
     done
 }
 
