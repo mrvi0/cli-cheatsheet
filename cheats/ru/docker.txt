@@ -1,0 +1,13 @@
+# Docker Шпаргалка
+
+$ docker ps
+> Список запущенных контейнеров
+
+$ docker images
+> Список образов
+
+$ docker run -it ubuntu bash
+> Запустить контейнер Ubuntu в интерактивном режиме
+
+$ docker build -t myimage .
+> Собрать образ из Dockerfile 

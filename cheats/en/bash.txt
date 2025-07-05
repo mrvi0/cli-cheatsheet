@@ -1,0 +1,13 @@
+# Bash Cheat Sheet
+
+$ ls -l
+> List files in long format
+
+$ cd /path/to/dir
+> Change directory
+
+$ grep 'pattern' file.txt
+> Search for pattern in file
+
+$ cat file.txt
+> Show file contents 

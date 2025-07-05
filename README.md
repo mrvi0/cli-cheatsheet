@@ -1,0 +1,186 @@
+# cli-cheatsheet
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Shell](https://img.shields.io/badge/Shell-Bash-green.svg)](https://www.gnu.org/software/bash/)
+[![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20WSL-blue.svg)](https://en.wikipedia.org/wiki/Unix-like)
+
+An interactive terminal utility for quick command reference.
+
+## 🚀 Idea
+
+Call `cheat <topic>` to display a concise and useful cheat sheet for commands (bash, git, docker, vim, systemctl, etc.).
+
+## ✨ Features
+- `cheat <topic>` — shows a text cheat sheet by key
+- Category support: `cheat git`, `cheat bash`, `cheat docker`
+- Colorful output (headers, commands, examples)
+- Autocompletion or list all topics: `cheat list`
+- Search functionality: `cheat search <query>`
+- Multi-language support (en/ru)
+- Theme support (light/dark)
+- Language switching: `cheat lang <language>`
+
+## 📁 Structure
+```
+cheats/
+├── en/
+│   ├── bash.txt
+│   ├── git.txt
+│   └── docker.txt
+└── ru/
+    ├── bash.txt
+    ├── git.txt
+    └── docker.txt
+cheat.sh
+config.json
+```
+
+## 🛠️ Installation
+
+### Quick Install (Recommended)
+```bash
+git clone https://github.com/yourname/cli-cheatsheet.git
+cd cli-cheatsheet
+sudo ln -s "$(pwd)/cheat.sh" /usr/local/bin/cheat
+```
+
+**After installation, you can use `cheat` command from anywhere in your system!**
+
+### Manual Install
+```bash
+git clone https://github.com/yourname/cli-cheatsheet.git
+cd cli-cheatsheet
+chmod +x cheat.sh
+./cheat.sh <topic>
+```
+
+## 📖 Usage Examples
+
+### Show cheat sheet
+```bash
+$ cheat git
+# Git Cheat Sheet
+
+$ git status
+> Show the working tree status
+
+$ git add .
+> Add all changes to staging
+
+$ git commit -m "message"
+> Commit changes with a message
+
+$ git log
+> Show commit logs
+```
+
+### List all topics
+```bash
+$ cheat list
+Available topics:
+  - bash
+  - docker
+  - git
+```
+
+### Search in cheat sheets
+```bash
+$ cheat search commit
+Searching for: commit
+---
+git:
+$ git commit -m "message"
+> Commit changes with a message
+```
+
+### Change language
+```bash
+$ cheat lang ru
+Language changed to: ru
+
+$ cheat git
+# Git Шпаргалка
+
+$ git status
+> Показать статус рабочей директории
+```
+
+### Get help
+```bash
+$ cheat help
+cli-cheatsheet - Interactive terminal utility
+
+Usage:
+  cheat <topic>           Show cheat sheet for topic
+  cheat list              List all available topics
+  cheat search <query>    Search in all cheat sheets
+  cheat lang <language>   Change language (en/ru)
+  cheat help              Show this help
+
+Examples:
+  cheat git               Show git cheat sheet
+  cheat bash              Show bash cheat sheet
+  cheat search commit     Search for 'commit' in all sheets
+  cheat lang ru           Change language to Russian
+  cheat lang en           Change language to English
+```
+
+## 🌍 Language Support
+
+### Change Language via CLI
+```bash
+cheat lang ru    # Switch to Russian
+cheat lang en    # Switch to English
+```
+
+### Change Language via Config
+Edit `config.json`:
+```json
+{
+  "lang": "ru",
+  "theme": "dark"
+}
+```
+
+### Add New Language
+1. Create directory: `cheats/your_lang/`
+2. Add `.txt` files with your language content
+3. Use `cheat lang your_lang` to switch
+
+## 🎨 Color Scheme
+- **Headers** (`#`) - Cyan bold
+- **Commands** (`$`) - Green
+- **Descriptions** (`>`) - Yellow
+- **Errors** - Red
+- **Search results** - Magenta
+
+## 📝 Adding New Topics
+
+Create a new file `cheats/en/your_topic.txt`:
+```
+# Your Topic Cheat Sheet
+
+$ command example
+> Description of what this command does
+
+$ another command
+> Another description
+```
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Inspired by the need for quick command reference
+- Built with pure bash for maximum compatibility
+- Color support for better readability 

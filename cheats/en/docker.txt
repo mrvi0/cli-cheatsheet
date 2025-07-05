@@ -1,0 +1,13 @@
+# Docker Cheat Sheet
+
+$ docker ps
+> List running containers
+
+$ docker images
+> List images
+
+$ docker run -it ubuntu bash
+> Run Ubuntu container interactively
+
+$ docker build -t myimage .
+> Build image from Dockerfile 

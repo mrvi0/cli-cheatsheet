@@ -1,0 +1,13 @@
+# Git Cheat Sheet
+
+$ git status
+> Show the working tree status
+
+$ git add .
+> Add all changes to staging
+
+$ git commit -m "message"
+> Commit changes with a message
+
+$ git log
+> Show commit logs 
