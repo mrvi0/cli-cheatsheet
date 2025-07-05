@@ -97,8 +97,15 @@ substitute_translations() {
         return 1
     fi
     
-    # Create temporary file with substitutions
-    local temp_file=$(mktemp)
+    # Load all translations into associative array for faster lookup
+    declare -A translations
+    while IFS=':' read -r key value; do
+        if [[ -n "$key" && -n "$value" ]]; then
+            # Remove quotes and escape sequences
+            value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
+            translations["$key"]="$value"
+        fi
+    done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
     
     # Read template and substitute translations
     while IFS= read -r line; do
@@ -106,15 +113,11 @@ substitute_translations() {
         local substituted_line="$line"
         while [[ "$substituted_line" =~ \{([^}]+)\} ]]; do
             local key="${BASH_REMATCH[1]}"
-            local value=$(jq -r ".$key // \"{$key}\"" "$lang_file" 2>/dev/null)
+            local value="${translations[$key]:-\{$key\}}"
             substituted_line="${substituted_line//\{$key\}/$value}"
         done
-        echo "$substituted_line" >> "$temp_file"
+        echo "$substituted_line"
     done < "$template_file"
-    
-    # Output the result
-    cat "$temp_file"
-    rm "$temp_file"
 }
 
 # Get available topics
@@ -191,14 +194,42 @@ search_cheats() {
     echo -e "${MAGENTA}${BOLD}Searching for: $query${NC}"
     echo "---"
     
+    # Load all translations into associative array for faster lookup
+    declare -A translations
+    while IFS=':' read -r key value; do
+        if [[ -n "$key" && -n "$value" ]]; then
+            # Remove quotes and escape sequences
+            value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
+            translations["$key"]="$value"
+        fi
+    done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
+    
     for template_file in "$TEMPLATES_DIR"/*.txt; do
         if [[ -f "$template_file" ]]; then
             local topic=$(basename "$template_file" .txt)
-            local temp_content=$(substitute_translations "$template_file" "$lang_file")
+            local found=false
             
-            if echo "$temp_content" | grep -qi "$query"; then
-                echo -e "${CYAN}${BOLD}$topic:${NC}"
-                echo "$temp_content" | grep -i "$query" | head -3
+            # Search in template content with translations
+            while IFS= read -r line; do
+                # Substitute translations in the line
+                local substituted_line="$line"
+                while [[ "$substituted_line" =~ \{([^}]+)\} ]]; do
+                    local key="${BASH_REMATCH[1]}"
+                    local value="${translations[$key]:-\{$key\}}"
+                    substituted_line="${substituted_line//\{$key\}/$value}"
+                done
+                
+                # Check if line contains query
+                if echo "$substituted_line" | grep -qi "$query"; then
+                    if [[ "$found" == false ]]; then
+                        echo -e "${CYAN}${BOLD}$topic:${NC}"
+                        found=true
+                    fi
+                    echo "$substituted_line"
+                fi
+            done < "$template_file" | head -3
+            
+            if [[ "$found" == true ]]; then
                 echo ""
             fi
         fi
