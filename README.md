@@ -22,17 +22,20 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 
 ## 📁 Structure
 ```
-cheats/
-├── en/
-│   ├── bash.txt
-│   ├── git.txt
-│   └── docker.txt
-└── ru/
-    ├── bash.txt
-    ├── git.txt
-    └── docker.txt
-cheat.sh
-config.json
+cli-cheatsheet/
+├── cheat.sh              # Main script
+├── config.json           # Configuration
+├── localizations/        # Translation files
+│   ├── en.json          # English translations
+│   └── ru.json          # Russian translations
+├── templates/            # Cheat sheet templates
+│   ├── bash.txt         # Bash template
+│   ├── git.txt          # Git template
+│   ├── docker.txt       # Docker template
+│   └── vim.txt          # Vim template
+└── docs/                # Documentation
+    ├── README.en.md     # English documentation
+    └── README.ru.md     # Russian documentation
 ```
 
 ## 🛠️ Installation
@@ -81,6 +84,7 @@ Available topics:
   - bash
   - docker
   - git
+  - vim
 ```
 
 ### Search in cheat sheets
@@ -143,8 +147,8 @@ Edit `config.json`:
 ```
 
 ### Add New Language
-1. Create directory: `cheats/your_lang/`
-2. Add `.txt` files with your language content
+1. Create file: `localizations/your_lang.json`
+2. Add translations with keys matching templates
 3. Use `cheat lang your_lang` to switch
 
 ## 🎨 Color Scheme
@@ -156,16 +160,30 @@ Edit `config.json`:
 
 ## 📝 Adding New Topics
 
-Create a new file `cheats/en/your_topic.txt`:
+Create a new file `templates/your_topic.txt`:
 ```
-# Your Topic Cheat Sheet
+# {your_topic_title}
 
 $ command example
-> Description of what this command does
+> {command_description}
 
 $ another command
-> Another description
+> {another_description}
 ```
+
+Then add translations to `localizations/en.json`:
+```json
+{
+  "your_topic_title": "Your Topic Cheat Sheet",
+  "command_description": "Description of what this command does",
+  "another_description": "Another description"
+}
+```
+
+## 📚 Documentation
+
+- [English Documentation](docs/README.en.md)
+- [Russian Documentation](docs/README.ru.md)
 
 ## 🤝 Contributing
 

@@ -1,0 +1,13 @@
+# {bash_title}
+
+$ ls -l
+> {ls_description}
+
+$ cd /path/to/dir
+> {cd_description}
+
+$ grep 'pattern' file.txt
+> {grep_description}
+
+$ cat file.txt
+> {cat_description} 

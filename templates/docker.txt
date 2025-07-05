@@ -1,0 +1,13 @@
+# {docker_title}
+
+$ docker ps
+> {docker_ps_description}
+
+$ docker images
+> {docker_images_description}
+
+$ docker run -it ubuntu bash
+> {docker_run_description}
+
+$ docker build -t myimage .
+> {docker_build_description} 

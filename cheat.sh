@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # cli-cheatsheet - Interactive terminal utility for quick command reference
-# Usage: ./cheat.sh <topic>|list|search <query>|lang <language>
+# Usage: ./cheat.sh <topic>|list|search <query>|lang [language]
 
 # Colors
 RED='\033[0;31m'
@@ -15,7 +15,8 @@ NC='\033[0m' # No Color
 
 # Configuration
 CONFIG_FILE="config.json"
-CHEATS_DIR="cheats"
+LOCALIZATIONS_DIR="localizations"
+TEMPLATES_DIR="templates"
 DEFAULT_LANG="en"
 DEFAULT_THEME="dark"
 
@@ -53,51 +54,75 @@ save_config() {
     fi
 }
 
+# Get available languages
+list_languages() {
+    echo -e "${MAGENTA}${BOLD}Available languages:${NC}"
+    for lang_file in "$LOCALIZATIONS_DIR"/*.json; do
+        if [[ -f "$lang_file" ]]; then
+            local lang_name=$(basename "$lang_file" .json)
+            if [[ "$lang_name" == "$LANG" ]]; then
+                echo -e "  - ${GREEN}$lang_name (current)${NC}"
+            else
+                echo "  - $lang_name"
+            fi
+        fi
+    done
+}
+
 # Change language
 change_lang() {
     local new_lang="$1"
     
     if [[ -z "$new_lang" ]]; then
-        echo -e "${RED}Error: Please specify a language${NC}"
-        echo "Available languages:"
-        for lang_dir in "$CHEATS_DIR"/*/; do
-            if [[ -d "$lang_dir" ]]; then
-                local lang_name=$(basename "$lang_dir")
-                echo "  - $lang_name"
-            fi
-        done
-        return 1
+        list_languages
+        return 0
     fi
     
-    # Check if language directory exists
-    if [[ ! -d "$CHEATS_DIR/$new_lang" ]]; then
+    # Check if language file exists
+    if [[ ! -f "$LOCALIZATIONS_DIR/$new_lang.json" ]]; then
         echo -e "${RED}Error: Language '$new_lang' not found${NC}"
-        echo "Available languages:"
-        for lang_dir in "$CHEATS_DIR"/*/; do
-            if [[ -d "$lang_dir" ]]; then
-                local lang_name=$(basename "$lang_dir")
-                echo "  - $lang_name"
-            fi
-        done
+        list_languages
         return 1
     fi
     
     save_config "$new_lang" ""
 }
 
-# Get available topics
-list_topics() {
-    local lang="$1"
-    local topics=()
-    local cheat_path="$CHEATS_DIR/$lang"
+# Substitute translations in template
+substitute_translations() {
+    local template_file="$1"
+    local lang_file="$2"
     
-    # Fallback to default language if current doesn't exist
-    if [[ ! -d "$cheat_path" ]]; then
-        cheat_path="$CHEATS_DIR/$DEFAULT_LANG"
+    if [[ ! -f "$template_file" ]] || [[ ! -f "$lang_file" ]]; then
+        return 1
     fi
     
-    if [[ -d "$cheat_path" ]]; then
-        for file in "$cheat_path"/*.txt; do
+    # Create temporary file with substitutions
+    local temp_file=$(mktemp)
+    
+    # Read template and substitute translations
+    while IFS= read -r line; do
+        # Find all {key} patterns and substitute them
+        local substituted_line="$line"
+        while [[ "$substituted_line" =~ \{([^}]+)\} ]]; do
+            local key="${BASH_REMATCH[1]}"
+            local value=$(jq -r ".$key // \"{$key}\"" "$lang_file" 2>/dev/null)
+            substituted_line="${substituted_line//\{$key\}/$value}"
+        done
+        echo "$substituted_line" >> "$temp_file"
+    done < "$template_file"
+    
+    # Output the result
+    cat "$temp_file"
+    rm "$temp_file"
+}
+
+# Get available topics
+list_topics() {
+    local topics=()
+    
+    if [[ -d "$TEMPLATES_DIR" ]]; then
+        for file in "$TEMPLATES_DIR"/*.txt; do
             if [[ -f "$file" ]]; then
                 topics+=("$(basename "$file" .txt)")
             fi
@@ -107,22 +132,29 @@ list_topics() {
     printf '%s\n' "${topics[@]}"
 }
 
-# Show cheat sheet with colors
+# Show cheat sheet with colors and translations
 show_cheat() {
     local topic="$1"
     local lang="$2"
-    local cheat_file="$CHEATS_DIR/$lang/$topic.txt"
+    local template_file="$TEMPLATES_DIR/$topic.txt"
+    local lang_file="$LOCALIZATIONS_DIR/$lang.json"
     
     # Fallback to default language
-    if [[ ! -f "$cheat_file" ]]; then
-        cheat_file="$CHEATS_DIR/$DEFAULT_LANG/$topic.txt"
+    if [[ ! -f "$lang_file" ]]; then
+        lang_file="$LOCALIZATIONS_DIR/$DEFAULT_LANG.json"
     fi
     
-    if [[ ! -f "$cheat_file" ]]; then
+    if [[ ! -f "$template_file" ]]; then
         echo -e "${RED}No cheat sheet found for topic: $topic${NC}"
         return 1
     fi
     
+    if [[ ! -f "$lang_file" ]]; then
+        echo -e "${RED}No language file found for: $lang${NC}"
+        return 1
+    fi
+    
+    # Substitute translations and apply colors
     while IFS= read -r line; do
         if [[ "$line" =~ ^# ]]; then
             # Headers
@@ -137,21 +169,21 @@ show_cheat() {
             # Regular text
             echo "$line"
         fi
-    done < "$cheat_file"
+    done < <(substitute_translations "$template_file" "$lang_file")
 }
 
 # Search in cheat sheets
 search_cheats() {
     local query="$1"
     local lang="$2"
-    local cheat_path="$CHEATS_DIR/$lang"
+    local lang_file="$LOCALIZATIONS_DIR/$lang.json"
     
     # Fallback to default language
-    if [[ ! -d "$cheat_path" ]]; then
-        cheat_path="$CHEATS_DIR/$DEFAULT_LANG"
+    if [[ ! -f "$lang_file" ]]; then
+        lang_file="$LOCALIZATIONS_DIR/$DEFAULT_LANG.json"
     fi
     
-    if [[ ! -d "$cheat_path" ]]; then
+    if [[ ! -d "$TEMPLATES_DIR" ]]; then
         echo -e "${RED}No cheat sheets found${NC}"
         return 1
     fi
@@ -159,14 +191,18 @@ search_cheats() {
     echo -e "${MAGENTA}${BOLD}Searching for: $query${NC}"
     echo "---"
     
-    while IFS= read -r -d '' file; do
-        if grep -qi "$query" "$file"; then
-            local topic=$(basename "$file" .txt)
-            echo -e "${CYAN}${BOLD}$topic:${NC}"
-            grep -i "$query" "$file" | head -3
-            echo ""
+    for template_file in "$TEMPLATES_DIR"/*.txt; do
+        if [[ -f "$template_file" ]]; then
+            local topic=$(basename "$template_file" .txt)
+            local temp_content=$(substitute_translations "$template_file" "$lang_file")
+            
+            if echo "$temp_content" | grep -qi "$query"; then
+                echo -e "${CYAN}${BOLD}$topic:${NC}"
+                echo "$temp_content" | grep -i "$query" | head -3
+                echo ""
+            fi
         fi
-    done < <(find "$cheat_path" -name "*.txt" -print0)
+    done
 }
 
 # Show help
@@ -177,6 +213,7 @@ show_help() {
     echo "  $0 <topic>           Show cheat sheet for topic"
     echo "  $0 list              List all available topics"
     echo "  $0 search <query>    Search in all cheat sheets"
+    echo "  $0 lang              Show available languages"
     echo "  $0 lang <language>   Change language (en/ru)"
     echo "  $0 help              Show this help"
     echo ""
@@ -184,6 +221,7 @@ show_help() {
     echo "  $0 git               Show git cheat sheet"
     echo "  $0 bash              Show bash cheat sheet"
     echo "  $0 search commit     Search for 'commit' in all sheets"
+    echo "  $0 lang              Show available languages"
     echo "  $0 lang ru           Change language to Russian"
     echo "  $0 lang en           Change language to English"
 }
@@ -204,7 +242,7 @@ main() {
                 if [[ -n "$topic" ]]; then
                     echo "  - $topic"
                 fi
-            done < <(list_topics "$LANG")
+            done < <(list_topics)
             ;;
         "search")
             if [[ $# -lt 2 ]]; then

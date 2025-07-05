@@ -1,0 +1,19 @@
+# {git_title}
+
+$ git status
+> {git_status_description}
+
+$ git add .
+> {git_add_description}
+
+$ git commit -m "message"
+> {git_commit_description}
+
+$ git log
+> {git_log_description}
+
+$ git push
+> {git_push_description}
+
+$ git pull
+> {git_pull_description} 
