@@ -6,6 +6,16 @@
 
 An interactive terminal utility for quick command reference.
 
+<details>
+<summary>🌍 Choose your language / Выберите язык</summary>
+
+| Language | Documentation |
+|----------|---------------|
+| 🇺🇸 English | [README.md](README.md) (current) |
+| 🇷🇺 Русский | [docs/README.ru.md](docs/README.ru.md) |
+
+</details>
+
 ## 🚀 Idea
 
 Call `cheat <topic>` to display a concise and useful cheat sheet for commands (bash, git, docker, vim, systemctl, etc.).
@@ -34,7 +44,6 @@ cli-cheatsheet/
 │   ├── docker.txt       # Docker template
 │   └── vim.txt          # Vim template
 └── docs/                # Documentation
-    ├── README.en.md     # English documentation
     └── README.ru.md     # Russian documentation
 ```
 
@@ -182,7 +191,7 @@ Then add translations to `localizations/en.json`:
 
 ## 📚 Documentation
 
-- [English Documentation](docs/README.en.md)
+- [English Documentation](README.md) (current)
 - [Russian Documentation](docs/README.ru.md)
 
 ## 🤝 Contributing
