@@ -157,22 +157,42 @@ show_cheat() {
         return 1
     fi
     
-    # Substitute translations and apply colors
-    while IFS= read -r line; do
-        if [[ "$line" =~ ^# ]]; then
-            # Headers
-            echo -e "${CYAN}${BOLD}$line${NC}"
-        elif [[ "$line" =~ ^\$ ]]; then
-            # Commands
-            echo -e "${GREEN}$line${NC}"
-        elif [[ "$line" =~ ^\> ]]; then
-            # Descriptions
-            echo -e "${YELLOW}$line${NC}"
-        else
-            # Regular text
-            echo "$line"
+    # Write all output to a temporary file for robust pagination
+    local tmpfile=$(mktemp)
+    substitute_translations "$template_file" "$lang_file" > "$tmpfile"
+    local total_lines=$(wc -l < "$tmpfile")
+    local lines_per_page=10
+    local current_page=1
+    local total_pages=$(( (total_lines + lines_per_page - 1) / lines_per_page ))
+    
+    local i=1
+    while (( i <= total_lines )); do
+        echo -e "${CYAN}${BOLD}--- Page $current_page of $total_pages ---${NC}"
+        echo ""
+        for ((j=0; j<lines_per_page && i<=total_lines; j++, i++)); do
+            local line
+            line=$(sed -n "${i}p" "$tmpfile")
+            if [[ "$line" =~ ^# ]]; then
+                echo -e "${CYAN}${BOLD}$line${NC}"
+            elif [[ "$line" =~ ^\$ ]]; then
+                echo -e "${GREEN}$line${NC}"
+            elif [[ "$line" =~ ^\> ]]; then
+                echo -e "${YELLOW}$line${NC}"
+            else
+                echo "$line"
+            fi
+        done
+        if (( i <= total_lines )); then
+            echo ""
+            echo -e "${MAGENTA}Press Enter for next page, 'q' to quit:${NC}"
+            read -r input
+            if [[ "$input" == "q" ]]; then
+                break
+            fi
         fi
-    done < <(substitute_translations "$template_file" "$lang_file")
+        current_page=$((current_page + 1))
+    done
+    rm -f "$tmpfile"
 }
 
 # Search in cheat sheets
@@ -255,11 +275,21 @@ search_cheats() {
                             local command_line=$(grep -B1 "^$line$" "$template_file" | head -1)
                             if [[ "$command_line" =~ ^\$ ]]; then
                                 local substituted_command="${command_line//\{$key\}/${translations[$key]}}"
-                                echo "$substituted_command"
+                                echo -e "${GREEN}$substituted_command${NC}"
                             fi
                         fi
                         
-                        echo "$substituted_line"
+                        # Apply colors based on line type
+                        if [[ "$line" =~ ^\> ]]; then
+                            echo -e "${YELLOW}$substituted_line${NC}"
+                        elif [[ "$line" =~ ^\$ ]]; then
+                            echo -e "${GREEN}$substituted_line${NC}"
+                        elif [[ "$line" =~ ^# ]]; then
+                            echo -e "${CYAN}${BOLD}$substituted_line${NC}"
+                        else
+                            echo "$substituted_line"
+                        fi
+                        
                         found_command=true
                         break
                     fi
@@ -270,7 +300,17 @@ search_cheats() {
                     while IFS= read -r line; do
                         if [[ "$line" =~ \{$key\} ]]; then
                             local substituted_line="${line//\{$key\}/${translations[$key]}}"
-                            echo "$substituted_line"
+                            
+                            # Apply colors based on line type
+                            if [[ "$line" =~ ^\> ]]; then
+                                echo -e "${YELLOW}$substituted_line${NC}"
+                            elif [[ "$line" =~ ^\$ ]]; then
+                                echo -e "${GREEN}$substituted_line${NC}"
+                            elif [[ "$line" =~ ^# ]]; then
+                                echo -e "${CYAN}${BOLD}$substituted_line${NC}"
+                            else
+                                echo "$substituted_line"
+                            fi
                             
                             # Show next line if it's a description
                             local next_line=$(grep -A1 "^$line$" "$template_file" | tail -1)
@@ -281,7 +321,7 @@ search_cheats() {
                                     local next_value="${translations[$next_key]:-\{$next_key\}}"
                                     substituted_next_line="${substituted_next_line//\{$next_key\}/$next_value}"
                                 done
-                                echo "$substituted_next_line"
+                                echo -e "${YELLOW}$substituted_next_line${NC}"
                             fi
                             break
                         fi
