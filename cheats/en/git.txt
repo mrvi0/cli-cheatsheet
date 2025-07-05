@@ -10,4 +10,10 @@ $ git commit -m "message"
 > Commit changes with a message
 
 $ git log
-> Show commit logs 
+> Show commit logs
+
+$ git push
+> Push changes to remote repository
+
+$ git pull
+> Pull changes from remote repository 
