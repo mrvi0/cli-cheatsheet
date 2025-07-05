@@ -10,7 +10,7 @@ Thank you for your interest in contributing to cli-cheatsheet! This document pro
 | Language | Documentation |
 |----------|---------------|
 | 🇺🇸 English | [CONTRIBUTING.md](CONTRIBUTING.md) (current) |
-| 🇷🇺 Русский | [docs/CONTRIBUTING.ru.md](docs/CONTRIBUTING.ru.md) |
+| 🇷🇺 Русский | [docs/ru/CONTRIBUTING.md](docs/ru/CONTRIBUTING.md) |
 
 </details>
 
@@ -48,7 +48,7 @@ This project and everyone participating in it is governed by our Code of Conduct
 - Test your changes thoroughly
 
 ### Adding New Languages
-- Follow the [Translation Guide](docs/TRANSLATION_GUIDE.md)
+- Follow the [Translation Guide](TRANSLATION_GUIDE.md)
 - Create translation files for all existing topics
 - Update documentation
 
@@ -227,7 +227,7 @@ git commit -m "feat: add German language support"
 
 ## 🌐 Translation Guide
 
-For detailed translation guidelines, see [TRANSLATION_GUIDE.md](docs/TRANSLATION_GUIDE.md).
+For detailed translation guidelines, see [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md).
 
 ## 📞 Getting Help
 

@@ -12,7 +12,7 @@ An interactive terminal utility for quick command reference.
 | Language | Documentation |
 |----------|---------------|
 | 🇺🇸 English | [README.md](README.md) (current) |
-| 🇷🇺 Русский | [docs/README.ru.md](docs/README.ru.md) |
+| 🇷🇺 Русский | [docs/ru/README.md](docs/ru/README.md) |
 
 </details>
 
@@ -192,7 +192,7 @@ Then add translations to `localizations/en.json`:
 ## 📚 Documentation
 
 - [English Documentation](README.md) (current)
-- [Russian Documentation](docs/README.ru.md)
+- [Russian Documentation](docs/ru/README.md)
 
 ## 🤝 Contributing
 

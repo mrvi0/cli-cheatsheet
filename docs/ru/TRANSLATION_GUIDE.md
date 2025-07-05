@@ -9,8 +9,8 @@
 
 | Language | Documentation |
 |----------|---------------|
-| 🇺🇸 English | [TRANSLATION_GUIDE.md](../docs/TRANSLATION_GUIDE.md) |
-| 🇷🇺 Русский | [TRANSLATION_GUIDE.ru.md](TRANSLATION_GUIDE.ru.md) (current) |
+| 🇺🇸 English | [TRANSLATION_GUIDE.md](../TRANSLATION_GUIDE.md) |
+| 🇷🇺 Русский | [docs/ru/TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) (current) |
 
 </details>
 

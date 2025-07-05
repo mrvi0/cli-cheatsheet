@@ -10,7 +10,7 @@ This guide explains how to add new languages and translate content for cli-cheat
 | Language | Documentation |
 |----------|---------------|
 | 🇺🇸 English | [TRANSLATION_GUIDE.md](TRANSLATION_GUIDE.md) (current) |
-| 🇷🇺 Русский | [TRANSLATION_GUIDE.ru.md](docs/TRANSLATION_GUIDE.ru.md) |
+| 🇷🇺 Русский | [docs/ru/TRANSLATION_GUIDE.md](docs/ru/TRANSLATION_GUIDE.md) |
 
 </details>
 
