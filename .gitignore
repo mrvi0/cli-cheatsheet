@@ -23,4 +23,8 @@ Thumbs.db
 
 # Backup files
 *.bak
-*.backup 
+*.backup
+
+# Ignore translation issue creation script
+create_translation_issues.sh 
+close_translation_issues.sh
