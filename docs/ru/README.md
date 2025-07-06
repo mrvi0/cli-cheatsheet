@@ -210,6 +210,17 @@ $ git status
 > Show the working tree status
 ```
 
+### Обновление утилиты
+```bash
+$ cheat update
+Updating cli-cheatsheet...
+Current branch: main
+Fetching latest changes...
+Found 3 new commit(s)
+Pulling latest changes...
+Successfully updated cli-cheatsheet!
+```
+
 ### Получить справку
 ```bash
 $ cheat help
@@ -220,6 +231,7 @@ Usage:
   cheat list              List all available topics
   cheat search <query>    Search in all cheat sheets
   cheat lang <language>   Change language (en/ru)
+  cheat update            Update to latest version
   cheat help              Show this help
 
 Examples:
@@ -228,6 +240,7 @@ Examples:
   cheat search commit     Search for 'commit' in all sheets
   cheat lang ru           Change language to Russian
   cheat lang en           Change language to English
+  cheat update            Update to latest version
 ```
 
 ## 🌍 Поддержка языков

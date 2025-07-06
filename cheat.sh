@@ -284,6 +284,59 @@ search_cheats() {
     fi
 }
 
+# Update utility
+update_utility() {
+    echo -e "${CYAN}${BOLD}Updating cli-cheatsheet...${NC}"
+    
+    # Check if we're in a git repository
+    if [[ ! -d "$SCRIPT_DIR/.git" ]]; then
+        echo -e "${RED}Error: Not a git repository. Cannot update.${NC}"
+        echo -e "${YELLOW}Please reinstall from: https://github.com/mrvi0/cli-cheatsheet${NC}"
+        return 1
+    fi
+    
+    # Check if git is available
+    if ! command -v git &> /dev/null; then
+        echo -e "${RED}Error: git is not installed. Cannot update.${NC}"
+        return 1
+    fi
+    
+    # Store current branch
+    local current_branch=$(git -C "$SCRIPT_DIR" branch --show-current 2>/dev/null)
+    if [[ -z "$current_branch" ]]; then
+        echo -e "${RED}Error: Could not determine current branch${NC}"
+        return 1
+    fi
+    
+    echo -e "${YELLOW}Current branch: $current_branch${NC}"
+    
+    # Fetch latest changes
+    echo -e "${YELLOW}Fetching latest changes...${NC}"
+    if ! git -C "$SCRIPT_DIR" fetch origin; then
+        echo -e "${RED}Error: Failed to fetch latest changes${NC}"
+        return 1
+    fi
+    
+    # Check if there are updates
+    local behind_count=$(git -C "$SCRIPT_DIR" rev-list --count HEAD..origin/$current_branch 2>/dev/null)
+    if [[ "$behind_count" == "0" ]]; then
+        echo -e "${GREEN}Already up to date!${NC}"
+        return 0
+    fi
+    
+    echo -e "${YELLOW}Found $behind_count new commit(s)${NC}"
+    
+    # Pull latest changes
+    echo -e "${YELLOW}Pulling latest changes...${NC}"
+    if ! git -C "$SCRIPT_DIR" pull origin "$current_branch"; then
+        echo -e "${RED}Error: Failed to pull latest changes${NC}"
+        return 1
+    fi
+    
+    echo -e "${GREEN}Successfully updated cli-cheatsheet!${NC}"
+    echo -e "${YELLOW}You may need to restart your terminal or reload your shell configuration.${NC}"
+}
+
 # Show help
 show_help() {
     echo -e "${CYAN}${BOLD}cli-cheatsheet - Interactive terminal utility${NC}"
@@ -294,6 +347,7 @@ show_help() {
     echo "  cheat search <query>    Search in all cheat sheets"
     echo "  cheat lang              Show available languages"
     echo "  cheat lang <language>   Change language (en/ru)"
+    echo "  cheat update            Update to latest version"
     echo "  cheat help              Show this help"
     echo ""
     echo "Examples:"
@@ -303,6 +357,7 @@ show_help() {
     echo "  cheat lang              Show available languages"
     echo "  cheat lang ru           Change language to Russian"
     echo "  cheat lang en           Change language to English"
+    echo "  cheat update            Update to latest version"
 }
 
 # Main function
@@ -332,6 +387,9 @@ main() {
             ;;
         "lang")
             change_lang "$2"
+            ;;
+        "update")
+            update_utility
             ;;
         "help"|"-h"|"--help")
             show_help
