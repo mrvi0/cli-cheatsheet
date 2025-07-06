@@ -276,4 +276,17 @@ localizations/de/
 
 ## 🙏 Thank You
 
-Thank you for helping make cli-cheatsheet available in more languages! Your contributions help users around the world. 
+Thank you for helping make cli-cheatsheet available in more languages! Your contributions help users around the world.
+
+## 🚀 Pull Request Best Practices for Translations
+
+- Please create a **separate branch and pull request for each utility translation** (e.g., `bash` in `de`).
+- **Do not combine multiple translations in a single PR.**
+- Example branch name: `translation/bash-de`
+- Example commit message: `feat(translation): add bash cheat sheet in German (de)`
+- Use [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages.
+- See [translation issues](https://github.com/mrvi0/cli-cheatsheet/issues?q=is%3Aissue+label%3Atranslation) for available tasks.
+
+## 👥 Contributors
+
+All contributors are listed in the [README.md](README.md) and updated automatically using [all-contributors](https://github.com/all-contributors/all-contributors). Make a PR and see yourself in the list! 

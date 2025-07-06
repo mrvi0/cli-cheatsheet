@@ -25,6 +25,8 @@ Thank you for your interest in contributing to cli-cheatsheet! This document pro
 - [Commit Guidelines](#commit-guidelines)
 - [Pull Request Process](#pull-request-process)
 - [Translation Guide](#translation-guide)
+- [Pull Request Best Practices](#pull-request-best-practices)
+- [Contributors](#contributors)
 
 ## 🤝 Code of Conduct
 
@@ -237,4 +239,17 @@ For detailed translation guidelines, see [TRANSLATION_GUIDE.md](TRANSLATION_GUID
 
 ## 🙏 Thank You
 
-Thank you for contributing to cli-cheatsheet! Your contributions help make this tool better for everyone. 
+Thank you for contributing to cli-cheatsheet! Your contributions help make this tool better for everyone.
+
+## 🚀 Pull Request Best Practices
+
+- Please create a **separate branch and pull request for each utility or translation** you contribute. This helps us review your work faster and gives you more contributions in your GitHub profile!
+- **Do not combine multiple translations or utilities in a single PR.**
+- Example branch name: `translation/bash-de`
+- Example commit message: `feat(translation): add bash cheat sheet in German (de)`
+- Use [Conventional Commits](https://www.conventionalcommits.org/) for your commit messages.
+- See [translation issues](https://github.com/mrvi0/cli-cheatsheet/issues?q=is%3Aissue+label%3Atranslation) for available tasks.
+
+## 👥 Contributors
+
+All contributors are listed in the [README.md](README.md) and updated automatically using [all-contributors](https://github.com/all-contributors/all-contributors). Make a PR and see yourself in the list! 

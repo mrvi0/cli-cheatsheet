@@ -339,36 +339,153 @@ update_utility() {
 
 # Show help
 show_help() {
-    echo -e "${CYAN}${BOLD}cli-cheatsheet - Interactive terminal utility${NC}"
-    echo ""
-    echo "Usage:"
-    echo "  cheat <topic>           Show cheat sheet for topic"
-    echo "  cheat list              List all available topics"
-    echo "  cheat search <query>    Search in all cheat sheets"
-    echo "  cheat lang              Show available languages"
-    echo "  cheat lang <language>   Change language (en/ru)"
-    echo "  cheat update            Update to latest version"
-    echo "  cheat help              Show this help"
-    echo ""
-    echo "Examples:"
-    echo "  cheat git               Show git cheat sheet"
-    echo "  cheat bash              Show bash cheat sheet"
-    echo "  cheat search commit     Search for 'commit' in all sheets"
-    echo "  cheat lang              Show available languages"
-    echo "  cheat lang ru           Change language to Russian"
-    echo "  cheat lang en           Change language to English"
-    echo "  cheat update            Update to latest version"
+    echo -e "${GREEN}${BOLD}"
+    echo "   ____ _     ___       ____ _   _ _____    _  _____ ____  _   _ _____ _____ _____ "
+    echo "  / ___| |   |_ _|     / ___| | | | ____|  / \\|_   _/ ___|| | | | ____| ____|_   _|"
+    echo " | |   | |    | |_____| |   | |_| |  _|   / _ \\ | | \\___ \\| |_| |  _| |  _|   | |  "
+    echo " | |___| |___ | |_____| |___|  _  | |___ / ___ \\| |  ___) |  _  | |___| |___  | |  "
+    echo "  \\____|_____|___|     \\____|_| |_|_____/_/   \\_\_| |____/|_| |_|_____|_____| |_|  "
+    echo -e "${NC}"
+    echo -e "${CYAN}${BOLD}The only CLI cheat sheet you need!${NC}"
+    echo -e "Unified, translatable, and community-driven.\n"
+    echo -e "${YELLOW}${BOLD}Available commands:${NC}"
+    echo -e "  ${GREEN}cheat <topic>${NC}         Show cheat sheet for topic (e.g. bash, git, docker)"
+    echo -e "  ${GREEN}cheat list${NC}            List all available topics"
+    echo -e "  ${GREEN}cheat status${NC}          Show status tables for all utilities"
+    echo -e "  ${GREEN}cheat search <query>${NC}  Search in all cheat sheets"
+    echo -e "  ${GREEN}cheat lang${NC}            Show available languages"
+    echo -e "  ${GREEN}cheat lang <lang>${NC}     Change language (en/ru)"
+    echo -e "  ${GREEN}cheat update${NC}          Update to latest version"
+    echo -e "  ${GREEN}cheat help${NC}            Show this help message\n"
+    echo -e "${YELLOW}${BOLD}Usage examples:${NC}"
+    echo -e "  ${GREEN}cheat bash${NC}           Bash cheat sheet"
+    echo -e "  ${GREEN}cheat git${NC}            Git cheat sheet"
+    echo -e "  ${GREEN}cheat --lang ru vim${NC}  Vim cheat sheet in Russian"
+    echo -e "  ${GREEN}cheat list${NC}           List all available topics"
+    echo -e "  ${GREEN}cheat search find${NC}    Search for 'find' in all topics\n"
+    echo -e "${MAGENTA}${BOLD}Categories:${NC} System, Network, Security, Text, Files, Archiving, Containers, Dev, Packages\n"
+    echo -e "${BOLD}Status:${NC}  ${GREEN}✅ Available${NC}   ${YELLOW}🔄 In progress${NC}   ❌ Not available\n"
+    echo -e "Contribute: ${CYAN}https://github.com/mrvi0/cli-cheatsheet${NC}"
+    echo -e "Type '${BOLD}cheat help${NC}' for more info.\n"
+}
+
+show_status() {
+    echo -e "${CYAN}${BOLD}Cheat Sheets Status:${NC}\n"
+    # System Utilities
+    echo -e "${BOLD}🔧 System Utilities${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| bash        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| systemctl   | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| cron        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| htop        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| tmux        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| ps          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| kill        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| top         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| iotop       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| useradd     | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| sudo        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| mount       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Network Utilities
+    echo -e "${BOLD}🌐 Network Utilities${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| curl        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| ssh         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| netstat     | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| nmap        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| lsof        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| ping        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| traceroute  | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| dig         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| wget        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| rsync       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| nc          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| iftop       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Security & Firewalls
+    echo -e "${BOLD}🛡️ Security & Firewalls${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| ufw         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| iptables    | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| fail2ban    | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| openssl     | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| gpg         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| ssh-keygen  | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Text Processing
+    echo -e "${BOLD}📝 Text Processing${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| vim         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| sed         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| awk         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| grep        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| cut         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| sort        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| wc          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| jq          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| nano        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # File System & Search
+    echo -e "${BOLD}🔍 File System & Search${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| find        | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| ls          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| cp          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| chmod       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| du          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| locate      | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| ripgrep     | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Archiving & Compression
+    echo -e "${BOLD}📦 Archiving & Compression${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| tar         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| zip         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| gzip        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| bzip2       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| xz          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| zstd        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Containerization
+    echo -e "${BOLD}🐳 Containerization${NC}"
+    echo -e "| Utility         | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-----------------|-----|-----|-----|-----|-----|"
+    echo -e "| docker          | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| docker-compose  | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| kubectl         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| podman          | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Development Tools
+    echo -e "${BOLD}🔧 Development Tools${NC}"
+    echo -e "| Utility     | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------|-----|-----|-----|-----|-----|"
+    echo -e "| git         | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| make        | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| cmake       | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| gcc         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| gdb         | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| valgrind    | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    # Package Management
+    echo -e "${BOLD}📦 Package Management${NC}"
+    echo -e "| Utility           | EN  | RU  | DE  | FR  | ES  |"
+    echo -e "|-------------------|-----|-----|-----|-----|-----|"
+    echo -e "| package-managers  | ${GREEN}✅${NC}  | ${GREEN}✅${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| apt               | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| yum               | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| dnf               | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| pacman            | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| snap              | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |"
+    echo -e "| flatpak           | ${YELLOW}🔄${NC}  | ${YELLOW}🔄${NC}  | ❌  | ❌  | ❌  |\n"
+    echo -e "${BOLD}Legend:${NC}  ${GREEN}✅ Available${NC}   ${YELLOW}🔄 In progress${NC}   ❌ Not available\n"
 }
 
 # Main function
 main() {
     load_config
-    
     if [[ $# -eq 0 ]]; then
         show_help
-        exit 1
+        exit 0
     fi
-    
     case "$1" in
         "list")
             echo -e "${MAGENTA}${BOLD}Available topics:${NC}"
@@ -393,6 +510,9 @@ main() {
             ;;
         "help"|"-h"|"--help")
             show_help
+            ;;
+        "status")
+            show_status
             ;;
         *)
             show_cheat "$1" "$LANG"
