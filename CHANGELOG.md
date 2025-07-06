@@ -8,9 +8,99 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
-- Add cheat sheets for: tar, awk, sed, cron, netstat, lsof, nmap, ufw, make, package managers
+- Add cheat sheets for: sed, cron, netstat, lsof, nmap, ufw, make, package managers
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
+
+## [2.0.0] - 2025-07-06
+
+### Added
+- **Significantly expanded bash cheat sheet** with 123 comprehensive commands
+- Organized into 15 logical categories:
+  - File system operations (ls, cd, pwd, mkdir, rm, cp, mv, ln)
+  - File viewing (cat, less, head, tail, nano, vim)
+  - Search and filtering (grep, find, locate, which, whereis)
+  - Process management (ps, top, htop, kill, jobs, fg, bg)
+  - System information (df, du, free, uname, whoami, uptime)
+  - Network commands (ping, netstat, ss, ifconfig, wget, curl, ssh, scp)
+  - Archives and compression (tar, zip, gzip)
+  - File permissions (chmod, chown, chgrp, umask)
+  - Environment variables (export, env, set, unset)
+  - I/O redirection (>, >>, <, 2>, |, &&, ||)
+  - History and completion (history, !!, Ctrl+R, Tab)
+  - Text utilities (sort, uniq, wc, cut, awk, sed, tr, xargs)
+  - Monitoring and logs (dmesg, journalctl, watch, strace, lsof)
+  - System administration (sudo, su, passwd, useradd, systemctl)
+  - Useful aliases and bash functions
+
+### Changed
+- **BREAKING**: Changed translation key format from `{key}` to `[[key]]` to avoid conflicts with command syntax
+- **BREAKING**: Reorganized translation files structure for better performance
+  - Split large localization files into separate files per utility
+  - New structure: `localizations/{lang}/{utility}.json`
+  - Improved loading performance for large cheat sheets
+- Expanded bash template from 5 to 123 translation keys
+- Improved organization with clear section headers
+- Enhanced usability with comprehensive command coverage
+- **Fixed search functionality** to work with new `[[key]]` format
+- Search now properly shows both commands and descriptions for matches
+
+### Fixed
+- Search function to display commands with descriptions
+- Translation key conflicts with command syntax (especially in awk)
+- Performance issues with large translation files
+- Missing translation keys in all cheat sheets
+- Empty descriptions in localization files
+
+### Technical Improvements
+- Replaced all `echo` calls with `printf '%s\n'` for better handling of special characters
+- Optimized translation loading for better performance
+- Improved search algorithm to find matches in commands, descriptions, keys, and translations
+- Better error handling and fallback mechanisms
+
+## [1.10.0] - 2025-07-06
+
+### Added
+- **Significantly expanded bash cheat sheet** with 123 comprehensive commands
+- Organized into 15 logical categories:
+  - File system operations (ls, cd, pwd, mkdir, rm, cp, mv, ln)
+  - File viewing (cat, less, head, tail, nano, vim)
+  - Search and filtering (grep, find, locate, which, whereis)
+  - Process management (ps, top, htop, kill, jobs, fg, bg)
+  - System information (df, du, free, uname, whoami, uptime)
+  - Network commands (ping, netstat, ss, ifconfig, wget, curl, ssh, scp)
+  - Archives and compression (tar, zip, gzip)
+  - File permissions (chmod, chown, chgrp, umask)
+  - Environment variables (export, env, set, unset)
+  - I/O redirection (>, >>, <, 2>, |, &&, ||)
+  - History and completion (history, !!, Ctrl+R, Tab)
+  - Text utilities (sort, uniq, wc, cut, awk, sed, tr, xargs)
+  - Monitoring and logs (dmesg, journalctl, watch, strace, lsof)
+  - System administration (sudo, su, passwd, useradd, systemctl)
+  - Useful aliases and bash functions
+- Complete Russian and English translations for all new commands
+- Practical examples and common use cases for each command
+
+## [1.9.0] - 2025-07-06
+
+### Added
+- Comprehensive **awk** command cheat sheet with 50+ commands
+- English and Russian translations for all awk commands
+- Template: templates/awk.txt
+
+### Changed
+- **Performance optimization**: Reorganized translation files structure
+  - Split large localization files into separate files per utility
+  - New structure: `localizations/{lang}/{utility}.json`
+  - Improved loading performance for large cheat sheets
+  - Better maintainability and organization
+
+## [1.8.0] - 2025-07-06
+
+### Added
+- Comprehensive **tar** command cheat sheet with detailed usage examples
+- English and Russian translations for all tar commands
+- Template: templates/tar.txt
 
 ## [1.7.0] - 2025-07-06
 
@@ -94,26 +184,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Color-coded output
 - Search functionality
 - Language switching capability
-
-## [1.8.0] - 2025-07-06
-
-### Added
-- Comprehensive **tar** command cheat sheet with detailed usage examples
-- English and Russian translations for all tar commands
-- Template: templates/tar.txt
-
-## [1.9.0] - 2025-07-06
-
-### Added
-- Comprehensive **awk** command cheat sheet with 50+ commands
-- English and Russian translations for all awk commands
-- Template: templates/awk.txt
-
-### Changed
-- **Performance optimization**: Reorganized translation files structure
-  - Split large localization files into separate files per utility
-  - New structure: `localizations/{lang}/{utility}.json`
-  - Improved loading performance for large cheat sheets
-  - Better maintainability and organization
 
 --- 

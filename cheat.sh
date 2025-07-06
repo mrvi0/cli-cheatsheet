@@ -203,136 +203,78 @@ search_cheats() {
     echo -e "${MAGENTA}${BOLD}Searching for: $query${NC}"
     echo "---"
     
-    # Search through all templates
+    local found_matches=false
+    local query_lower="${query,,}"
+    
     for template_file in "$TEMPLATES_DIR"/*.txt; do
         if [[ ! -f "$template_file" ]]; then
             continue
         fi
-        
         local topic=$(basename "$template_file" .txt)
         local lang_file="$LOCALIZATIONS_DIR/$lang/$topic.json"
-        
         if [[ ! -f "$lang_file" ]]; then
             continue
         fi
-        
-        # Load translations for this topic
         declare -A translations
         while IFS=':' read -r key value; do
             if [[ -n "$key" && -n "$value" ]]; then
-                # Remove quotes and escape sequences
                 value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
                 translations["$key"]="$value"
             fi
         done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
-        
-        # Search in template and translations
-        local found_matches=false
-        local command_buffer=""
-        local description_buffer=""
-        
+        local prev_command=""
         while IFS= read -r line; do
-            # Check if line contains the search query
-            local line_lower="${line,,}"
-            local query_lower="${query,,}"
-            
-            if [[ "$line_lower" =~ $query_lower ]]; then
-                # This line contains the search term
-                if [[ "$line" =~ ^\$ ]]; then
-                    # Command line
-                    command_buffer="$line"
-                elif [[ "$line" =~ ^\> ]]; then
-                    # Description line
-                    description_buffer="$line"
-                    
-                    # If we have both command and description, show them
-                    if [[ -n "$command_buffer" && -n "$description_buffer" ]]; then
-                        if [[ "$found_matches" == false ]]; then
-                            echo -e "${CYAN}${BOLD}$topic:${NC}"
-                            found_matches=true
-                        fi
-                        
-                        # Substitute translations in command
-                        local substituted_command="$command_buffer"
-                        while [[ "$substituted_command" =~ \[\[([^\]]+)\]\] ]]; do
-                            local key="${BASH_REMATCH[1]}"
-                            local value="${translations[$key]:-\[\[$key\]\]}"
-                            substituted_command="${substituted_command//\[\[$key\]\]/$value}"
-                        done
-                        
-                        # Substitute translations in description
-                        local substituted_description="$description_buffer"
-                        while [[ "$substituted_description" =~ \[\[([^\]]+)\]\] ]]; do
-                            local key="${BASH_REMATCH[1]}"
-                            local value="${translations[$key]:-\[\[$key\]\]}"
-                            substituted_description="${substituted_description//\[\[$key\]\]/$value}"
-                        done
-                        
-                        echo -e "${GREEN}$substituted_command${NC}"
-                        echo -e "${YELLOW}$substituted_description${NC}"
-                        echo ""
-                        
-                        # Reset buffers
-                        command_buffer=""
-                        description_buffer=""
-                    fi
-                fi
-            else
-                # Check if this line contains a translation key that matches the query
-                while [[ "$line" =~ \[\[([^\]]+)\]\] ]]; do
+            if [[ "$line" =~ ^\$ ]]; then
+                prev_command="$line"
+                continue
+            fi
+            if [[ "$line" =~ ^\> ]]; then
+                local cmd_line="$prev_command"
+                local desc_line="$line"
+                # Substitute translations
+                local substituted_cmd="$cmd_line"
+                while [[ "$substituted_cmd" =~ \[\[([^\]]+)\]\] ]]; do
                     local key="${BASH_REMATCH[1]}"
-                    local value="${translations[$key]}"
-                    
-                    if [[ -n "$value" ]]; then
-                        local value_lower="${value,,}"
-                        if [[ "$value_lower" =~ $query_lower ]]; then
-                            # Translation value contains the search term
-                            if [[ "$line" =~ ^\$ ]]; then
-                                # Command line
-                                command_buffer="$line"
-                            elif [[ "$line" =~ ^\> ]]; then
-                                # Description line
-                                description_buffer="$line"
-                                
-                                # If we have both command and description, show them
-                                if [[ -n "$command_buffer" && -n "$description_buffer" ]]; then
-                                    if [[ "$found_matches" == false ]]; then
-                                        echo -e "${CYAN}${BOLD}$topic:${NC}"
-                                        found_matches=true
-                                    fi
-                                    
-                                    # Substitute translations in command
-                                    local substituted_command="$command_buffer"
-                                    while [[ "$substituted_command" =~ \[\[([^\]]+)\]\] ]]; do
-                                        local key="${BASH_REMATCH[1]}"
-                                        local value="${translations[$key]:-\[\[$key\]\]}"
-                                        substituted_command="${substituted_command//\[\[$key\]\]/$value}"
-                                    done
-                                    
-                                    # Substitute translations in description
-                                    local substituted_description="$description_buffer"
-                                    while [[ "$substituted_description" =~ \[\[([^\]]+)\]\] ]]; do
-                                        local key="${BASH_REMATCH[1]}"
-                                        local value="${translations[$key]:-\[\[$key\]\]}"
-                                        substituted_description="${substituted_description//\[\[$key\]\]/$value}"
-                                    done
-                                    
-                                    echo -e "${GREEN}$substituted_command${NC}"
-                                    echo -e "${YELLOW}$substituted_description${NC}"
-                                    echo ""
-                                    
-                                    # Reset buffers
-                                    command_buffer=""
-                                    description_buffer=""
-                                fi
+                    local value="${translations[$key]:-\[\[$key\]\]}"
+                    substituted_cmd="${substituted_cmd//\[\[$key\]\]/$value}"
+                done
+                local substituted_desc="$desc_line"
+                while [[ "$substituted_desc" =~ \[\[([^\]]+)\]\] ]]; do
+                    local key="${BASH_REMATCH[1]}"
+                    local value="${translations[$key]:-\[\[$key\]\]}"
+                    substituted_desc="${substituted_desc//\[\[$key\]\]/$value}"
+                done
+                # Lowercase for search
+                local cmd_lower="${substituted_cmd,,}"
+                local desc_lower="${substituted_desc,,}"
+                # Search in command, description, keys, and translations
+                local match=false
+                if [[ "$cmd_lower" == *$query_lower* ]] || [[ "$desc_lower" == *$query_lower* ]]; then
+                    match=true
+                else
+                    # Check keys and translation values
+                    for k in "${!translations[@]}"; do
+                        local v="${translations[$k]}"
+                        if [[ "${k,,}" == *$query_lower* ]] || [[ "${v,,}" == *$query_lower* ]]; then
+                            if [[ "$cmd_line" == *"[[$k]]"* ]] || [[ "$desc_line" == *"[[$k]]"* ]]; then
+                                match=true
+                                break
                             fi
                         fi
+                    done
+                fi
+                if [[ "$match" == true ]]; then
+                    if [[ "$found_matches" == false ]]; then
+                        echo -e "${CYAN}${BOLD}$topic:${NC}"
+                        found_matches=true
                     fi
-                done
+                    echo -e "${GREEN}$substituted_cmd${NC}"
+                    echo -e "${YELLOW}$substituted_desc${NC}"
+                    echo ""
+                fi
             fi
         done < "$template_file"
     done
-    
     if [[ "$found_matches" == false ]]; then
         echo -e "${YELLOW}No matches found for: $query${NC}"
     fi
