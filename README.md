@@ -22,13 +22,15 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 
 ## ✨ Features
 - `cheat <topic>` — shows a text cheat sheet by key
-- Category support: `cheat git`, `cheat bash`, `cheat docker`
-- Colorful output (headers, commands, examples)
-- Autocompletion or list all topics: `cheat list`
-- Search functionality: `cheat search <query>`
-- Multi-language support (en/ru)
-- Theme support (light/dark)
-- Language switching: `cheat lang <language>`
+- **Comprehensive topic support**: `cheat git`, `cheat bash`, `cheat docker`, `cheat systemctl`, `cheat tmux`, `cheat htop`, `cheat curl`, `cheat ssh`, `cheat find`
+- **Colorful output** (headers, commands, descriptions)
+- **Autocompletion or list all topics**: `cheat list`
+- **Advanced search functionality**: `cheat search <query>` with grouped results by topic
+- **Multi-language support** (en/ru) with JSON-based translations
+- **Theme support** (light/dark)
+- **Language switching**: `cheat lang <language>`
+- **Template-based system** with placeholder substitution
+- **Optimized performance** with efficient translation lookup
 
 ## 📁 Structure
 ```
@@ -42,7 +44,12 @@ cli-cheatsheet/
 │   ├── bash.txt         # Bash template
 │   ├── git.txt          # Git template
 │   ├── docker.txt       # Docker template
-│   └── vim.txt          # Vim template
+│   ├── systemctl.txt    # Systemctl template
+│   ├── tmux.txt         # Tmux template
+│   ├── htop.txt         # Htop template
+│   ├── curl.txt         # Curl template
+│   ├── ssh.txt          # SSH template
+│   └── find.txt         # Find template
 └── docs/                # Documentation
     └── README.ru.md     # Russian documentation
 ```
@@ -91,9 +98,14 @@ $ git log
 $ cheat list
 Available topics:
   - bash
+  - curl
   - docker
+  - find
   - git
-  - vim
+  - htop
+  - ssh
+  - systemctl
+  - tmux
 ```
 
 ### Search in cheat sheets
@@ -104,6 +116,16 @@ Searching for: commit
 git:
 $ git commit -m "message"
 > Commit changes with a message
+
+$ cheat search find
+Searching for: find
+---
+find:
+$ find . -name "filename"
+> Find files by exact name
+
+$ find . -type f -name "*.txt"
+> Find text files
 ```
 
 ### Change language
@@ -180,7 +202,7 @@ $ another command
 > {another_description}
 ```
 
-Then add translations to `localizations/en.json`:
+Then add translations to `localizations/en.json` and `localizations/ru.json`:
 ```json
 {
   "your_topic_title": "Your Topic Cheat Sheet",
@@ -188,6 +210,32 @@ Then add translations to `localizations/en.json`:
   "another_description": "Another description"
 }
 ```
+
+### Template Format
+- Use `{key_name}` placeholders for translations
+- Commands start with `$`
+- Descriptions start with `>`
+- Headers start with `#`
+- Add empty lines between commands for better readability
+
+## 🆕 Recent Updates
+
+### v1.6.0 - New Topics & Improvements
+- ✅ Added comprehensive **find** command cheat sheet
+- ✅ Added **tmux**, **htop**, **curl**, **ssh** cheat sheets
+- ✅ Fixed duplicate translation keys in htop templates
+- ✅ Improved template formatting with proper line breaks
+- ✅ Enhanced search functionality with topic grouping
+- ✅ Optimized translation lookup performance
+
+### v1.5.0 - Systemctl Support
+- ✅ Added **systemctl** command cheat sheet
+- ✅ Improved search function to include new topics
+
+### v1.4.x - Search & Pagination
+- ✅ Fixed search function to show commands with descriptions
+- ✅ Added colorized output in search results
+- ✅ Optimized performance for large cheat sheets
 
 ## 📚 Documentation
 
