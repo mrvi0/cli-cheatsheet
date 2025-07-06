@@ -30,4 +30,5 @@ $ nmap --script=vuln 192.168.1.1
 $ nmap --script=ip-geolocation-ipapi-<country_code> 192.168.1.1
 > [[nmap_ip_geolocation_ipapi_script]]
 
+$ nmap ipai description <- not command
 > [[nmap_ip_geolocation_ipapi_script_desc]] 

@@ -53,7 +53,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | netstat | ✅ | ✅ | ❌ | ❌ | ❌ |
 | lsof | ✅ | ✅ | ❌ | ❌ | ❌ |
 | nmap | ✅ | ✅ | ❌ | ❌ | ❌ |
-| ufw | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| ufw | ✅ | ✅ | ❌ | ❌ | ❌ |
 | make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | iptables | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | package managers | 🔄 | 🔄 | ❌ | ❌ | ❌ |

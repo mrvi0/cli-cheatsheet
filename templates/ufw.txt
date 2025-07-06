@@ -1,0 +1,106 @@
+# [[ufw_title]]
+
+$ ufw status
+> [[ufw_status]]
+
+$ ufw status verbose
+> [[ufw_status_verbose]]
+
+$ ufw status numbered
+> [[ufw_status_numbered]]
+
+$ ufw enable
+> [[ufw_enable]]
+
+$ ufw disable
+> [[ufw_disable]]
+
+$ ufw reset
+> [[ufw_reset]]
+
+$ ufw default deny incoming
+> [[ufw_default_deny_incoming]]
+
+$ ufw default allow outgoing
+> [[ufw_default_allow_outgoing]]
+
+$ ufw allow ssh
+> [[ufw_allow_ssh]]
+
+$ ufw allow 22/tcp
+> [[ufw_allow_port_22_tcp]]
+
+$ ufw allow 80/tcp
+> [[ufw_allow_port_80_tcp]]
+
+$ ufw allow 443/tcp
+> [[ufw_allow_port_443_tcp]]
+
+$ ufw allow from 192.168.1.0/24
+> [[ufw_allow_from_subnet]]
+
+$ ufw allow from 192.168.1.100
+> [[ufw_allow_from_ip]]
+
+$ ufw allow from 192.168.1.100 to any port 22
+> [[ufw_allow_from_ip_to_port]]
+
+$ ufw deny 23/tcp
+> [[ufw_deny_port_23_tcp]]
+
+$ ufw deny from 10.0.0.0/8
+> [[ufw_deny_from_subnet]]
+
+$ ufw delete allow ssh
+> [[ufw_delete_allow_ssh]]
+
+$ ufw delete 3
+> [[ufw_delete_rule_number]]
+
+$ ufw insert 1 allow from 192.168.1.100
+> [[ufw_insert_rule_at_position]]
+
+$ ufw logging on
+> [[ufw_logging_on]]
+
+$ ufw logging off
+> [[ufw_logging_off]]
+
+$ ufw logging low
+> [[ufw_logging_low]]
+
+$ ufw logging medium
+> [[ufw_logging_medium]]
+
+$ ufw logging high
+> [[ufw_logging_high]]
+
+$ ufw show added
+> [[ufw_show_added]]
+
+$ ufw show listening
+> [[ufw_show_listening]]
+
+$ ufw show raw
+> [[ufw_show_raw]]
+
+$ ufw app list
+> [[ufw_app_list]]
+
+$ ufw app info ssh
+> [[ufw_app_info_ssh]]
+
+$ ufw app update
+> [[ufw_app_update]]
+
+$ ufw app default allow
+> [[ufw_app_default_allow]]
+
+$ ufw app default deny
+> [[ufw_app_default_deny]]
+
+$ ufw --help
+> [[ufw_help]]
+
+$ ufw version
+> [[ufw_version]] 

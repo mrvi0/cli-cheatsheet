@@ -7,8 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **feat(ufw)**: add comprehensive UFW firewall cheat sheet with translation support
+- Essential UFW commands for firewall management and configuration
+- Support for rule management, logging, and application profiles
+- English and Russian translations for UFW cheat sheet
+
 ### Planned
-- Add cheat sheets for: sed, netstat, lsof, nmap, ufw, make, package managers
+- Add cheat sheets for: make, iptables, package managers
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 
