@@ -224,6 +224,11 @@ search_cheats() {
             vim_*) topic="vim" ;;
             systemctl_*) topic="systemctl" ;;
             journalctl_*) topic="systemctl" ;;
+            tmux_*) topic="tmux" ;;
+            htop_*) topic="htop" ;;
+            curl_*) topic="curl" ;;
+            ssh_*) topic="ssh" ;;
+            find_*) topic="find" ;;
             *) continue ;;
         esac
         
