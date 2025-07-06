@@ -233,35 +233,15 @@ Then add translations to `localizations/en.json` and `localizations/ru.json`:
 - Headers start with `#`
 - Add empty lines between commands for better readability
 
-## 🆕 Recent Updates
 
-### v1.7.0 - Status Table & Future Planning
-- ✅ Added comprehensive status table showing all cheat sheets and languages
-- ✅ Added support for future languages: German (Deutsch), French (Français), Spanish (Español)
-- ✅ Planned additional cheat sheets: tar, awk, sed, cron, netstat, lsof, nmap, ufw, make, package managers
-- ✅ Improved project documentation with clear development roadmap
 
-### v1.6.0 - New Topics & Improvements
-- ✅ Added comprehensive **find** command cheat sheet
-- ✅ Added **tmux**, **htop**, **curl**, **ssh** cheat sheets
-- ✅ Fixed duplicate translation keys in htop templates
-- ✅ Improved template formatting with proper line breaks
-- ✅ Enhanced search functionality with topic grouping
-- ✅ Optimized translation lookup performance
 
-### v1.5.0 - Systemctl Support
-- ✅ Added **systemctl** command cheat sheet
-- ✅ Improved search function to include new topics
-
-### v1.4.x - Search & Pagination
-- ✅ Fixed search function to show commands with descriptions
-- ✅ Added colorized output in search results
-- ✅ Optimized performance for large cheat sheets
 
 ## 📚 Documentation
 
 - [English Documentation](README.md) (current)
 - [Russian Documentation](docs/ru/README.md)
+- [Changelog](CHANGELOG.md) - Complete version history
 
 ## 🤝 Contributing
 
