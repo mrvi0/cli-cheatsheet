@@ -1,6 +1,6 @@
 # [[ssh_title]]
 
-## 🔗 Basic Connection
+## [[ssh_basic_connection]]
 
 $ ssh user@host
 > [[ssh_basic_description]]
@@ -32,7 +32,7 @@ $ ssh -o StrictHostKeyChecking=no user@host
 $ ssh -o UserKnownHostsFile=/dev/null user@host
 > [[ssh_no_known_hosts_description]]
 
-## 🔑 Key Management
+## [[ssh_key_management]]
 
 $ ssh-keygen -t rsa -b 4096
 > [[ssh_keygen_rsa_description]]
@@ -76,7 +76,7 @@ $ ssh-add -d ~/.ssh/id_rsa
 $ ssh-add -D
 > [[ssh_add_delete_all_description]]
 
-## 🔧 Configuration
+## [[ssh_configuration]]
 
 $ ssh -F ~/.ssh/config user@host
 > [[ssh_config_file_description]]
@@ -105,7 +105,7 @@ $ ssh -o "PreferredAuthentications=publickey" user@host
 $ ssh -o "IdentitiesOnly=yes" user@host
 > [[ssh_identities_only_description]]
 
-## 🌐 Tunneling & Port Forwarding
+## [[ssh_tunneling_port_forwarding]]
 
 $ ssh -L 8080:localhost:80 user@host
 > [[ssh_local_forward_description]]
@@ -137,7 +137,7 @@ $ ssh -J user@jumphost user@destination
 $ ssh -J user1@host1,user2@host2 user@destination
 > [[ssh_multiple_jump_description]]
 
-## 📁 File Transfer
+## [[ssh_file_transfer]]
 
 $ scp file.txt user@host:/path/
 > [[scp_upload_description]]
@@ -187,7 +187,7 @@ $ sftp -P 2222 user@host
 $ sftp -i ~/.ssh/id_rsa user@host
 > [[sftp_key_description]]
 
-## 🔍 Connection & Debugging
+## [[ssh_connection_debugging]]
 
 $ ssh -T user@host
 > [[ssh_test_connection_description]]
@@ -219,7 +219,7 @@ $ ssh -o Compression=yes user@host
 $ ssh -o TCPKeepAlive=yes user@host
 > [[ssh_tcp_keepalive_description]]
 
-## 🔒 Security Options
+## [[ssh_security_options]]
 
 $ ssh -o PermitRootLogin=no user@host
 > [[ssh_no_root_description]]
@@ -251,7 +251,7 @@ $ ssh -o X11Forwarding=no user@host
 $ ssh -o PermitTunnel=no user@host
 > [[ssh_no_tunnel_description]]
 
-## 🖥️ X11 Forwarding
+## [[ssh_x11_forwarding]]
 
 $ ssh -X user@host
 > [[ssh_x11_forwarding_description]]
@@ -268,7 +268,7 @@ $ ssh -o ForwardX11Trusted=yes user@host
 $ ssh -o XAuthLocation=/usr/bin/xauth user@host
 > [[ssh_xauth_location_description]]
 
-## 🔄 Multiplexing
+## [[ssh_multiplexing]]
 
 $ ssh -M -S ~/.ssh/control-%h-%p-%r user@host
 > [[ssh_master_description]]
@@ -285,7 +285,7 @@ $ ssh -O exit -S ~/.ssh/control-%h-%p-%r user@host
 $ ssh -O forward -L 8080:localhost:80 -S ~/.ssh/control-%h-%p-%r user@host
 > [[ssh_control_forward_description]]
 
-## 📊 Performance
+## [[ssh_performance]]
 
 $ ssh -o Compression=yes user@host
 > [[ssh_compression_performance_description]]
@@ -314,7 +314,7 @@ $ ssh -o ControlPath=~/.ssh/control-%h-%p-%r user@host
 $ ssh -o ControlPersist=10m user@host
 > [[ssh_control_persist_description]]
 
-## 🔧 Advanced Options
+## [[ssh_advanced_options]]
 
 $ ssh -o ProxyCommand="nc -X connect -x proxy:1080 %h %p" user@host
 > [[ssh_proxy_command_nc_description]]
@@ -346,7 +346,7 @@ $ ssh -o ProxyCommand="ssh user@proxy socat STDIO TCP:%h:%p" user@host
 $ ssh -o ProxyCommand="ssh user@proxy -W %h:%p" user@host
 > [[ssh_proxy_command_ssh_w_description]]
 
-## 📝 Examples
+## [[ssh_examples]]
 
 $ ssh -i ~/.ssh/id_rsa -p 2222 -L 8080:localhost:80 user@host
 > [[ssh_example_complex_description]]
@@ -378,7 +378,7 @@ $ ssh -o "RequestTTY=yes" -o "ForceCommand=sudo -u root /bin/bash" user@host
 $ ssh -o "PermitLocalCommand=yes" -o "LocalCommand=notify-send 'SSH Connected'" user@host
 > [[ssh_example_notification_description]]
 
-## 🔍 Troubleshooting
+## [[ssh_troubleshooting]]
 
 $ ssh -vvv user@host
 > [[ssh_troubleshoot_verbose_description]]

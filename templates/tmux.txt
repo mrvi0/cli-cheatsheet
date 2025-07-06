@@ -1,6 +1,6 @@
 # [[tmux_title]]
 
-## 📋 Session Management
+## [[tmux_session_management]]
 
 $ tmux new-session -s <session-name>
 > [[tmux_new_session_description]]
@@ -32,7 +32,7 @@ $ tmux kill-server
 $ tmux rename-session -t <old-name> <new-name>
 > [[tmux_rename_session_description]]
 
-## 🪟 Window Management
+## [[tmux_window_management]]
 
 $ tmux new-window -n <window-name>
 > [[tmux_new_window_description]]
@@ -55,7 +55,7 @@ $ tmux list-windows
 $ tmux move-window -s <source> -t <target>
 > [[tmux_move_window_description]]
 
-## 📐 Pane Management
+## [[tmux_pane_management]]
 
 $ tmux split-window
 > [[tmux_split_window_description]]
@@ -99,7 +99,7 @@ $ tmux swap-pane -D
 $ tmux swap-pane -U
 > [[tmux_swap_pane_up_description]]
 
-## ⌨️ Key Bindings (Prefix: Ctrl+b)
+## [[tmux_key_bindings]]
 
 $ tmux bind-key <key> <command>
 > [[tmux_bind_key_description]]
@@ -110,7 +110,7 @@ $ tmux unbind-key <key>
 $ tmux list-keys
 > [[tmux_list_keys_description]]
 
-## 📋 Copy Mode
+## [[tmux_copy_mode]]
 
 $ tmux copy-mode
 > [[tmux_copy_mode_description]]
@@ -127,7 +127,7 @@ $ tmux delete-buffer -b <buffer-name>
 $ tmux list-buffers
 > [[tmux_list_buffers_description]]
 
-## 🔧 Configuration
+## [[tmux_configuration]]
 
 $ tmux source-file ~/.tmux.conf
 > [[tmux_source_file_description]]
@@ -147,7 +147,7 @@ $ tmux show-environment
 $ tmux set-environment <name> <value>
 > [[tmux_set_environment_description]]
 
-## 📊 Status Bar
+## [[tmux_status_bar]]
 
 $ tmux set-option -g status-left <string>
 > [[tmux_status_left_description]]
@@ -164,7 +164,7 @@ $ tmux set-option -g window-status-format <format>
 $ tmux set-option -g window-status-current-format <format>
 > [[tmux_window_status_current_format_description]]
 
-## 🔗 Synchronization
+## [[tmux_synchronization]]
 
 $ tmux set-window-option synchronize-panes on
 > [[tmux_sync_panes_on_description]]
@@ -175,12 +175,12 @@ $ tmux set-window-option synchronize-panes off
 $ tmux set-window-option synchronize-panes
 > [[tmux_sync_panes_toggle_description]]
 
-## 📝 Common Key Bindings
+## [[tmux_common_key_bindings]]
 
 $ tmux list-keys | grep -E "(prefix|bind)"
 > [[tmux_list_prefix_keys_description]]
 
-## 🎨 Colors & Themes
+## [[tmux_colors_themes]]
 
 $ tmux set-option -g default-terminal "screen-256color"
 > [[tmux_default_terminal_description]]
@@ -197,7 +197,7 @@ $ tmux set-option -g pane-border-style <style>
 $ tmux set-option -g pane-active-border-style <style>
 > [[tmux_pane_active_border_style_description]]
 
-## 🔄 Advanced Features
+## [[tmux_advanced_features]]
 
 $ tmux capture-pane -S -E
 > [[tmux_capture_pane_description]]

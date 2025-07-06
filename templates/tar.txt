@@ -1,6 +1,6 @@
 # [[tar_title]]
 
-## 📦 Basic Archive Operations
+## [[tar_basic_archive_operations]]
 
 $ tar -cf archive.tar file1 file2
 > [[tar_create_description]]
@@ -17,7 +17,7 @@ $ tar -xf archive.tar -C /path/to/directory
 $ tar -xf archive.tar file1
 > [[tar_extract_specific_file_description]]
 
-## 🗜️ Compression
+## [[tar_compression]]
 
 $ tar -czf archive.tar.gz directory/
 > [[tar_gzip_description]]
@@ -34,7 +34,7 @@ $ tar -czf archive.tar.gz --exclude="*.tmp" directory/
 $ tar -czf archive.tar.gz --exclude-from=exclude.txt directory/
 > [[tar_exclude_from_file_description]]
 
-## 📋 Advanced Operations
+## [[tar_advanced_operations]]
 
 $ tar -czf archive.tar.gz --gzip --verbose directory/
 > [[tar_verbose_description]]
@@ -54,7 +54,7 @@ $ tar -czf archive.tar.gz --preserve-permissions directory/
 $ tar -czf archive.tar.gz --preserve-order directory/
 > [[tar_preserve_order_description]]
 
-## 🔍 Archive Inspection
+## [[tar_archive_inspection]]
 
 $ tar -tvf archive.tar.gz
 > [[tar_list_verbose_description]]
@@ -71,7 +71,7 @@ $ tar -czf archive.tar.gz --wildcards "*.txt" directory/
 $ tar -czf archive.tar.gz --transform 's/\.txt$/.bak/' directory/
 > [[tar_transform_description]]
 
-## 🔄 Incremental Backups
+## [[tar_incremental_backups]]
 
 $ tar -czf backup.tar.gz --listed-incremental=backup.snar directory/
 > [[tar_incremental_description]]
@@ -82,7 +82,7 @@ $ tar -czf backup.tar.gz --listed-incremental=backup.snar --level=0 directory/
 $ tar -czf backup.tar.gz --listed-incremental=backup.snar --level=1 directory/
 > [[tar_incremental_level1_description]]
 
-## 🌐 Network Operations
+## [[tar_network_operations]]
 
 $ tar -czf - directory/ | ssh user@host "tar -xzf - -C /backup/"
 > [[tar_ssh_pipe_description]]
@@ -93,7 +93,7 @@ $ tar -czf - directory/ | nc -l 1234
 $ nc host 1234 | tar -xzf -
 > [[tar_netcat_receive_description]]
 
-## 🛠️ Special Operations
+## [[tar_special_operations]]
 
 $ tar -czf archive.tar.gz --remove-files directory/
 > [[tar_remove_after_description]]
@@ -113,7 +113,7 @@ $ tar -czf archive.tar.gz --dereference directory/
 $ tar -czf archive.tar.gz --hard-dereference directory/
 > [[tar_hard_dereference_description]]
 
-## 📊 Archive Information
+## [[tar_archive_information]]
 
 $ tar -czf archive.tar.gz --totals directory/
 > [[tar_totals_description]]
@@ -127,7 +127,7 @@ $ tar -czf archive.tar.gz --checkpoint-action=echo directory/
 $ tar -czf archive.tar.gz --warning=no-timestamp directory/
 > [[tar_warning_description]]
 
-## 🔧 Examples
+## [[tar_examples]]
 
 $ tar -czf backup-$(date +%Y%m%d).tar.gz /home/user/
 > [[tar_example_dated_backup_description]]

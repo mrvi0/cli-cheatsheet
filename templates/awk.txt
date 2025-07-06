@@ -1,6 +1,6 @@
 # [[awk_title]]
 
-## 📋 Basic Syntax
+## [[awk_basic_syntax]]
 
 $ awk '{print $1}' file.txt
 > [[awk_print_field_description]]
@@ -20,7 +20,7 @@ $ awk '{print NR}' file.txt
 $ awk '{print $NF}' file.txt
 > [[awk_print_last_field_description]]
 
-## 🔍 Pattern Matching
+## [[awk_pattern_matching]]
 
 $ awk '/pattern/' file.txt
 > [[awk_pattern_match_description]]
@@ -52,7 +52,7 @@ $ awk '$1 < 100' file.txt
 $ awk '$1 <= 100' file.txt
 > [[awk_field_less_equal_description]]
 
-## 🔧 Variables & Calculations
+## [[awk_variables_calculations]]
 
 $ awk '{sum += $1} END {print sum}' file.txt
 > [[awk_sum_calculation_description]]
@@ -81,7 +81,7 @@ $ awk '{print $1 + $2}' file.txt
 $ awk '{print $1 - $2}' file.txt
 > [[awk_subtract_fields_description]]
 
-## 📊 Conditional Statements
+## [[awk_conditional_statements]]
 
 $ awk '{if($1 > 10) print $0}' file.txt
 > [[awk_if_statement_description]]
@@ -101,7 +101,7 @@ $ awk '$1 > 10 || $2 < 5' file.txt
 $ awk '!($1 == 0)' file.txt
 > [[awk_not_operator_description]]
 
-## 🔄 Loops & Arrays
+## [[awk_loops_arrays]]
 
 $ awk '{for(i=1; i<=NF; i++) print $i}' file.txt
 > [[awk_for_loop_fields_description]]
@@ -118,7 +118,7 @@ $ awk '{sum[$1] += $2} END {for(k in sum) print k, sum[k]}' file.txt
 $ awk '{if($1 in seen) print "duplicate"; else {seen[$1] = 1; print "unique"}}' file.txt
 > [[awk_array_unique_description]]
 
-## 📝 String Functions
+## [[awk_string_functions]]
 
 $ awk '{print length($1)}' file.txt
 > [[awk_length_function_description]]
@@ -144,7 +144,7 @@ $ awk '{print index($1, "search")}' file.txt
 $ awk '{print split($1, arr, ","); for(i in arr) print arr[i]}' file.txt
 > [[awk_split_function_description]]
 
-## 📅 BEGIN & END Blocks
+## [[awk_begin_end_blocks]]
 
 $ awk 'BEGIN {print "Processing file..."} {print $1} END {print "Done!"}' file.txt
 > [[awk_begin_end_description]]
@@ -158,7 +158,7 @@ $ awk 'BEGIN {OFS="\t"} {print $1, $2}' file.txt
 $ awk 'BEGIN {sum=0} {sum+=$1} END {print "Total:", sum}' file.txt
 > [[awk_begin_end_sum_description]]
 
-## 🔧 Built-in Variables
+## [[awk_built_in_variables]]
 
 $ awk '{print FILENAME}' file.txt
 > [[awk_filename_variable_description]]
@@ -178,7 +178,7 @@ $ awk '{print RS}' file.txt
 $ awk '{print ORS}' file.txt
 > [[awk_ors_variable_description]]
 
-## 📊 Advanced Examples
+## [[awk_advanced_examples]]
 
 $ awk 'NR==1 {print "Header:", $0} NR>1 {print "Data:", $0}' file.txt
 > [[awk_header_data_description]]

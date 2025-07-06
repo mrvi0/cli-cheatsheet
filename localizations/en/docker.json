@@ -1,5 +1,13 @@
 {
   "docker_title": "Docker Cheat Sheet",
+  "docker_container_management": "Container Management",
+  "docker_image_management": "Image Management",
+  "docker_information_debugging": "Information & Debugging",
+  "docker_network_management": "Network Management",
+  "docker_volume_management": "Volume Management",
+  "docker_compose": "Docker Compose",
+  "docker_cleanup": "Cleanup",
+  "docker_advanced": "Advanced",
   "docker_ps_description": "List running containers",
   "docker_ps_a_description": "List all containers (including stopped)",
   "docker_ps_q_description": "List only container IDs",

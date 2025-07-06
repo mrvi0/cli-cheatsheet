@@ -1,6 +1,6 @@
 # [[docker_title]]
 
-## 📋 Container Management
+## [[docker_container_management]]
 
 $ docker ps
 > [[docker_ps_description]]
@@ -65,7 +65,7 @@ $ docker logs -f <container>
 $ docker logs --tail 100 <container>
 > [[docker_logs_tail_description]]
 
-## 🖼️ Image Management
+## [[docker_image_management]]
 
 $ docker images
 > [[docker_images_description]]
@@ -124,7 +124,7 @@ $ docker history <image>
 $ docker inspect <image>
 > [[docker_inspect_image_description]]
 
-## 🔍 Information & Debugging
+## [[docker_information_debugging]]
 
 $ docker inspect <container>
 > [[docker_inspect_description]]
@@ -156,7 +156,7 @@ $ docker commit <container> myimage
 $ docker commit -m "message" <container> myimage
 > [[docker_commit_m_description]]
 
-## 🌐 Network Management
+## [[docker_network_management]]
 
 $ docker network ls
 > [[docker_network_ls_description]]
@@ -179,7 +179,7 @@ $ docker network rm mynetwork
 $ docker run --network mynetwork nginx
 > [[docker_run_network_description]]
 
-## 💾 Volume Management
+## [[docker_volume_management]]
 
 $ docker volume ls
 > [[docker_volume_ls_description]]
@@ -199,7 +199,7 @@ $ docker run -v myvolume:/app nginx
 $ docker run --mount type=bind,source=/host/path,target=/container/path nginx
 > [[docker_run_mount_description]]
 
-## 🏷️ Docker Compose
+## [[docker_compose]]
 
 $ docker-compose up
 > [[docker_compose_up_description]]
@@ -237,7 +237,7 @@ $ docker-compose pull
 $ docker-compose config
 > [[docker_compose_config_description]]
 
-## 🧹 Cleanup
+## [[docker_cleanup]]
 
 $ docker system prune
 > [[docker_system_prune_description]]
@@ -260,7 +260,7 @@ $ docker volume prune
 $ docker network prune
 > [[docker_network_prune_description]]
 
-## 🔧 Advanced
+## [[docker_advanced]]
 
 $ docker run --rm nginx
 > [[docker_run_rm_description]]

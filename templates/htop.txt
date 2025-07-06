@@ -1,6 +1,6 @@
 # [[htop_title]]
 
-## 🚀 Starting htop
+## [[htop_starting_htop]]
 
 $ htop
 > [[htop_start_description]]
@@ -20,7 +20,7 @@ $ htop -C
 $ htop --no-color
 > [[htop_no_color_description]]
 
-## ⌨️ Navigation Keys
+## [[htop_navigation_keys]]
 
 $ htop (F1)
 > [[htop_f1_description]]
@@ -52,7 +52,7 @@ $ htop (F9)
 $ htop (F10)
 > [[htop_f10_description]]
 
-## 📊 Process Management
+## [[htop_process_management]]
 
 $ htop (Space)
 > [[htop_space_description]]
@@ -96,7 +96,7 @@ $ htop (p)
 $ htop (n)
 > [[htop_pid_sort_description]]
 
-## 🔍 Search & Filter
+## [[htop_search_filter]]
 
 $ htop (/)
 > [[htop_search_description]]
@@ -125,7 +125,7 @@ $ htop (O)
 $ htop (Ctrl+L)
 > [[htop_clear_filter_description]]
 
-## 📈 System Information
+## [[htop_system_information]]
 
 $ htop (1)
 > [[htop_cpu_usage_description]]
@@ -157,7 +157,7 @@ $ htop (9)
 $ htop (0)
 > [[htop_network_usage_description]]
 
-## 🎯 Process Actions
+## [[htop_process_actions]]
 
 $ htop (F1)
 > [[htop_help_description]]
@@ -189,7 +189,7 @@ $ htop (F9)
 $ htop (F10)
 > [[htop_quit_description]]
 
-## 🔧 Configuration
+## [[htop_configuration]]
 
 $ htop (F2) -> Setup
 > [[htop_setup_menu_description]]
@@ -212,7 +212,7 @@ $ htop (F2) -> Mouse
 $ htop (F2) -> Setup
 > [[htop_setup_description]]
 
-## 📱 Mouse Actions
+## [[htop_mouse_actions]]
 
 $ htop (Left Click)
 > [[htop_left_click_description]]
@@ -229,7 +229,7 @@ $ htop (Scroll)
 $ htop (Double Click)
 > [[htop_double_click_description]]
 
-## 🎨 Display Options
+## [[htop_display_options]]
 
 $ htop (F2) -> Display Options -> Show CPU usage
 > [[htop_show_cpu_description]]
@@ -249,7 +249,7 @@ $ htop (F2) -> Display Options -> Show threads
 $ htop (F2) -> Display Options -> Show tree view
 > [[htop_show_tree_description]]
 
-## 🔄 Sorting Options
+## [[htop_sorting_options]]
 
 $ htop (F6) -> CPU%
 > [[htop_sort_cpu_description]]
@@ -293,7 +293,7 @@ $ htop (F6) -> S
 $ htop (F6) -> Command
 > [[htop_sort_command_description]]
 
-## 🎯 Process States
+## [[htop_process_states]]
 
 $ htop (R)
 > [[htop_running_description]]
@@ -331,7 +331,7 @@ $ htop (P)
 $ htop (I)
 > [[htop_idle_description]]
 
-## 📊 Memory Information
+## [[htop_memory_information]]
 
 $ htop (F1) -> Memory
 > [[htop_memory_info_description]]
@@ -357,7 +357,7 @@ $ htop (F1) -> Used
 $ htop (F1) -> Free
 > [[htop_free_info_description]]
 
-## 🔧 Advanced Features
+## [[htop_advanced_features]]
 
 $ htop (F1) -> Help
 > [[htop_help_full_description]]

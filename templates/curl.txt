@@ -1,6 +1,6 @@
 # [[curl_title]]
 
-## 🌐 Basic HTTP Requests
+## [[curl_basic_http_requests]]
 
 $ curl <url>
 > [[curl_basic_description]]
@@ -26,7 +26,7 @@ $ curl -X HEAD <url>
 $ curl -X OPTIONS <url>
 > [[curl_options_description]]
 
-## 📤 Sending Data
+## [[curl_sending_data]]
 
 $ curl -d "data" <url>
 > [[curl_data_description]]
@@ -52,7 +52,7 @@ $ curl -F "file=@local.txt;type=text/plain" <url>
 $ curl -F "field=value" -F "file=@local.txt" <url>
 > [[curl_form_multiple_description]]
 
-## 📋 Headers
+## [[curl_headers]]
 
 $ curl -H "Content-Type: application/json" <url>
 > [[curl_header_content_type_description]]
@@ -78,7 +78,7 @@ $ curl -A "MyApp/1.0" <url>
 $ curl -e "https://referrer.com" <url>
 > [[curl_referer_description]]
 
-## 🔐 Authentication
+## [[curl_authentication]]
 
 $ curl -u username:password <url>
 > [[curl_auth_basic_description]]
@@ -107,7 +107,7 @@ $ curl -c cookies.txt <url>
 $ curl -b cookies.txt <url>
 > [[curl_auth_cookie_load_description]]
 
-## 📁 File Operations
+## [[curl_file_operations]]
 
 $ curl -O <url>
 > [[curl_download_filename_description]]
@@ -136,7 +136,7 @@ $ curl --max-time 30 <url>
 $ curl --connect-timeout 10 <url>
 > [[curl_connect_timeout_description]]
 
-## 🔍 Output & Verbose
+## [[curl_output_verbose]]
 
 $ curl -v <url>
 > [[curl_verbose_description]]
@@ -174,7 +174,7 @@ $ curl --silent <url>
 $ curl -S <url>
 > [[curl_show_error_description]]
 
-## 🔄 Redirects & Following
+## [[curl_redirects_following]]
 
 $ curl -L <url>
 > [[curl_follow_redirects_description]]
@@ -191,7 +191,7 @@ $ curl --location-trusted <url>
 $ curl --location-trusted-temp <url>
 > [[curl_location_trusted_temp_description]]
 
-## 🔒 SSL/TLS
+## [[curl_ssl_tls]]
 
 $ curl -k <url>
 > [[curl_insecure_description]]
@@ -217,7 +217,7 @@ $ curl -E cert.pem <url>
 $ curl --cacert cert.pem --cert cert.pem --key key.pem <url>
 > [[curl_ssl_full_description]]
 
-## 🌍 Proxies
+## [[curl_proxies]]
 
 $ curl --proxy http://proxy:port <url>
 > [[curl_proxy_description]]
@@ -237,7 +237,7 @@ $ curl --proxy-user user:pass <url>
 $ curl --noproxy "localhost,127.0.0.1" <url>
 > [[curl_noproxy_description]]
 
-## 📊 JSON Operations
+## [[curl_json_operations]]
 
 $ curl -H "Content-Type: application/json" -d '{"key":"value"}' <url>
 > [[curl_json_basic_description]]
@@ -251,7 +251,7 @@ $ curl -H "Accept: application/json" <url>
 $ curl -H "Content-Type: application/json" -H "Accept: application/json" -d '{"key":"value"}' <url>
 > [[curl_json_full_description]]
 
-## 🔧 Advanced Options
+## [[curl_advanced_options]]
 
 $ curl --compressed <url>
 > [[curl_compressed_description]]
@@ -283,7 +283,7 @@ $ curl --resolve host:port:address <url>
 $ curl --connect-to host:port:address:port <url>
 > [[curl_connect_to_description]]
 
-## 📝 Examples
+## [[curl_examples]]
 
 $ curl -X POST -H "Content-Type: application/json" -d '{"name":"John","age":30}' https://api.example.com/users
 > [[curl_example_post_json_description]]
@@ -318,7 +318,7 @@ $ curl -H "Content-Type: multipart/form-data" -F "image=@photo.jpg" -F "caption=
 $ curl -r 0-1023 -o part1.bin https://example.com/large-file.bin
 > [[curl_example_partial_download_description]]
 
-## 🔍 Debugging
+## [[curl_debugging]]
 
 $ curl --trace output.txt <url>
 > [[curl_trace_description]]
@@ -344,7 +344,7 @@ $ curl --dump-header headers.txt <url>
 $ curl --dump-header - <url>
 > [[curl_dump_header_stdout_description]]
 
-## ⚙️ Configuration
+## [[curl_configuration]]
 
 $ curl --config config.txt <url>
 > [[curl_config_description]]
@@ -361,7 +361,7 @@ $ curl --config @config.txt <url>
 $ curl --config @- <url>
 > [[curl_config_stdin_file_description]]
 
-## 🔄 Multiple URLs
+## [[curl_multiple_urls]]
 
 $ curl url1 url2 url3
 > [[curl_multiple_urls_description]]
@@ -378,7 +378,7 @@ $ curl --parallel-immediate url1 url2 url3
 $ curl --parallel-tcp url1 url2 url3
 > [[curl_parallel_tcp_description]]
 
-## 📊 Performance
+## [[curl_performance]]
 
 $ curl --max-time 30 <url>
 > [[curl_max_time_description]]
@@ -407,7 +407,7 @@ $ curl --speed-limit 1000 <url>
 $ curl --speed-time 10 <url>
 > [[curl_speed_time_description]]
 
-## 🔧 Network Options
+## [[curl_network_options]]
 
 $ curl --interface eth0 <url>
 > [[curl_interface_description]]

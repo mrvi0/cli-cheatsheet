@@ -1,6 +1,6 @@
 # [[systemctl_title]]
 
-## 📋 Service Management
+## [[systemctl_service_management]]
 
 $ systemctl start <service>
 > [[systemctl_start_description]]
@@ -41,7 +41,7 @@ $ systemctl unmask <service>
 $ systemctl daemon-reload
 > [[systemctl_daemon_reload_description]]
 
-## 🔍 Service Information
+## [[systemctl_service_information]]
 
 $ systemctl list-units
 > [[systemctl_list_units_description]]
@@ -70,7 +70,7 @@ $ systemctl edit <service>
 $ systemctl edit --full <service>
 > [[systemctl_edit_full_description]]
 
-## 📊 System Control
+## [[systemctl_system_control]]
 
 $ systemctl poweroff
 > [[systemctl_poweroff_description]]
@@ -96,7 +96,7 @@ $ systemctl rescue
 $ systemctl emergency
 > [[systemctl_emergency_description]]
 
-## 🔧 System Management
+## [[systemctl_system_management]]
 
 $ systemctl get-default
 > [[systemctl_get_default_description]]
@@ -119,7 +119,7 @@ $ systemctl list-dependencies <service>
 $ systemctl list-dependencies --reverse <service>
 > [[systemctl_list_dependencies_reverse_description]]
 
-## 📝 Logs & Debugging
+## [[systemctl_logs_debugging]]
 
 $ journalctl -u <service>
 > [[journalctl_u_description]]
@@ -163,7 +163,7 @@ $ journalctl -p info
 $ journalctl -p debug
 > [[journalctl_p_debug_description]]
 
-## 🎯 Target Management
+## [[systemctl_target_management]]
 
 $ systemctl list-units --type=target
 > [[systemctl_list_units_target_description]]
@@ -183,7 +183,7 @@ $ systemctl list-dependencies multi-user.target
 $ systemctl list-dependencies graphical.target
 > [[systemctl_list_dependencies_graphical_description]]
 
-## 🔄 Timer Management
+## [[systemctl_timer_management]]
 
 $ systemctl list-timers
 > [[systemctl_list_timers_description]]
@@ -203,7 +203,7 @@ $ systemctl enable <timer>
 $ systemctl disable <timer>
 > [[systemctl_disable_timer_description]]
 
-## 🛠️ Advanced Commands
+## [[systemctl_advanced_commands]]
 
 $ systemctl show-environment
 > [[systemctl_show_environment_description]]
@@ -241,7 +241,7 @@ $ systemctl kill -s SIGTERM <service>
 $ systemctl kill -s SIGKILL <service>
 > [[systemctl_kill_sigkill_description]]
 
-## 📈 Performance & Monitoring
+## [[systemctl_performance_monitoring]]
 
 $ systemctl show --property=MainPID <service>
 > [[systemctl_show_mainpid_description]]
@@ -261,7 +261,7 @@ $ systemctl show --property=User <service>
 $ systemctl show --property=Group <service>
 > [[systemctl_show_group_description]]
 
-## 🔒 Security & Permissions
+## [[systemctl_security_permissions]]
 
 $ systemctl --user start <service>
 > [[systemctl_user_start_description]]

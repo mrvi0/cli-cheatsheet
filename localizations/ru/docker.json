@@ -1,5 +1,13 @@
 {
   "docker_title": "Docker Шпаргалка",
+  "docker_container_management": "Управление контейнерами",
+  "docker_image_management": "Управление образами",
+  "docker_information_debugging": "Информация и отладка",
+  "docker_network_management": "Управление сетями",
+  "docker_volume_management": "Управление томами",
+  "docker_compose": "Docker Compose",
+  "docker_cleanup": "Очистка",
+  "docker_advanced": "Продвинутые",
   "docker_ps_description": "Список запущенных контейнеров",
   "docker_ps_a_description": "Список всех контейнеров (включая остановленные)",
   "docker_ps_q_description": "Список только ID контейнеров",

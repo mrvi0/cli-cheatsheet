@@ -1,6 +1,6 @@
 # [[git_title]]
 
-## 📋 Basic Commands
+## [[git_basic_commands]]
 
 $ git status
 > [[git_status_description]]
@@ -32,7 +32,7 @@ $ git push
 $ git pull
 > [[git_pull_description]]
 
-## 🌿 Branching
+## [[git_branching]]
 
 $ git branch
 > [[git_branch_description]]
@@ -64,7 +64,7 @@ $ git merge <branch-name>
 $ git rebase <branch-name>
 > [[git_rebase_description]]
 
-## 🔄 Remote Operations
+## [[git_remote_operations]]
 
 $ git remote -v
 > [[git_remote_v_description]]
@@ -87,7 +87,7 @@ $ git fetch
 $ git fetch origin
 > [[git_fetch_origin_description]]
 
-## 📝 Staging & Stashing
+## [[git_staging_stashing]]
 
 $ git reset HEAD <file>
 > [[git_reset_head_description]]
@@ -119,7 +119,7 @@ $ git stash drop stash@{n}
 $ git stash clear
 > [[git_stash_clear_description]]
 
-## 🔍 Information & History
+## [[git_information_history]]
 
 $ git show <commit>
 > [[git_show_description]]
@@ -148,7 +148,7 @@ $ git log --since="2023-01-01"
 $ git log --until="2023-12-31"
 > [[git_log_until_description]]
 
-## 🏷️ Tags
+## [[git_tags]]
 
 $ git tag
 > [[git_tag_description]]
@@ -168,7 +168,7 @@ $ git push origin --tags
 $ git tag -d <tag-name>
 > [[git_tag_d_description]]
 
-## 🔧 Configuration
+## [[git_configuration]]
 
 $ git config --list
 > [[git_config_list_description]]
@@ -185,7 +185,7 @@ $ git config --global core.editor "vim"
 $ git config --global init.defaultBranch main
 > [[git_config_branch_description]]
 
-## 🧹 Cleanup
+## [[git_cleanup]]
 
 $ git clean -n
 > [[git_clean_n_description]]
@@ -202,7 +202,7 @@ $ git gc
 $ git prune
 > [[git_prune_description]]
 
-## 🔗 Advanced
+## [[git_advanced]]
 
 $ git cherry-pick <commit>
 > [[git_cherry_pick_description]]
