@@ -1,0 +1,196 @@
+# [[lsof_title]]
+
+$ lsof
+> [[lsof_basic_usage]]
+
+$ lsof -i
+> [[lsof_network_connections]]
+
+$ lsof -i :80
+> [[lsof_port_80]]
+
+$ lsof -i :22
+> [[lsof_port_22]]
+
+$ lsof -i :443
+> [[lsof_port_443]]
+
+$ lsof -i :3306
+> [[lsof_port_3306]]
+
+$ lsof -i :5432
+> [[lsof_port_5432]]
+
+$ lsof -i :6379
+> [[lsof_port_6379]]
+
+$ lsof -i :27017
+> [[lsof_port_27017]]
+
+$ lsof -i :8080
+> [[lsof_port_8080]]
+
+$ lsof -i :9000
+> [[lsof_port_9000]]
+
+$ lsof -i tcp
+> [[lsof_tcp_connections]]
+
+$ lsof -i udp
+> [[lsof_udp_connections]]
+
+$ lsof -i tcp:80
+> [[lsof_tcp_port_80]]
+
+$ lsof -i udp:53
+> [[lsof_udp_port_53]]
+
+$ lsof -p 1234
+> [[lsof_process_id]]
+
+$ lsof -c ssh
+> [[lsof_command_name]]
+
+$ lsof -u username
+> [[lsof_user_files]]
+
+$ lsof -u $USER
+> [[lsof_current_user]]
+
+$ lsof +D /var/log
+> [[lsof_directory]]
+
+$ lsof +d /var/log
+> [[lsof_directory_recursive]]
+
+$ lsof /var/log/messages
+> [[lsof_specific_file]]
+
+$ lsof /dev/sda1
+> [[lsof_device]]
+
+$ lsof /tmp
+> [[lsof_tmp_directory]]
+
+$ lsof /proc
+> [[lsof_proc_directory]]
+
+$ lsof /home
+> [[lsof_home_directory]]
+
+$ lsof -r 5
+> [[lsof_repeat_every_5_seconds]]
+
+$ lsof -r 5 -i
+> [[lsof_repeat_network_connections]]
+
+$ lsof -a -u username -i
+> [[lsof_user_network_connections]]
+
+$ lsof -a -c ssh -i
+> [[lsof_ssh_network_connections]]
+
+$ lsof -a -p 1234 -i
+> [[lsof_process_network_connections]]
+
+$ lsof -i -P
+> [[lsof_no_port_resolution]]
+
+$ lsof -i -n
+> [[lsof_no_host_resolution]]
+
+$ lsof -i -P -n
+> [[lsof_no_resolution]]
+
+$ lsof -i -s tcp:LISTEN
+> [[lsof_listening_tcp]]
+
+$ lsof -i -s tcp:ESTABLISHED
+> [[lsof_established_tcp]]
+
+$ lsof -i -s tcp:CLOSE_WAIT
+> [[lsof_close_wait_tcp]]
+
+$ lsof -i -s tcp:TIME_WAIT
+> [[lsof_time_wait_tcp]]
+
+$ lsof -i -s tcp:SYN_SENT
+> [[lsof_syn_sent_tcp]]
+
+$ lsof -i -s tcp:SYN_RECV
+> [[lsof_syn_recv_tcp]]
+
+$ lsof -i -s tcp:FIN_WAIT1
+> [[lsof_fin_wait1_tcp]]
+
+$ lsof -i -s tcp:FIN_WAIT2
+> [[lsof_fin_wait2_tcp]]
+
+$ lsof -i -s tcp:LAST_ACK
+> [[lsof_last_ack_tcp]]
+
+$ lsof -i -s tcp:CLOSED
+> [[lsof_closed_tcp]]
+
+$ lsof -i -s tcp:CLOSING
+> [[lsof_closing_tcp]]
+
+$ lsof -i -s tcp:UNKNOWN
+> [[lsof_unknown_tcp]]
+
+$ lsof -i -s udp:UNCONN
+> [[lsof_unconnected_udp]]
+
+$ lsof -i -s udp:IDLE
+> [[lsof_idle_udp]]
+
+$ lsof -i -s udp:BOUND
+> [[lsof_bound_udp]]
+
+$ lsof -i -s udp:CONNECTED
+> [[lsof_connected_udp]]
+
+$ lsof -i -s udp:UNKNOWN
+> [[lsof_unknown_udp]]
+
+$ lsof -F
+> [[lsof_field_output]]
+
+$ lsof -F pcn
+> [[lsof_specific_fields]]
+
+$ lsof -l
+> [[lsof_no_uid_resolution]]
+
+$ lsof -L
+> [[lsof_no_link_resolution]]
+
+$ lsof -N
+> [[lsof_network_files_only]]
+
+$ lsof -S
+> [[lsof_network_files_only_alt]]
+
+$ lsof -X
+> [[lsof_network_files_only_alt2]]
+
+$ lsof -t
+> [[lsof_process_ids_only]]
+
+$ lsof -t -i :80
+> [[lsof_process_ids_port_80]]
+
+$ lsof -t -c ssh
+> [[lsof_process_ids_ssh]]
+
+$ lsof -t -u username
+> [[lsof_process_ids_user]]
+
+$ lsof -w
+> [[lsof_suppress_warnings]]
+
+$ lsof -v
+> [[lsof_version]]
+
+$ lsof -h
+> [[lsof_help]] 

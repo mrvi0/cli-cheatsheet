@@ -51,10 +51,11 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | cron | ✅ | ✅ | ❌ | ❌ | ❌ |
 | sed | ✅ | ✅ | ❌ | ❌ | ❌ |
 | netstat | ✅ | ✅ | ❌ | ❌ | ❌ |
-| lsof | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| lsof | ✅ | ✅ | ❌ | ❌ | ❌ |
 | nmap | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | ufw | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| iptables | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | package managers | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 
 **Legend:**
