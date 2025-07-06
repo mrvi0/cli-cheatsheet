@@ -347,4 +347,5 @@ $ docker run --net=none nginx
 > {docker_run_net_none_description}
 
 $ docker run --net=bridge nginx
+> {docker_run_net_bridge_description}
 > {docker_run_net_bridge_description} 
