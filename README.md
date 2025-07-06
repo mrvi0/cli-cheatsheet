@@ -34,34 +34,154 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 
 ## 📊 Cheat Sheets Status
 
+### 🔧 System Utilities
 | Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
 |---------|-------------|-------------|-------------|--------------|-------------|
 | bash | ✅ | ✅ | ❌ | ❌ | ❌ |
-| git | ✅ | ✅ | ❌ | ❌ | ❌ |
-| docker | ✅ | ✅ | ❌ | ❌ | ❌ |
-| vim | ✅ | ✅ | ❌ | ❌ | ❌ |
 | systemctl | ✅ | ✅ | ❌ | ❌ | ❌ |
-| tmux | ✅ | ✅ | ❌ | ❌ | ❌ |
+| cron | ✅ | ✅ | ❌ | ❌ | ❌ |
 | htop | ✅ | ✅ | ❌ | ❌ | ❌ |
+| tmux | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 🌐 Network Utilities
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
 | curl | ✅ | ✅ | ❌ | ❌ | ❌ |
 | ssh | ✅ | ✅ | ❌ | ❌ | ❌ |
-| find | ✅ | ✅ | ❌ | ❌ | ❌ |
-| tar | ✅ | ✅ | ❌ | ❌ | ❌ |
-| awk | ✅ | ✅ | ❌ | ❌ | ❌ |
-| cron | ✅ | ✅ | ❌ | ❌ | ❌ |
-| sed | ✅ | ✅ | ❌ | ❌ | ❌ |
 | netstat | ✅ | ✅ | ❌ | ❌ | ❌ |
-| lsof | ✅ | ✅ | ❌ | ❌ | ❌ |
 | nmap | ✅ | ✅ | ❌ | ❌ | ❌ |
+| lsof | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 🛡️ Security & Firewalls
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
 | ufw | ✅ | ✅ | ❌ | ❌ | ❌ |
-| make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | iptables | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 📝 Text Processing
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
+| vim | ✅ | ✅ | ❌ | ❌ | ❌ |
+| sed | ✅ | ✅ | ❌ | ❌ | ❌ |
+| awk | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 🔍 File System & Search
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
+| find | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 📦 Archiving & Compression
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
+| tar | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 🐳 Containerization
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
+| docker | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+### 🔧 Development Tools
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
+| git | ✅ | ✅ | ❌ | ❌ | ❌ |
+| make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+
+### 📦 Package Management
+| Utility | 🇺🇸 English | 🇷🇺 Русский | 🇩🇪 Deutsch | 🇫🇷 Français | 🇪🇸 Español |
+|---------|-------------|-------------|-------------|--------------|-------------|
 | package-managers | ✅ | ✅ | ❌ | ❌ | ❌ |
 
 **Legend:**
 - ✅ Available - Complete cheat sheet with translations
 - ❌ Not available - Cheat sheet or translations missing
 - 🔄 In progress - Currently being developed
+
+## 🚀 Planned Utilities
+
+### 🔧 System Utilities
+- `ps` - Process status and management
+- `kill` / `pkill` - Process termination
+- `nice` / `renice` - Process priority management
+- `top` - Process monitoring
+- `iotop` - I/O monitoring
+- `useradd` / `userdel` - User management
+- `groupadd` / `groupdel` - Group management
+- `sudo` / `su` - Privilege escalation
+- `mount` / `umount` - Filesystem mounting
+
+### 🌐 Network Utilities
+- `ping` / `ping6` - Network connectivity testing
+- `traceroute` / `mtr` - Network path tracing
+- `dig` / `nslookup` - DNS queries
+- `whois` - Domain information
+- `wget` - File downloading
+- `rsync` - File synchronization
+- `nc` (netcat) - Network utility
+- `socat` - Multipurpose network relay
+- `iftop` - Network traffic monitoring
+- `nethogs` - Network usage by process
+
+### 🛡️ Security & Firewalls
+- `fail2ban` - Brute force protection
+- `openssl` - Cryptographic utilities
+- `gpg` - Encryption and signatures
+- `ssh-keygen` - SSH key generation
+
+### 📝 Text Processing
+- `grep` / `egrep` / `fgrep` - Text searching
+- `cut` - Field extraction
+- `paste` - Line merging
+- `join` - File joining
+- `sort` / `uniq` - Sorting and uniqueness
+- `wc` - Word/line/character counting
+- `tr` - Character translation
+- `rev` - String reversal
+- `nano` - Simple text editor
+- `jq` - JSON processing
+- `yq` - YAML processing
+
+### 🔍 File System & Search
+- `locate` / `updatedb` - Fast file search
+- `fd` - Modern find alternative
+- `ripgrep` (rg) - Fast text search
+- `ls` - File listing (extended options)
+- `cp` / `mv` / `rm` - File operations
+- `chmod` / `chown` - Permission management
+- `ln` - Link creation
+- `du` / `df` - Disk usage
+- `file` - File type detection
+
+### 📦 Archiving & Compression
+- `zip` / `unzip` - ZIP archives
+- `7z` - 7-Zip archives
+- `gzip` / `gunzip` - Gzip compression
+- `bzip2` / `bunzip2` - Bzip2 compression
+- `xz` / `unxz` - XZ compression
+- `zstd` - Modern compression
+
+### 🐳 Containerization
+- `docker-compose` - Container orchestration
+- `podman` - Docker alternative
+- `buildah` - Image building
+- `skopeo` - Image operations
+- `virsh` - KVM management
+- `virt-manager` - Virtualization GUI
+
+### 🔧 Development Tools
+- `at` - One-time task scheduling
+- `anacron` - Laptop-friendly cron
+- `service` - Service management
+- `systemd` - System daemon
+
+### 📊 Data Analysis
+- `csvkit` - CSV processing
+- `sqlite3` - Database operations
+- `bc` - Calculator
+- `dc` - Reverse Polish calculator
+- `units` - Unit conversion
+- `hexdump` / `xxd` - Hex viewing
+- `strings` - String extraction
+- `objdump` - Binary analysis
 
 ## 📁 Project Structure
 ```
