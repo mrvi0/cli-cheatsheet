@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Planned
+- Add cheat sheets for: sed, netstat, lsof, nmap, ufw, make, package managers
+- Add language support for: German (Deutsch), French (Français), Spanish (Español)
+- Expand vim cheat sheet with more commands and modes
+
+## [2.2.0] - 2025-07-06
+
+### Fixed
+- **Replaced hardcoded section headers with translatable keys** in all cheat sheets
+  - Updated templates for: find, git, tmux, docker, curl, systemctl, ssh, htop, tar, awk
+  - Added corresponding translation keys in English and Russian JSON files
+  - Ensured all section headers are now translatable and consistent
+  - Improved internationalization support across all utilities
+  - Fixed section headers that were previously hardcoded in Russian or English
+  - Enhanced user experience with proper language switching for all content
+
 ### Added
 - **Comprehensive cron cheat sheet** with scheduling, environment variables, and system administration
   - Basic crontab commands (list, edit, remove, user management)
@@ -19,11 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Security best practices
   - Practical examples for common tasks
   - Complete English and Russian translations
-
-### Planned
-- Add cheat sheets for: sed, netstat, lsof, nmap, ufw, make, package managers
-- Add language support for: German (Deutsch), French (Français), Spanish (Español)
-- Expand vim cheat sheet with more commands and modes
 
 ## [2.1.0] - 2025-07-06
 
