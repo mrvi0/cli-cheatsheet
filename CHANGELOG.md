@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 
-## [2.6.0] - 2024-12-19
+## [2.6.0] - 2025-07-06
 
 ### Added
 - **feat(nmap)**: add compact nmap cheat sheet with country code info for geolocation scripts
@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for ip-geolocation-ipapi scripts with country code examples
 - English and Russian translations for nmap cheat sheet
 
-## [2.5.0] - 2024-12-19
+## [2.5.0] - 2025-07-06
 
 ### Added
 - **feat(lsof)**: add comprehensive lsof cheat sheet with translation support
@@ -29,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - TCP/UDP connection state filtering
 - English and Russian translations for lsof cheat sheet
 
-## [2.4.0] - 2024-12-19
+## [2.4.0] - 2025-07-06
 
 ### Added
 - **feat(netstat)**: add compact netstat cheat sheet with translation support
@@ -38,7 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Connection state filtering (ESTABLISHED, TIME_WAIT, CLOSE_WAIT)
 - English and Russian translations for netstat cheat sheet
 
-## [2.3.0] - 2024-12-19
+## [2.3.0] - 2025-07-06
 
 ### Added
 - **feat(sed)**: add full sed cheat sheet with translation support and update docs
@@ -47,7 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Advanced features like capture groups, in-place editing, and character translation
 - English and Russian translations for sed cheat sheet
 
-## [2.2.0] - 2024-12-19
+## [2.2.0] - 2025-07-06
 
 ### Added
 - **feat(update)**: add automatic update functionality
@@ -65,7 +65,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Section headers in cron and bash cheat sheets now support proper localization
 - All cheat sheets now use consistent translation key format
 
-## [2.1.0] - 2024-12-19
+## [2.1.0] - 2025-07-06
 
 ### Added
 - **feat(cron)**: add comprehensive cron cheat sheet
@@ -78,7 +78,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated README files to include cron in supported topics
 - Enhanced documentation with cron examples
 
-## [2.0.0] - 2024-12-19
+## [2.0.0] - 2025-07-06
 
 ### Added
 - **feat(translations)**: implement comprehensive translation system
@@ -127,7 +127,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Persistent language and theme settings
 - Easy configuration management
 
-## [1.0.0] - 2024-12-19
+## [1.0.0] - 2025-07-06
 
 ### Added
 - Initial release of cli-cheatsheet
