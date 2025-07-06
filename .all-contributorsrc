@@ -1,0 +1,27 @@
+{
+  "projectName": "q",
+  "projectOwner": "npx all-contributors-cli init",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "mrvi0",
+      "name": "Vi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/196581611?v=4",
+      "profile": "https://github.com/mrvi0",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": true
+}
