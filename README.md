@@ -48,8 +48,8 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | find | ✅ | ✅ | ❌ | ❌ | ❌ |
 | tar | ✅ | ✅ | ❌ | ❌ | ❌ |
 | awk | ✅ | ✅ | ❌ | ❌ | ❌ |
+| cron | ✅ | ✅ | ❌ | ❌ | ❌ |
 | sed | 🔄 | 🔄 | ❌ | ❌ | ❌ |
-| cron | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | netstat | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | lsof | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | nmap | 🔄 | 🔄 | ❌ | ❌ | ❌ |

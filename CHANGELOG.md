@@ -7,8 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- **Comprehensive cron cheat sheet** with scheduling, environment variables, and system administration
+  - Basic crontab commands (list, edit, remove, user management)
+  - Cron format explanation and examples
+  - Special symbols (@yearly, @monthly, @daily, @hourly, @reboot)
+  - Environment variables (SHELL, PATH, MAILTO, HOME)
+  - Logging and output redirection
+  - System cron directories and files
+  - Debugging and monitoring commands
+  - Security best practices
+  - Practical examples for common tasks
+  - Complete English and Russian translations
+
 ### Planned
-- Add cheat sheets for: sed, cron, netstat, lsof, nmap, ufw, make, package managers
+- Add cheat sheets for: sed, netstat, lsof, nmap, ufw, make, package managers
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 

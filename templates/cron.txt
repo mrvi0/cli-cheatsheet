@@ -1,0 +1,152 @@
+# [[cron_title]]
+
+## Основные команды
+$ crontab -l
+> [[cron_crontab_l_description]]
+
+$ crontab -e
+> [[cron_crontab_e_description]]
+
+$ crontab -r
+> [[cron_crontab_r_description]]
+
+$ crontab -u username -l
+> [[cron_crontab_u_description]]
+
+$ crontab file.txt
+> [[cron_crontab_file_description]]
+
+## Формат cron
+$ * * * * * command
+> [[cron_format_description]]
+
+$ 0 2 * * * /path/to/script.sh
+> [[cron_example_daily_description]]
+
+$ */15 * * * * /path/to/script.sh
+> [[cron_example_15min_description]]
+
+$ 0 0 * * 0 /path/to/backup.sh
+> [[cron_example_weekly_description]]
+
+$ 0 0 1 * * /path/to/monthly.sh
+> [[cron_example_monthly_description]]
+
+## Специальные символы
+$ @yearly command
+> [[cron_yearly_description]]
+
+$ @annually command
+> [[cron_annually_description]]
+
+$ @monthly command
+> [[cron_monthly_description]]
+
+$ @weekly command
+> [[cron_weekly_description]]
+
+$ @daily command
+> [[cron_daily_description]]
+
+$ @hourly command
+> [[cron_hourly_description]]
+
+$ @reboot command
+> [[cron_reboot_description]]
+
+## Примеры расписаний
+$ 0 12 * * * echo "Lunch time"
+> [[cron_example_noon_description]]
+
+$ 30 2 * * * /usr/bin/backup.sh
+> [[cron_example_backup_description]]
+
+$ 0 */6 * * * /usr/bin/check.sh
+> [[cron_example_6hour_description]]
+
+$ 0 0 1 1 * /usr/bin/yearly.sh
+> [[cron_example_newyear_description]]
+
+$ 59 23 31 12 * /usr/bin/nye.sh
+> [[cron_example_nye_description]]
+
+## Переменные окружения
+$ SHELL=/bin/bash
+> [[cron_shell_description]]
+
+$ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+> [[cron_path_description]]
+
+$ MAILTO=user@example.com
+> [[cron_mailto_description]]
+
+$ HOME=/home/user
+> [[cron_home_description]]
+
+## Логирование
+$ 0 2 * * * /path/to/script.sh >> /var/log/script.log 2>&1
+> [[cron_logging_description]]
+
+$ 0 2 * * * /path/to/script.sh > /dev/null 2>&1
+> [[cron_no_output_description]]
+
+$ 0 2 * * * /path/to/script.sh | logger -t myapp
+> [[cron_logger_description]]
+
+## Системные cron файлы
+$ /etc/crontab
+> [[cron_system_crontab_description]]
+
+$ /etc/cron.d/
+> [[cron_system_d_description]]
+
+$ /etc/cron.daily/
+> [[cron_system_daily_description]]
+
+$ /etc/cron.hourly/
+> [[cron_system_hourly_description]]
+
+$ /etc/cron.monthly/
+> [[cron_system_monthly_description]]
+
+$ /etc/cron.weekly/
+> [[cron_system_weekly_description]]
+
+## Проверка и отладка
+$ systemctl status cron
+> [[cron_status_description]]
+
+$ journalctl -u cron
+> [[cron_journal_description]]
+
+$ grep CRON /var/log/syslog
+> [[cron_syslog_description]]
+
+$ tail -f /var/log/cron
+> [[cron_tail_log_description]]
+
+## Безопасность
+$ crontab -l | grep -v "^#"
+> [[cron_list_no_comments_description]]
+
+$ chmod 600 /tmp/crontab
+> [[cron_secure_file_description]]
+
+$ sudo crontab -u root -l
+> [[cron_root_crontab_description]]
+
+## Полезные примеры
+$ 0 3 * * * find /tmp -type f -mtime +7 -delete
+> [[cron_cleanup_tmp_description]]
+
+$ */5 * * * * /usr/bin/check_disk.sh
+> [[cron_check_disk_description]]
+
+$ 0 1 * * * /usr/bin/backup_database.sh
+> [[cron_backup_db_description]]
+
+$ 0 0 * * 0 /usr/bin/update_system.sh
+> [[cron_update_system_description]]
+
+$ 30 9 * * 1-5 /usr/bin/send_report.sh
+> [[cron_workday_report_description]] 
