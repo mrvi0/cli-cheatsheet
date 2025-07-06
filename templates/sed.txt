@@ -1,0 +1,160 @@
+# [[sed_title]]
+
+$ sed 's/old/new/' file
+> [[sed_substitute_basic]]
+
+$ sed 's/old/new/g' file
+> [[sed_substitute_global]]
+
+$ sed 's/old/new/2' file
+> [[sed_substitute_nth]]
+
+$ sed 's/old/new/gi' file
+> [[sed_substitute_case_insensitive]]
+
+$ sed '/pattern/d' file
+> [[sed_delete_lines]]
+
+$ sed '1,5d' file
+> [[sed_delete_range]]
+
+$ sed '/^$/d' file
+> [[sed_delete_empty_lines]]
+
+$ sed 's/^/prefix/' file
+> [[sed_add_prefix]]
+
+$ sed 's/$/suffix/' file
+> [[sed_add_suffix]]
+
+$ sed 's/.*/& suffix/' file
+> [[sed_append_to_line]]
+
+$ sed 's/^prefix//' file
+> [[sed_remove_prefix]]
+
+$ sed 's/suffix$//' file
+> [[sed_remove_suffix]]
+
+$ sed 's/[0-9]//g' file
+> [[sed_remove_digits]]
+
+$ sed 's/[a-zA-Z]//g' file
+> [[sed_remove_letters]]
+
+$ sed 's/[[:space:]]\+/ /g' file
+> [[sed_normalize_spaces]]
+
+$ sed 's/\t/    /g' file
+> [[sed_replace_tabs]]
+
+$ sed 's/^[[:space:]]*//' file
+> [[sed_remove_leading_spaces]]
+
+$ sed 's/[[:space:]]*$//' file
+> [[sed_remove_trailing_spaces]]
+
+$ sed '1i\new line' file
+> [[sed_insert_before_first]]
+
+$ sed '$a\new line' file
+> [[sed_append_after_last]]
+
+$ sed '/pattern/a\new line' file
+> [[sed_append_after_pattern]]
+
+$ sed '/pattern/i\new line' file
+> [[sed_insert_before_pattern]]
+
+$ sed '1,5s/old/new/g' file
+> [[sed_substitute_in_range]]
+
+$ sed '/start/,/end/s/old/new/g' file
+> [[sed_substitute_between_patterns]]
+
+$ sed -n '1,5p' file
+> [[sed_print_range]]
+
+$ sed -n '/pattern/p' file
+> [[sed_print_matching]]
+
+$ sed -n '/start/,/end/p' file
+> [[sed_print_between_patterns]]
+
+$ sed '=' file | sed 'N;s/\n/ /'
+> [[sed_number_lines]]
+
+$ sed 's/\(.*\)/\1 backup/' file
+> [[sed_capture_groups]]
+
+$ sed 's/\([0-9]\+\)/NUMBER:\1/g' file
+> [[sed_number_capture]]
+
+$ sed -e 's/old1/new1/' -e 's/old2/new2/' file
+> [[sed_multiple_commands]]
+
+$ sed -f script.sed file
+> [[sed_script_file]]
+
+$ sed -i 's/old/new/g' file
+> [[sed_inplace_edit]]
+
+$ sed -i.bak 's/old/new/g' file
+> [[sed_inplace_backup]]
+
+$ sed 'y/abc/ABC/' file
+> [[sed_translate_chars]]
+
+$ sed 'q' file
+> [[sed_quit_after_first]]
+
+$ sed '10q' file
+> [[sed_quit_after_nth]]
+
+$ sed 's/^/    /' file
+> [[sed_indent_lines]]
+
+$ sed 's/^    //' file
+> [[sed_unindent_lines]]
+
+$ sed 's/.*/\U&/' file
+> [[sed_uppercase_all]]
+
+$ sed 's/.*/\L&/' file
+> [[sed_lowercase_all]]
+
+$ sed 's/\b\w/\U&/g' file
+> [[sed_capitalize_words]]
+
+$ sed 's/^\(.\)/\U\1/' file
+> [[sed_capitalize_first_letter]]
+
+$ sed 's/\([.!?]\) /\1\n/g' file
+> [[sed_split_sentences]]
+
+$ sed 's/^/Line /' file | sed 's/:/: /'
+> [[sed_add_line_prefix]]
+
+$ sed '/^#/d' file
+> [[sed_remove_comments]]
+
+$ sed 's/#.*$//' file
+> [[sed_remove_inline_comments]]
+
+$ sed 's/^[[:space:]]*#.*$//' file
+> [[sed_remove_comment_lines]]
+
+$ sed 's/^[[:space:]]*$//' file
+> [[sed_clear_empty_lines]]
+
+$ sed 's/\([0-9]\{3\}\)\([0-9]\{3\}\)\([0-9]\{4\}\)/(\1) \2-\3/' file
+> [[sed_format_phone]]
+
+$ sed 's/\([0-9]\{4\}\)\([0-9]\{4\}\)\([0-9]\{4\}\)\([0-9]\{4\}\)/\1 \2 \3 \4/' file
+> [[sed_format_credit_card]]
+
+$ sed 's/\([a-zA-Z0-9._%+-]\+\)@\([a-zA-Z0-9.-]\+\.[a-zA-Z]\{2,\}\)/***@\2/' file
+> [[sed_mask_email]]
+
+$ sed 's/\([0-9]\{3\}\)\([0-9]\{3\}\)\([0-9]\{4\}\)/\1-***-\4/' file
+> [[sed_mask_ssn]] 

@@ -49,7 +49,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | tar | ✅ | ✅ | ❌ | ❌ | ❌ |
 | awk | ✅ | ✅ | ❌ | ❌ | ❌ |
 | cron | ✅ | ✅ | ❌ | ❌ | ❌ |
-| sed | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| sed | ✅ | ✅ | ❌ | ❌ | ❌ |
 | netstat | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | lsof | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | nmap | 🔄 | 🔄 | ❌ | ❌ | ❌ |
@@ -177,15 +177,20 @@ $ git log
 ```bash
 $ cheat list
 Available topics:
+  - awk
   - bash
+  - cron
   - curl
   - docker
   - find
   - git
   - htop
+  - sed
   - ssh
   - systemctl
+  - tar
   - tmux
+  - vim
 ```
 
 ### Search in cheat sheets
