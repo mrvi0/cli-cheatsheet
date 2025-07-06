@@ -1,0 +1,14 @@
+{
+  "nmap_title": "Nmap Cheat Sheet",
+  "nmap_basic_scan": "Basic scan of target host",
+  "nmap_syn_scan": "TCP SYN scan (stealth scan)",
+  "nmap_udp_scan": "UDP scan",
+  "nmap_specific_ports": "Scan specific ports (80, 443)",
+  "nmap_aggressive_scan": "Aggressive scan (OS, version, script, traceroute)",
+  "nmap_version_detection": "Detect service versions",
+  "nmap_os_detection": "Detect operating system",
+  "nmap_default_scripts": "Run default scripts",
+  "nmap_vuln_scripts": "Run vulnerability detection scripts",
+  "nmap_ip_geolocation_ipapi_script": "IP geolocation using ipapi script for a specific country",
+  "nmap_ip_geolocation_ipapi_script_desc": "Replace <country_code> with a two-letter country code (e.g., pl, cz, sk, hu, de, fr, gb, it, es, ru, us, ca, au, jp, cn, in, br, etc.). Example: nmap --script=ip-geolocation-ipapi-pl 192.168.1.1. See the Nmap documentation for the full list of supported country codes."
+} 

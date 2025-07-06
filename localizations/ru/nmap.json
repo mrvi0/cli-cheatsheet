@@ -1,0 +1,14 @@
+{
+  "nmap_title": "Шпаргалка по Nmap",
+  "nmap_basic_scan": "Базовое сканирование целевого хоста",
+  "nmap_syn_scan": "TCP SYN сканирование (скрытое)",
+  "nmap_udp_scan": "UDP сканирование",
+  "nmap_specific_ports": "Сканировать определённые порты (80, 443)",
+  "nmap_aggressive_scan": "Агрессивное сканирование (ОС, версия, скрипты, traceroute)",
+  "nmap_version_detection": "Определить версии сервисов",
+  "nmap_os_detection": "Определить операционную систему",
+  "nmap_default_scripts": "Запустить стандартные скрипты",
+  "nmap_vuln_scripts": "Запустить скрипты поиска уязвимостей",
+  "nmap_ip_geolocation_ipapi_script": "IP-геолокация с помощью скрипта ipapi для выбранной страны",
+  "nmap_ip_geolocation_ipapi_script_desc": "Замените <country_code> на двухбуквенный код страны (например: pl, cz, sk, hu, de, fr, gb, it, es, ru, us, ca, au, jp, cn, in, br и др.). Пример: nmap --script=ip-geolocation-ipapi-pl 192.168.1.1. Полный список поддерживаемых кодов смотрите в документации Nmap."
+} 

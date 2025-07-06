@@ -1,0 +1,33 @@
+# [[nmap_title]]
+
+$ nmap 192.168.1.1
+> [[nmap_basic_scan]]
+
+$ nmap -sS 192.168.1.1
+> [[nmap_syn_scan]]
+
+$ nmap -sU 192.168.1.1
+> [[nmap_udp_scan]]
+
+$ nmap -p 80,443 192.168.1.1
+> [[nmap_specific_ports]]
+
+$ nmap -A 192.168.1.1
+> [[nmap_aggressive_scan]]
+
+$ nmap -sV 192.168.1.1
+> [[nmap_version_detection]]
+
+$ nmap -O 192.168.1.1
+> [[nmap_os_detection]]
+
+$ nmap -sC 192.168.1.1
+> [[nmap_default_scripts]]
+
+$ nmap --script=vuln 192.168.1.1
+> [[nmap_vuln_scripts]]
+
+$ nmap --script=ip-geolocation-ipapi-<country_code> 192.168.1.1
+> [[nmap_ip_geolocation_ipapi_script]]
+
+> [[nmap_ip_geolocation_ipapi_script_desc]] 
