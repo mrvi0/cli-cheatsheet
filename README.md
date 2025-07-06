@@ -55,7 +55,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | nmap | ✅ | ✅ | ❌ | ❌ | ❌ |
 | ufw | ✅ | ✅ | ❌ | ❌ | ❌ |
 | make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
-| iptables | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| iptables | ✅ | ✅ | ❌ | ❌ | ❌ |
 | package-managers | ✅ | ✅ | ❌ | ❌ | ❌ |
 
 **Legend:**

@@ -16,9 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Covers APT, DNF, YUM, Pacman, Zypper, Snap, and Flatpak
 - Essential commands for package installation, removal, and management
 - English and Russian translations for package managers cheat sheet
+- **feat(iptables)**: add comprehensive iptables firewall cheat sheet with translation support
+- Covers basic commands, input/output/forward chains, NAT rules, and advanced features
+- Essential commands for firewall management, rule creation, and network security
+- English and Russian translations for iptables cheat sheet
 
 ### Planned
-- Add cheat sheets for: make, iptables
+- Add cheat sheets for: make
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 

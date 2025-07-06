@@ -1,0 +1,177 @@
+# [[iptables_title]]
+
+## [[iptables_basic_section_title]]
+
+$ iptables -L
+> [[iptables_list_rules]]
+
+$ iptables -L -v
+> [[iptables_list_rules_verbose]]
+
+$ iptables -L -n
+> [[iptables_list_rules_numeric]]
+
+$ iptables -L -t nat
+> [[iptables_list_nat_rules]]
+
+$ iptables -L -t mangle
+> [[iptables_list_mangle_rules]]
+
+$ iptables -F
+> [[iptables_flush_rules]]
+
+$ iptables -F -t nat
+> [[iptables_flush_nat_rules]]
+
+$ iptables -X
+> [[iptables_delete_custom_chains]]
+
+$ iptables -Z
+> [[iptables_zero_counters]]
+
+## [[iptables_input_section_title]]
+
+$ iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+> [[iptables_allow_ssh]]
+
+$ iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+> [[iptables_allow_http]]
+
+$ iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+> [[iptables_allow_https]]
+
+$ iptables -A INPUT -i lo -j ACCEPT
+> [[iptables_allow_loopback]]
+
+$ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+> [[iptables_allow_established]]
+
+$ iptables -A INPUT -p icmp -j ACCEPT
+> [[iptables_allow_icmp]]
+
+$ iptables -A INPUT -j DROP
+> [[iptables_drop_all_input]]
+
+## [[iptables_output_section_title]]
+
+$ iptables -A OUTPUT -o lo -j ACCEPT
+> [[iptables_allow_loopback_output]]
+
+$ iptables -A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+> [[iptables_allow_established_output]]
+
+$ iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
+> [[iptables_allow_http_output]]
+
+$ iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
+> [[iptables_allow_https_output]]
+
+$ iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+> [[iptables_allow_dns_output]]
+
+$ iptables -A OUTPUT -j DROP
+> [[iptables_drop_all_output]]
+
+## [[iptables_forward_section_title]]
+
+$ iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
+> [[iptables_allow_forward_interface]]
+
+$ iptables -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT
+> [[iptables_allow_forward_established]]
+
+$ iptables -A FORWARD -j DROP
+> [[iptables_drop_all_forward]]
+
+## [[iptables_nat_section_title]]
+
+$ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+> [[iptables_masquerade]]
+
+$ iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-dest 192.168.1.10:80
+> [[iptables_dnat_port_forward]]
+
+$ iptables -t nat -A PREROUTING -d 203.0.113.1 -j DNAT --to-dest 192.168.1.10
+> [[iptables_dnat_ip_forward]]
+
+$ iptables -t nat -A OUTPUT -p tcp --dport 80 -j DNAT --to-dest 192.168.1.10:80
+> [[iptables_dnat_local]]
+
+## [[iptables_management_section_title]]
+
+$ iptables -I INPUT 1 -p tcp --dport 22 -j ACCEPT
+> [[iptables_insert_rule_position]]
+
+$ iptables -D INPUT -p tcp --dport 22 -j ACCEPT
+> [[iptables_delete_rule]]
+
+$ iptables -R INPUT 1 -p tcp --dport 22 -j DROP
+> [[iptables_replace_rule]]
+
+$ iptables -N CUSTOM_CHAIN
+> [[iptables_create_custom_chain]]
+
+$ iptables -A CUSTOM_CHAIN -p tcp --dport 8080 -j ACCEPT
+> [[iptables_add_to_custom_chain]]
+
+$ iptables -A INPUT -j CUSTOM_CHAIN
+> [[iptables_jump_to_custom_chain]]
+
+## [[iptables_logging_section_title]]
+
+$ iptables -A INPUT -p tcp --dport 22 -j LOG --log-prefix "SSH: "
+> [[iptables_log_ssh]]
+
+$ iptables -A INPUT -j LOG --log-prefix "DROPPED: "
+> [[iptables_log_dropped]]
+
+$ iptables -A INPUT -p tcp --dport 80 -j LOG --log-level 4
+> [[iptables_log_with_level]]
+
+## [[iptables_save_restore_section_title]]
+
+$ iptables-save > /etc/iptables/rules.v4
+> [[iptables_save_rules]]
+
+$ iptables-restore < /etc/iptables/rules.v4
+> [[iptables_restore_rules]]
+
+$ iptables-save -t nat > /etc/iptables/nat.rules
+> [[iptables_save_nat_rules]]
+
+$ iptables-restore -t nat < /etc/iptables/nat.rules
+> [[iptables_restore_nat_rules]]
+
+## [[iptables_advanced_section_title]]
+
+$ iptables -A INPUT -m limit --limit 5/min -j LOG --log-prefix "RATE_LIMIT: "
+> [[iptables_rate_limit_log]]
+
+$ iptables -A INPUT -m recent --name SSH --set
+> [[iptables_recent_connection_tracking]]
+
+$ iptables -A INPUT -m recent --name SSH --rcheck --seconds 60 --hitcount 4 -j DROP
+> [[iptables_recent_connection_limit]]
+
+$ iptables -A INPUT -m string --string "GET /admin" --algo bm -j DROP
+> [[iptables_string_matching]]
+
+$ iptables -A INPUT -m mac --mac-source 00:11:22:33:44:55 -j ACCEPT
+> [[iptables_mac_address_filtering]]
+
+$ iptables -A INPUT -p tcp --tcp-flags ALL NONE -j DROP
+> [[iptables_null_scan_protection]]
+
+$ iptables -A INPUT -p tcp --tcp-flags ALL ALL -j DROP
+> [[iptables_xmas_scan_protection]]
+
+## [[iptables_help_section_title]]
+
+$ iptables --help
+> [[iptables_help]]
+
+$ iptables -h
+> [[iptables_help_short]]
+
+$ iptables --version
+> [[iptables_version]] 
