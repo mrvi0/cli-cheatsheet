@@ -46,7 +46,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | curl | ✅ | ✅ | ❌ | ❌ | ❌ |
 | ssh | ✅ | ✅ | ❌ | ❌ | ❌ |
 | find | ✅ | ✅ | ❌ | ❌ | ❌ |
-| tar | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| tar | ✅ | ✅ | ❌ | ❌ | ❌ |
 | awk | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | sed | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | cron | 🔄 | 🔄 | ❌ | ❌ | ❌ |
