@@ -93,4 +93,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Template-based system with placeholder substitution
 - Color-coded output
 - Search functionality
-- Language switching capability 
+- Language switching capability
+
+## [1.8.0] - 2025-07-06
+
+### Added
+- Comprehensive **tar** command cheat sheet with detailed usage examples
+- English and Russian translations for all tar commands
+- Template: templates/tar.txt
+
+--- 
