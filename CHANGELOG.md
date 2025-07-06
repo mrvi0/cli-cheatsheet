@@ -20,10 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Covers basic commands, input/output/forward chains, NAT rules, and advanced features
 - Essential commands for firewall management, rule creation, and network security
 - English and Russian translations for iptables cheat sheet
-- **docs**: reorganize cheat sheets into logical categories and add planned utilities list
+- **docs**: reorganize cheat sheets into logical categories and add planned utilities to tables
 - Categorized existing utilities into System, Network, Security, Text Processing, etc.
-- Added comprehensive list of planned utilities with descriptions
-- Updated both English and Russian README files with new structure
+- Added planned utilities directly to tables with 🔄 status indicators
+- Updated both English and Russian README files with improved structure
 
 ### Planned
 - Add cheat sheets for: make, ps, kill, grep, rsync, dig, jq
