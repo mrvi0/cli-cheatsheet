@@ -46,16 +46,16 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | curl | ✅ | ✅ | ❌ | ❌ | ❌ |
 | ssh | ✅ | ✅ | ❌ | ❌ | ❌ |
 | find | ✅ | ✅ | ❌ | ❌ | ❌ |
-| tar | ❌ | ❌ | ❌ | ❌ | ❌ |
-| awk | ❌ | ❌ | ❌ | ❌ | ❌ |
-| sed | ❌ | ❌ | ❌ | ❌ | ❌ |
-| cron | ❌ | ❌ | ❌ | ❌ | ❌ |
-| netstat | ❌ | ❌ | ❌ | ❌ | ❌ |
-| lsof | ❌ | ❌ | ❌ | ❌ | ❌ |
-| nmap | ❌ | ❌ | ❌ | ❌ | ❌ |
-| ufw | ❌ | ❌ | ❌ | ❌ | ❌ |
-| make | ❌ | ❌ | ❌ | ❌ | ❌ |
-| package managers | ❌ | ❌ | ❌ | ❌ | ❌ |
+| tar | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| awk | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| sed | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| cron | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| netstat | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| lsof | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| nmap | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| ufw | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| package managers | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 
 **Legend:**
 - ✅ Available - Complete cheat sheet with translations
