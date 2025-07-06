@@ -1,351 +1,350 @@
-# {docker_title}
+# [[docker_title]]
 
 ## 📋 Container Management
 
 $ docker ps
-> {docker_ps_description}
+> [[docker_ps_description]]
 
 $ docker ps -a
-> {docker_ps_a_description}
+> [[docker_ps_a_description]]
 
 $ docker ps -q
-> {docker_ps_q_description}
+> [[docker_ps_q_description]]
 
 $ docker run -it ubuntu bash
-> {docker_run_description}
+> [[docker_run_description]]
 
 $ docker run -d nginx
-> {docker_run_d_description}
+> [[docker_run_d_description]]
 
 $ docker run -p 8080:80 nginx
-> {docker_run_p_description}
+> [[docker_run_p_description]]
 
 $ docker run -v /host/path:/container/path nginx
-> {docker_run_v_description}
+> [[docker_run_v_description]]
 
 $ docker run --name mycontainer nginx
-> {docker_run_name_description}
+> [[docker_run_name_description]]
 
 $ docker start <container>
-> {docker_start_description}
+> [[docker_start_description]]
 
 $ docker stop <container>
-> {docker_stop_description}
+> [[docker_stop_description]]
 
 $ docker restart <container>
-> {docker_restart_description}
+> [[docker_restart_description]]
 
 $ docker pause <container>
-> {docker_pause_description}
+> [[docker_pause_description]]
 
 $ docker unpause <container>
-> {docker_unpause_description}
+> [[docker_unpause_description]]
 
 $ docker kill <container>
-> {docker_kill_description}
+> [[docker_kill_description]]
 
 $ docker rm <container>
-> {docker_rm_description}
+> [[docker_rm_description]]
 
 $ docker rm -f <container>
-> {docker_rm_f_description}
+> [[docker_rm_f_description]]
 
 $ docker exec -it <container> bash
-> {docker_exec_description}
+> [[docker_exec_description]]
 
 $ docker exec <container> ls
-> {docker_exec_cmd_description}
+> [[docker_exec_cmd_description]]
 
 $ docker logs <container>
-> {docker_logs_description}
+> [[docker_logs_description]]
 
 $ docker logs -f <container>
-> {docker_logs_f_description}
+> [[docker_logs_f_description]]
 
 $ docker logs --tail 100 <container>
-> {docker_logs_tail_description}
+> [[docker_logs_tail_description]]
 
 ## 🖼️ Image Management
 
 $ docker images
-> {docker_images_description}
+> [[docker_images_description]]
 
 $ docker images -a
-> {docker_images_a_description}
+> [[docker_images_a_description]]
 
 $ docker images --filter "dangling=true"
-> {docker_images_filter_description}
+> [[docker_images_filter_description]]
 
 $ docker build -t myimage .
-> {docker_build_description}
+> [[docker_build_description]]
 
 $ docker build -t myimage:tag .
-> {docker_build_tag_description}
+> [[docker_build_tag_description]]
 
 $ docker build -f Dockerfile.dev .
-> {docker_build_f_description}
+> [[docker_build_f_description]]
 
 $ docker build --no-cache .
-> {docker_build_no_cache_description}
+> [[docker_build_no_cache_description]]
 
 $ docker pull nginx
-> {docker_pull_description}
+> [[docker_pull_description]]
 
 $ docker pull nginx:latest
-> {docker_pull_tag_description}
+> [[docker_pull_tag_description]]
 
 $ docker push myimage
-> {docker_push_description}
+> [[docker_push_description]]
 
 $ docker push myimage:tag
-> {docker_push_tag_description}
+> [[docker_push_tag_description]]
 
 $ docker rmi <image>
-> {docker_rmi_description}
+> [[docker_rmi_description]]
 
 $ docker rmi -f <image>
-> {docker_rmi_f_description}
+> [[docker_rmi_f_description]]
 
 $ docker rmi $(docker images -q)
-> {docker_rmi_all_description}
+> [[docker_rmi_all_description]]
 
 $ docker save -o myimage.tar myimage
-> {docker_save_description}
+> [[docker_save_description]]
 
 $ docker load -i myimage.tar
-> {docker_load_description}
+> [[docker_load_description]]
 
 $ docker tag myimage myimage:tag
-> {docker_tag_description}
+> [[docker_tag_description]]
 
 $ docker history <image>
-> {docker_history_description}
+> [[docker_history_description]]
 
 $ docker inspect <image>
-> {docker_inspect_image_description}
+> [[docker_inspect_image_description]]
 
 ## 🔍 Information & Debugging
 
 $ docker inspect <container>
-> {docker_inspect_description}
+> [[docker_inspect_description]]
 
 $ docker stats
-> {docker_stats_description}
+> [[docker_stats_description]]
 
 $ docker stats <container>
-> {docker_stats_container_description}
+> [[docker_stats_container_description]]
 
 $ docker top <container>
-> {docker_top_description}
+> [[docker_top_description]]
 
 $ docker diff <container>
-> {docker_diff_description}
+> [[docker_diff_description]]
 
 $ docker port <container>
-> {docker_port_description}
+> [[docker_port_description]]
 
 $ docker cp <container>:/path /host/path
-> {docker_cp_description}
+> [[docker_cp_description]]
 
 $ docker cp /host/path <container>:/path
-> {docker_cp_to_description}
+> [[docker_cp_to_description]]
 
 $ docker commit <container> myimage
-> {docker_commit_description}
+> [[docker_commit_description]]
 
 $ docker commit -m "message" <container> myimage
-> {docker_commit_m_description}
+> [[docker_commit_m_description]]
 
 ## 🌐 Network Management
 
 $ docker network ls
-> {docker_network_ls_description}
+> [[docker_network_ls_description]]
 
 $ docker network create mynetwork
-> {docker_network_create_description}
+> [[docker_network_create_description]]
 
 $ docker network connect mynetwork <container>
-> {docker_network_connect_description}
+> [[docker_network_connect_description]]
 
 $ docker network disconnect mynetwork <container>
-> {docker_network_disconnect_description}
+> [[docker_network_disconnect_description]]
 
 $ docker network inspect mynetwork
-> {docker_network_inspect_description}
+> [[docker_network_inspect_description]]
 
 $ docker network rm mynetwork
-> {docker_network_rm_description}
+> [[docker_network_rm_description]]
 
 $ docker run --network mynetwork nginx
-> {docker_run_network_description}
+> [[docker_run_network_description]]
 
 ## 💾 Volume Management
 
 $ docker volume ls
-> {docker_volume_ls_description}
+> [[docker_volume_ls_description]]
 
 $ docker volume create myvolume
-> {docker_volume_create_description}
+> [[docker_volume_create_description]]
 
 $ docker volume inspect myvolume
-> {docker_volume_inspect_description}
+> [[docker_volume_inspect_description]]
 
 $ docker volume rm myvolume
-> {docker_volume_rm_description}
+> [[docker_volume_rm_description]]
 
 $ docker run -v myvolume:/app nginx
-> {docker_run_volume_description}
+> [[docker_run_volume_description]]
 
 $ docker run --mount type=bind,source=/host/path,target=/container/path nginx
-> {docker_run_mount_description}
+> [[docker_run_mount_description]]
 
 ## 🏷️ Docker Compose
 
 $ docker-compose up
-> {docker_compose_up_description}
+> [[docker_compose_up_description]]
 
 $ docker-compose up -d
-> {docker_compose_up_d_description}
+> [[docker_compose_up_d_description]]
 
 $ docker-compose down
-> {docker_compose_down_description}
+> [[docker_compose_down_description]]
 
 $ docker-compose down -v
-> {docker_compose_down_v_description}
+> [[docker_compose_down_v_description]]
 
 $ docker-compose ps
-> {docker_compose_ps_description}
+> [[docker_compose_ps_description]]
 
 $ docker-compose logs
-> {docker_compose_logs_description}
+> [[docker_compose_logs_description]]
 
 $ docker-compose logs -f
-> {docker_compose_logs_f_description}
+> [[docker_compose_logs_f_description]]
 
 $ docker-compose exec <service> bash
-> {docker_compose_exec_description}
+> [[docker_compose_exec_description]]
 
 $ docker-compose build
-> {docker_compose_build_description}
+> [[docker_compose_build_description]]
 
 $ docker-compose build --no-cache
-> {docker_compose_build_no_cache_description}
+> [[docker_compose_build_no_cache_description]]
 
 $ docker-compose pull
-> {docker_compose_pull_description}
+> [[docker_compose_pull_description]]
 
 $ docker-compose config
-> {docker_compose_config_description}
+> [[docker_compose_config_description]]
 
 ## 🧹 Cleanup
 
 $ docker system prune
-> {docker_system_prune_description}
+> [[docker_system_prune_description]]
 
 $ docker system prune -a
-> {docker_system_prune_a_description}
+> [[docker_system_prune_a_description]]
 
 $ docker system prune -f
-> {docker_system_prune_f_description}
+> [[docker_system_prune_f_description]]
 
 $ docker container prune
-> {docker_container_prune_description}
+> [[docker_container_prune_description]]
 
 $ docker image prune
-> {docker_image_prune_description}
+> [[docker_image_prune_description]]
 
 $ docker volume prune
-> {docker_volume_prune_description}
+> [[docker_volume_prune_description]]
 
 $ docker network prune
-> {docker_network_prune_description}
+> [[docker_network_prune_description]]
 
 ## 🔧 Advanced
 
 $ docker run --rm nginx
-> {docker_run_rm_description}
+> [[docker_run_rm_description]]
 
 $ docker run --restart=always nginx
-> {docker_run_restart_description}
+> [[docker_run_restart_description]]
 
 $ docker run --restart=unless-stopped nginx
-> {docker_run_restart_unless_description}
+> [[docker_run_restart_unless_description]]
 
 $ docker run --restart=on-failure nginx
-> {docker_run_restart_failure_description}
+> [[docker_run_restart_failure_description]]
 
 $ docker run --memory=512m nginx
-> {docker_run_memory_description}
+> [[docker_run_memory_description]]
 
 $ docker run --cpus=2 nginx
-> {docker_run_cpus_description}
+> [[docker_run_cpus_description]]
 
 $ docker run --env-file .env nginx
-> {docker_run_env_file_description}
+> [[docker_run_env_file_description]]
 
 $ docker run -e VAR=value nginx
-> {docker_run_env_description}
+> [[docker_run_env_description]]
 
 $ docker run --entrypoint /bin/bash nginx
-> {docker_run_entrypoint_description}
+> [[docker_run_entrypoint_description]]
 
 $ docker run --user 1000:1000 nginx
-> {docker_run_user_description}
+> [[docker_run_user_description]]
 
 $ docker run --workdir /app nginx
-> {docker_run_workdir_description}
+> [[docker_run_workdir_description]]
 
 $ docker run --hostname myhost nginx
-> {docker_run_hostname_description}
+> [[docker_run_hostname_description]]
 
 $ docker run --add-host host.docker.internal:host-gateway nginx
-> {docker_run_add_host_description}
+> [[docker_run_add_host_description]]
 
 $ docker run --dns 8.8.8.8 nginx
-> {docker_run_dns_description}
+> [[docker_run_dns_description]]
 
 $ docker run --ulimit nofile=65536:65536 nginx
-> {docker_run_ulimit_description}
+> [[docker_run_ulimit_description]]
 
 $ docker run --cap-add SYS_ADMIN nginx
-> {docker_run_cap_add_description}
+> [[docker_run_cap_add_description]]
 
 $ docker run --cap-drop CHOWN nginx
-> {docker_run_cap_drop_description}
+> [[docker_run_cap_drop_description]]
 
 $ docker run --security-opt seccomp=unconfined nginx
-> {docker_run_security_opt_description}
+> [[docker_run_security_opt_description]]
 
 $ docker run --device /dev/sda:/dev/sda nginx
-> {docker_run_device_description}
+> [[docker_run_device_description]]
 
 $ docker run --privileged nginx
-> {docker_run_privileged_description}
+> [[docker_run_privileged_description]]
 
 $ docker run --read-only nginx
-> {docker_run_read_only_description}
+> [[docker_run_read_only_description]]
 
 $ docker run --tmpfs /tmp nginx
-> {docker_run_tmpfs_description}
+> [[docker_run_tmpfs_description]]
 
 $ docker run --shm-size=256m nginx
-> {docker_run_shm_size_description}
+> [[docker_run_shm_size_description]]
 
 $ docker run --ipc=host nginx
-> {docker_run_ipc_description}
+> [[docker_run_ipc_description]]
 
 $ docker run --pid=host nginx
-> {docker_run_pid_description}
+> [[docker_run_pid_description]]
 
 $ docker run --uts=host nginx
-> {docker_run_uts_description}
+> [[docker_run_uts_description]]
 
 $ docker run --net=host nginx
-> {docker_run_net_host_description}
+> [[docker_run_net_host_description]]
 
 $ docker run --net=none nginx
-> {docker_run_net_none_description}
+> [[docker_run_net_none_description]]
 
 $ docker run --net=bridge nginx
-> {docker_run_net_bridge_description}
-> {docker_run_net_bridge_description} 
+> [[docker_run_net_bridge_description]]

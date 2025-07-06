@@ -73,5 +73,19 @@
   "systemctl_user_disable_description": "Отключить пользовательскую службу",
   "systemctl_user_status_description": "Показать статус пользовательской службы",
   "systemctl_user_list_units_description": "Показать пользовательские юниты",
-  "systemctl_user_daemon_reload_description": "Перезагрузить пользовательский демон systemd"
+  "systemctl_user_daemon_reload_description": "Перезагрузить пользовательский демон systemd",
+  "journalctl_u_description": "Показать логи конкретной службы",
+  "journalctl_u_f_description": "Следить за логами службы в реальном времени",
+  "journalctl_u_since_description": "Показать логи службы с определённого времени",
+  "journalctl_u_since_today_description": "Показать логи службы с начала дня",
+  "journalctl_u_since_date_description": "Показать логи службы с определённой даты",
+  "journalctl_u_n_description": "Показать последние N строк логов службы",
+  "journalctl_u_no_pager_description": "Показать логи службы без пейджера",
+  "journalctl_boot_description": "Показать логи текущей загрузки",
+  "journalctl_boot_1_description": "Показать логи предыдущей загрузки",
+  "journalctl_list_boots_description": "Показать список всех загрузок",
+  "journalctl_p_err_description": "Показать только ошибки",
+  "journalctl_p_warning_description": "Показать предупреждения и ошибки",
+  "journalctl_p_info_description": "Показать информационные сообщения и выше",
+  "journalctl_p_debug_description": "Показать отладочные сообщения и выше"
 }

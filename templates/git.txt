@@ -1,235 +1,235 @@
-# {git_title}
+# [[git_title]]
 
 ## 📋 Basic Commands
 
 $ git status
-> {git_status_description}
+> [[git_status_description]]
 
 $ git add .
-> {git_add_description}
+> [[git_add_description]]
 
 $ git add <file>
-> {git_add_file_description}
+> [[git_add_file_description]]
 
 $ git commit -m "message"
-> {git_commit_description}
+> [[git_commit_description]]
 
 $ git commit -am "message"
-> {git_commit_am_description}
+> [[git_commit_am_description]]
 
 $ git log
-> {git_log_description}
+> [[git_log_description]]
 
 $ git log --oneline
-> {git_log_oneline_description}
+> [[git_log_oneline_description]]
 
 $ git log --graph --oneline --all
-> {git_log_graph_description}
+> [[git_log_graph_description]]
 
 $ git push
-> {git_push_description}
+> [[git_push_description]]
 
 $ git pull
-> {git_pull_description}
+> [[git_pull_description]]
 
 ## 🌿 Branching
 
 $ git branch
-> {git_branch_description}
+> [[git_branch_description]]
 
 $ git branch <branch-name>
-> {git_branch_create_description}
+> [[git_branch_create_description]]
 
 $ git checkout <branch-name>
-> {git_checkout_description}
+> [[git_checkout_description]]
 
 $ git checkout -b <branch-name>
-> {git_checkout_b_description}
+> [[git_checkout_b_description]]
 
 $ git switch <branch-name>
-> {git_switch_description}
+> [[git_switch_description]]
 
 $ git switch -c <branch-name>
-> {git_switch_c_description}
+> [[git_switch_c_description]]
 
 $ git branch -d <branch-name>
-> {git_branch_d_description}
+> [[git_branch_d_description]]
 
 $ git branch -D <branch-name>
-> {git_branch_D_description}
+> [[git_branch_D_description]]
 
 $ git merge <branch-name>
-> {git_merge_description}
+> [[git_merge_description]]
 
 $ git rebase <branch-name>
-> {git_rebase_description}
+> [[git_rebase_description]]
 
 ## 🔄 Remote Operations
 
 $ git remote -v
-> {git_remote_v_description}
+> [[git_remote_v_description]]
 
 $ git remote add origin <url>
-> {git_remote_add_description}
+> [[git_remote_add_description]]
 
 $ git push -u origin <branch>
-> {git_push_u_description}
+> [[git_push_u_description]]
 
 $ git push origin <branch>
-> {git_push_branch_description}
+> [[git_push_branch_description]]
 
 $ git pull origin <branch>
-> {git_pull_branch_description}
+> [[git_pull_branch_description]]
 
 $ git fetch
-> {git_fetch_description}
+> [[git_fetch_description]]
 
 $ git fetch origin
-> {git_fetch_origin_description}
+> [[git_fetch_origin_description]]
 
 ## 📝 Staging & Stashing
 
 $ git reset HEAD <file>
-> {git_reset_head_description}
+> [[git_reset_head_description]]
 
 $ git reset --soft HEAD~1
-> {git_reset_soft_description}
+> [[git_reset_soft_description]]
 
 $ git reset --hard HEAD~1
-> {git_reset_hard_description}
+> [[git_reset_hard_description]]
 
 $ git stash
-> {git_stash_description}
+> [[git_stash_description]]
 
 $ git stash push -m "message"
-> {git_stash_push_description}
+> [[git_stash_push_description]]
 
 $ git stash list
-> {git_stash_list_description}
+> [[git_stash_list_description]]
 
 $ git stash pop
-> {git_stash_pop_description}
+> [[git_stash_pop_description]]
 
 $ git stash apply stash@{n}
-> {git_stash_apply_description}
+> [[git_stash_apply_description]]
 
 $ git stash drop stash@{n}
-> {git_stash_drop_description}
+> [[git_stash_drop_description]]
 
 $ git stash clear
-> {git_stash_clear_description}
+> [[git_stash_clear_description]]
 
 ## 🔍 Information & History
 
 $ git show <commit>
-> {git_show_description}
+> [[git_show_description]]
 
 $ git diff
-> {git_diff_description}
+> [[git_diff_description]]
 
 $ git diff --staged
-> {git_diff_staged_description}
+> [[git_diff_staged_description]]
 
 $ git diff <commit1> <commit2>
-> {git_diff_commits_description}
+> [[git_diff_commits_description]]
 
 $ git blame <file>
-> {git_blame_description}
+> [[git_blame_description]]
 
 $ git log --follow <file>
-> {git_log_follow_description}
+> [[git_log_follow_description]]
 
 $ git log --author="name"
-> {git_log_author_description}
+> [[git_log_author_description]]
 
 $ git log --since="2023-01-01"
-> {git_log_since_description}
+> [[git_log_since_description]]
 
 $ git log --until="2023-12-31"
-> {git_log_until_description}
+> [[git_log_until_description]]
 
 ## 🏷️ Tags
 
 $ git tag
-> {git_tag_description}
+> [[git_tag_description]]
 
 $ git tag <tag-name>
-> {git_tag_create_description}
+> [[git_tag_create_description]]
 
 $ git tag -a <tag-name> -m "message"
-> {git_tag_a_description}
+> [[git_tag_a_description]]
 
 $ git push origin <tag-name>
-> {git_push_tag_description}
+> [[git_push_tag_description]]
 
 $ git push origin --tags
-> {git_push_tags_description}
+> [[git_push_tags_description]]
 
 $ git tag -d <tag-name>
-> {git_tag_d_description}
+> [[git_tag_d_description]]
 
 ## 🔧 Configuration
 
 $ git config --list
-> {git_config_list_description}
+> [[git_config_list_description]]
 
 $ git config --global user.name "Your Name"
-> {git_config_name_description}
+> [[git_config_name_description]]
 
 $ git config --global user.email "email@example.com"
-> {git_config_email_description}
+> [[git_config_email_description]]
 
 $ git config --global core.editor "vim"
-> {git_config_editor_description}
+> [[git_config_editor_description]]
 
 $ git config --global init.defaultBranch main
-> {git_config_branch_description}
+> [[git_config_branch_description]]
 
 ## 🧹 Cleanup
 
 $ git clean -n
-> {git_clean_n_description}
+> [[git_clean_n_description]]
 
 $ git clean -f
-> {git_clean_f_description}
+> [[git_clean_f_description]]
 
 $ git clean -fd
-> {git_clean_fd_description}
+> [[git_clean_fd_description]]
 
 $ git gc
-> {git_gc_description}
+> [[git_gc_description]]
 
 $ git prune
-> {git_prune_description}
+> [[git_prune_description]]
 
 ## 🔗 Advanced
 
 $ git cherry-pick <commit>
-> {git_cherry_pick_description}
+> [[git_cherry_pick_description]]
 
 $ git revert <commit>
-> {git_revert_description}
+> [[git_revert_description]]
 
 $ git bisect start
-> {git_bisect_start_description}
+> [[git_bisect_start_description]]
 
 $ git bisect good <commit>
-> {git_bisect_good_description}
+> [[git_bisect_good_description]]
 
 $ git bisect bad <commit>
-> {git_bisect_bad_description}
+> [[git_bisect_bad_description]]
 
 $ git bisect reset
-> {git_bisect_reset_description}
+> [[git_bisect_reset_description]]
 
 $ git submodule add <url>
-> {git_submodule_add_description}
+> [[git_submodule_add_description]]
 
 $ git submodule update --init --recursive
-> {git_submodule_update_description}
+> [[git_submodule_update_description]]
 
 $ git worktree add <path> <branch>
-> {git_worktree_add_description}
+> [[git_worktree_add_description]]
 
 $ git worktree list
-> {git_worktree_list_description} 
+> [[git_worktree_list_description]] 

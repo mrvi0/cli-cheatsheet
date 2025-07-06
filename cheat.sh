@@ -57,9 +57,9 @@ save_config() {
 # Get available languages
 list_languages() {
     echo -e "${MAGENTA}${BOLD}Available languages:${NC}"
-    for lang_file in "$LOCALIZATIONS_DIR"/*.json; do
-        if [[ -f "$lang_file" ]]; then
-            local lang_name=$(basename "$lang_file" .json)
+    for lang_dir in "$LOCALIZATIONS_DIR"/*/; do
+        if [[ -d "$lang_dir" ]]; then
+            local lang_name=$(basename "$lang_dir")
             if [[ "$lang_name" == "$LANG" ]]; then
                 echo -e "  - ${GREEN}$lang_name (current)${NC}"
             else
@@ -78,8 +78,8 @@ change_lang() {
         return 0
     fi
     
-    # Check if language file exists
-    if [[ ! -f "$LOCALIZATIONS_DIR/$new_lang.json" ]]; then
+    # Check if language directory exists
+    if [[ ! -d "$LOCALIZATIONS_DIR/$new_lang" ]]; then
         echo -e "${RED}Error: Language '$new_lang' not found${NC}"
         list_languages
         return 1
@@ -102,37 +102,30 @@ substitute_translations() {
     # Load all translations into associative array for faster lookup
     declare -A translations
     
-    # Try to load from new structure first (separate files per utility)
-    local utility_lang_file="$LOCALIZATIONS_DIR/$lang/$topic.json"
-    if [[ -f "$utility_lang_file" ]]; then
+    if [[ -f "$lang_file" ]]; then
         while IFS=':' read -r key value; do
             if [[ -n "$key" && -n "$value" ]]; then
                 # Remove quotes and escape sequences
                 value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
                 translations["$key"]="$value"
             fi
-        done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$utility_lang_file" 2>/dev/null)
-    else
-        # Fallback to old structure (single file)
-        if [[ -f "$lang_file" ]]; then
-            while IFS=':' read -r key value; do
-                if [[ -n "$key" && -n "$value" ]]; then
-                    # Remove quotes and escape sequences
-                    value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
-                    translations["$key"]="$value"
-                fi
-            done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
-        fi
+        done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
     fi
     
     # Read template and substitute translations
     while IFS= read -r line; do
-        # Find all {key} patterns and substitute them
+        # Find all [[key]] patterns and substitute them
         local substituted_line="$line"
-        while [[ "$substituted_line" =~ \{([^}]+)\} ]]; do
+        while [[ "$substituted_line" =~ \[\[([^\]]+)\]\] ]]; do
             local key="${BASH_REMATCH[1]}"
-            local value="${translations[$key]:-\{$key\}}"
-            substituted_line="${substituted_line//\{$key\}/$value}"
+            if [[ -n "${translations[$key]}" ]]; then
+                local value="${translations[$key]}"
+                substituted_line="${substituted_line//\[\[$key\]\]/$value}"
+            else
+                # If key not found, replace with empty string and break to avoid infinite loop
+                substituted_line="${substituted_line//\[\[$key\]\]/}"
+                break
+            fi
         done
         echo "$substituted_line"
     done < "$template_file"
@@ -160,18 +153,21 @@ show_cheat() {
     local template_file="$TEMPLATES_DIR/$topic.txt"
     local lang_file="$LOCALIZATIONS_DIR/$lang.json"
     
-    # Fallback to default language
-    if [[ ! -f "$lang_file" ]]; then
-        lang_file="$LOCALIZATIONS_DIR/$DEFAULT_LANG.json"
-    fi
-    
     if [[ ! -f "$template_file" ]]; then
         echo -e "${RED}No cheat sheet found for topic: $topic${NC}"
         return 1
     fi
     
-    if [[ ! -f "$lang_file" ]]; then
-        echo -e "${RED}No language file found for: $lang${NC}"
+    # Check if language directory exists
+    if [[ ! -d "$LOCALIZATIONS_DIR/$lang" ]]; then
+        echo -e "${RED}No language directory found for: $lang${NC}"
+        return 1
+    fi
+    
+    # Check if specific utility translation file exists
+    local utility_lang_file="$LOCALIZATIONS_DIR/$lang/$topic.json"
+    if [[ ! -f "$utility_lang_file" ]]; then
+        echo -e "${RED}No translation file found for topic '$topic' in language '$lang'${NC}"
         return 1
     fi
     
@@ -191,7 +187,7 @@ show_cheat() {
             # Regular text
             echo "$line"
         fi
-    done < <(substitute_translations "$template_file" "$lang_file" "$topic" "$lang")
+    done < <(substitute_translations "$template_file" "$utility_lang_file" "$topic" "$lang")
 }
 
 # Search in cheat sheets

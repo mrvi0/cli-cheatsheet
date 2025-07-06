@@ -2,180 +2,180 @@
 
 ## Basic Usage
 $ find . -name "filename"
-> {find_basic_name_desc}
+> [[find_basic_name_desc]]
 
 $ find . -iname "filename"
-> {find_case_insensitive_desc}
+> [[find_case_insensitive_desc]]
 
 $ find . -type f
-> {find_files_only_desc}
+> [[find_files_only_desc]]
 
 $ find . -type d
-> {find_directories_only_desc}
+> [[find_directories_only_desc]]
 
 $ find . -type l
-> {find_symlinks_only_desc}
+> [[find_symlinks_only_desc]]
 
 ## File Types
 $ find . -type f -name "*.txt"
-> {find_text_files_desc}
+> [[find_text_files_desc]]
 
 $ find . -type f -name "*.py"
-> {find_python_files_desc}
+> [[find_python_files_desc]]
 
 $ find . -type f -name "*.sh"
-> {find_shell_scripts_desc}
+> [[find_shell_scripts_desc]]
 
 $ find . -type f -name "*.log"
-> {find_log_files_desc}
+> [[find_log_files_desc]]
 
 $ find . -type f -name "*.tmp"
-> {find_temp_files_desc}
+> [[find_temp_files_desc]]
 
 ## Size-based Search
 $ find . -size +100M
-> {find_large_files_desc}
+> [[find_large_files_desc]]
 
 $ find . -size -1M
-> {find_small_files_desc}
+> [[find_small_files_desc]]
 
 $ find . -size +100M -size -1G
-> {find_medium_files_desc}
+> [[find_medium_files_desc]]
 
 $ find . -empty
-> {find_empty_files_desc}
+> [[find_empty_files_desc]]
 
 $ find . -size 0
-> {find_zero_size_files_desc}
+> [[find_zero_size_files_desc]]
 
 ## Time-based Search
 $ find . -mtime -7
-> {find_modified_week_desc}
+> [[find_modified_week_desc]]
 
 $ find . -mtime +30
-> {find_old_files_desc}
+> [[find_old_files_desc]]
 
 $ find . -atime -1
-> {find_accessed_today_desc}
+> [[find_accessed_today_desc]]
 
 $ find . -ctime +7
-> {find_changed_week_desc}
+> [[find_changed_week_desc]]
 
 $ find . -newer file.txt
-> {find_newer_than_desc}
+> [[find_newer_than_desc]]
 
 ## Permissions
 $ find . -perm 644
-> {find_specific_perms_desc}
+> [[find_specific_perms_desc]]
 
 $ find . -perm -u+w
-> {find_user_writable_desc}
+> [[find_user_writable_desc]]
 
 $ find . -perm -g+w
-> {find_group_writable_desc}
+> [[find_group_writable_desc]]
 
 $ find . -perm -o+w
-> {find_world_writable_desc}
+> [[find_world_writable_desc]]
 
 $ find . -perm /u=x
-> {find_user_executable_desc}
+> [[find_user_executable_desc]]
 
 ## Owner and Group
 $ find . -user username
-> {find_by_owner_desc}
+> [[find_by_owner_desc]]
 
 $ find . -group groupname
-> {find_by_group_desc}
+> [[find_by_group_desc]]
 
 $ find . -uid 1000
-> {find_by_uid_desc}
+> [[find_by_uid_desc]]
 
 $ find . -gid 1000
-> {find_by_gid_desc}
+> [[find_by_gid_desc]]
 
 $ find . -nouser
-> {find_no_owner_desc}
+> [[find_no_owner_desc]]
 
 ## Complex Conditions
 $ find . -name "*.txt" -o -name "*.log"
-> {find_or_condition_desc}
+> [[find_or_condition_desc]]
 
 $ find . -name "*.txt" -a -size +1M
-> {find_and_condition_desc}
+> [[find_and_condition_desc]]
 
 $ find . ! -name "*.tmp"
-> {find_not_condition_desc}
+> [[find_not_condition_desc]]
 
 $ find . \( -name "*.txt" -o -name "*.log" \)
-> {find_grouped_conditions_desc}
+> [[find_grouped_conditions_desc]]
 
 ## Actions
 $ find . -name "*.tmp" -delete
-> {find_delete_files_desc}
+> [[find_delete_files_desc]]
 
 $ find . -name "*.log" -exec rm {} \;
-> {find_exec_remove_desc}
+> [[find_exec_remove_desc]]
 
 $ find . -name "*.txt" -exec cp {} /backup \;
-> {find_exec_copy_desc}
+> [[find_exec_copy_desc]]
 
 $ find . -name "*.sh" -exec chmod +x {} \;
-> {find_exec_chmod_desc}
+> [[find_exec_chmod_desc]]
 
 $ find . -name "*.py" -exec python3 {} \;
-> {find_exec_python_desc}
+> [[find_exec_python_desc]]
 
 ## Advanced Patterns
 $ find . -regex ".*\.(txt|log)$"
-> {find_regex_pattern_desc}
+> [[find_regex_pattern_desc]]
 
 $ find . -iregex ".*\.(TXT|LOG)$"
-> {find_case_insensitive_regex_desc}
+> [[find_case_insensitive_regex_desc]]
 
 $ find . -path "*/node_modules/*" -prune
-> {find_prune_directories_desc}
+> [[find_prune_directories_desc]]
 
 $ find . -name "*.tmp" -prune -o -print
-> {find_prune_and_print_desc}
+> [[find_prune_and_print_desc]]
 
 ## Depth Control
 $ find . -maxdepth 2
-> {find_max_depth_desc}
+> [[find_max_depth_desc]]
 
 $ find . -mindepth 2
-> {find_min_depth_desc}
+> [[find_min_depth_desc]]
 
 $ find . -maxdepth 1 -type f
-> {find_current_dir_files_desc}
+> [[find_current_dir_files_desc]]
 
 $ find . -mindepth 1 -maxdepth 3
-> {find_depth_range_desc}
+> [[find_depth_range_desc]]
 
 ## Output Formatting
 $ find . -name "*.txt" -printf "%p %s\n"
-> {find_printf_format_desc}
+> [[find_printf_format_desc]]
 
 $ find . -name "*.log" -ls
-> {find_ls_format_desc}
+> [[find_ls_format_desc]]
 
 $ find . -name "*.py" -print0 | xargs -0
-> {find_null_separated_desc}
+> [[find_null_separated_desc]]
 
 $ find . -name "*.sh" -exec basename {} \;
-> {find_basename_only_desc}
+> [[find_basename_only_desc]]
 
 ## Common Combinations
 $ find . -type f -name "*.log" -mtime +7 -delete
-> {find_cleanup_logs_desc}
+> [[find_cleanup_logs_desc]]
 
 $ find . -type f -size +100M -exec ls -lh {} \;
-> {find_large_files_list_desc}
+> [[find_large_files_list_desc]]
 
 $ find . -name "*.tmp" -o -name "*.temp" | wc -l
-> {find_count_temp_files_desc}
+> [[find_count_temp_files_desc]]
 
 $ find . -type f -exec grep -l "pattern" {} \;
-> {find_grep_in_files_desc}
+> [[find_grep_in_files_desc]]
 
 $ find . -type f -name "*.txt" -exec sed -i 's/old/new/g' {} \;
-> {find_sed_replace_desc} 
+> [[find_sed_replace_desc]] 

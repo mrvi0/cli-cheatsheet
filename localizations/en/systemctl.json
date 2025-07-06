@@ -73,5 +73,19 @@
   "systemctl_user_disable_description": "Disable user service",
   "systemctl_user_status_description": "Show user service status",
   "systemctl_user_list_units_description": "List user units",
-  "systemctl_user_daemon_reload_description": "Reload user systemd daemon"
+  "systemctl_user_daemon_reload_description": "Reload user systemd daemon",
+  "journalctl_u_description": "Show logs for specific service",
+  "journalctl_u_f_description": "Follow service logs in real-time",
+  "journalctl_u_since_description": "Show service logs since specific time",
+  "journalctl_u_since_today_description": "Show service logs since start of day",
+  "journalctl_u_since_date_description": "Show service logs since specific date",
+  "journalctl_u_n_description": "Show last N lines of service logs",
+  "journalctl_u_no_pager_description": "Show service logs without pager",
+  "journalctl_boot_description": "Show logs from current boot",
+  "journalctl_boot_1_description": "Show logs from previous boot",
+  "journalctl_list_boots_description": "Show list of all boots",
+  "journalctl_p_err_description": "Show only errors",
+  "journalctl_p_warning_description": "Show warnings and errors",
+  "journalctl_p_info_description": "Show info messages and above",
+  "journalctl_p_debug_description": "Show debug messages and above"
 }

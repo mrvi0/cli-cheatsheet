@@ -116,7 +116,7 @@ cli-cheatsheet/
 
 ### Quick Install (Recommended)
 ```bash
-git clone https://github.com/yourname/cli-cheatsheet.git
+git clone https://github.com/mrvi0/cli-cheatsheet.git
 cd cli-cheatsheet
 sudo ln -s "$(pwd)/cheat.sh" /usr/local/bin/cheat
 ```
@@ -125,7 +125,7 @@ sudo ln -s "$(pwd)/cheat.sh" /usr/local/bin/cheat
 
 ### Manual Install
 ```bash
-git clone https://github.com/yourname/cli-cheatsheet.git
+git clone https://github.com/mrvi0/cli-cheatsheet.git
 cd cli-cheatsheet
 chmod +x cheat.sh
 ./cheat.sh <topic>

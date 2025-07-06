@@ -1,285 +1,285 @@
-# {systemctl_title}
+# [[systemctl_title]]
 
 ## 📋 Service Management
 
 $ systemctl start <service>
-> {systemctl_start_description}
+> [[systemctl_start_description]]
 
 $ systemctl stop <service>
-> {systemctl_stop_description}
+> [[systemctl_stop_description]]
 
 $ systemctl restart <service>
-> {systemctl_restart_description}
+> [[systemctl_restart_description]]
 
 $ systemctl reload <service>
-> {systemctl_reload_description}
+> [[systemctl_reload_description]]
 
 $ systemctl status <service>
-> {systemctl_status_description}
+> [[systemctl_status_description]]
 
 $ systemctl enable <service>
-> {systemctl_enable_description}
+> [[systemctl_enable_description]]
 
 $ systemctl disable <service>
-> {systemctl_disable_description}
+> [[systemctl_disable_description]]
 
 $ systemctl is-enabled <service>
-> {systemctl_is_enabled_description}
+> [[systemctl_is_enabled_description]]
 
 $ systemctl is-active <service>
-> {systemctl_is_active_description}
+> [[systemctl_is_active_description]]
 
 $ systemctl is-failed <service>
-> {systemctl_is_failed_description}
+> [[systemctl_is_failed_description]]
 
 $ systemctl mask <service>
-> {systemctl_mask_description}
+> [[systemctl_mask_description]]
 
 $ systemctl unmask <service>
-> {systemctl_unmask_description}
+> [[systemctl_unmask_description]]
 
 $ systemctl daemon-reload
-> {systemctl_daemon_reload_description}
+> [[systemctl_daemon_reload_description]]
 
 ## 🔍 Service Information
 
 $ systemctl list-units
-> {systemctl_list_units_description}
+> [[systemctl_list_units_description]]
 
 $ systemctl list-units --type=service
-> {systemctl_list_units_service_description}
+> [[systemctl_list_units_service_description]]
 
 $ systemctl list-units --failed
-> {systemctl_list_units_failed_description}
+> [[systemctl_list_units_failed_description]]
 
 $ systemctl list-unit-files
-> {systemctl_list_unit_files_description}
+> [[systemctl_list_unit_files_description]]
 
 $ systemctl list-unit-files --type=service
-> {systemctl_list_unit_files_service_description}
+> [[systemctl_list_unit_files_service_description]]
 
 $ systemctl show <service>
-> {systemctl_show_description}
+> [[systemctl_show_description]]
 
 $ systemctl cat <service>
-> {systemctl_cat_description}
+> [[systemctl_cat_description]]
 
 $ systemctl edit <service>
-> {systemctl_edit_description}
+> [[systemctl_edit_description]]
 
 $ systemctl edit --full <service>
-> {systemctl_edit_full_description}
+> [[systemctl_edit_full_description]]
 
 ## 📊 System Control
 
 $ systemctl poweroff
-> {systemctl_poweroff_description}
+> [[systemctl_poweroff_description]]
 
 $ systemctl reboot
-> {systemctl_reboot_description}
+> [[systemctl_reboot_description]]
 
 $ systemctl halt
-> {systemctl_halt_description}
+> [[systemctl_halt_description]]
 
 $ systemctl suspend
-> {systemctl_suspend_description}
+> [[systemctl_suspend_description]]
 
 $ systemctl hibernate
-> {systemctl_hibernate_description}
+> [[systemctl_hibernate_description]]
 
 $ systemctl hybrid-sleep
-> {systemctl_hybrid_sleep_description}
+> [[systemctl_hybrid_sleep_description]]
 
 $ systemctl rescue
-> {systemctl_rescue_description}
+> [[systemctl_rescue_description]]
 
 $ systemctl emergency
-> {systemctl_emergency_description}
+> [[systemctl_emergency_description]]
 
 ## 🔧 System Management
 
 $ systemctl get-default
-> {systemctl_get_default_description}
+> [[systemctl_get_default_description]]
 
 $ systemctl set-default multi-user.target
-> {systemctl_set_default_multi_user_description}
+> [[systemctl_set_default_multi_user_description]]
 
 $ systemctl set-default graphical.target
-> {systemctl_set_default_graphical_description}
+> [[systemctl_set_default_graphical_description]]
 
 $ systemctl isolate multi-user.target
-> {systemctl_isolate_multi_user_description}
+> [[systemctl_isolate_multi_user_description]]
 
 $ systemctl isolate graphical.target
-> {systemctl_isolate_graphical_description}
+> [[systemctl_isolate_graphical_description]]
 
 $ systemctl list-dependencies <service>
-> {systemctl_list_dependencies_description}
+> [[systemctl_list_dependencies_description]]
 
 $ systemctl list-dependencies --reverse <service>
-> {systemctl_list_dependencies_reverse_description}
+> [[systemctl_list_dependencies_reverse_description]]
 
 ## 📝 Logs & Debugging
 
 $ journalctl -u <service>
-> {journalctl_u_description}
+> [[journalctl_u_description]]
 
 $ journalctl -u <service> -f
-> {journalctl_u_f_description}
+> [[journalctl_u_f_description]]
 
 $ journalctl -u <service> --since "1 hour ago"
-> {journalctl_u_since_description}
+> [[journalctl_u_since_description]]
 
 $ journalctl -u <service> --since today
-> {journalctl_u_since_today_description}
+> [[journalctl_u_since_today_description]]
 
 $ journalctl -u <service> --since "2023-01-01"
-> {journalctl_u_since_date_description}
+> [[journalctl_u_since_date_description]]
 
 $ journalctl -u <service> -n 50
-> {journalctl_u_n_description}
+> [[journalctl_u_n_description]]
 
 $ journalctl -u <service> --no-pager
-> {journalctl_u_no_pager_description}
+> [[journalctl_u_no_pager_description]]
 
 $ journalctl --boot
-> {journalctl_boot_description}
+> [[journalctl_boot_description]]
 
 $ journalctl --boot -1
-> {journalctl_boot_1_description}
+> [[journalctl_boot_1_description]]
 
 $ journalctl --list-boots
-> {journalctl_list_boots_description}
+> [[journalctl_list_boots_description]]
 
 $ journalctl -p err
-> {journalctl_p_err_description}
+> [[journalctl_p_err_description]]
 
 $ journalctl -p warning
-> {journalctl_p_warning_description}
+> [[journalctl_p_warning_description]]
 
 $ journalctl -p info
-> {journalctl_p_info_description}
+> [[journalctl_p_info_description]]
 
 $ journalctl -p debug
-> {journalctl_p_debug_description}
+> [[journalctl_p_debug_description]]
 
 ## 🎯 Target Management
 
 $ systemctl list-units --type=target
-> {systemctl_list_units_target_description}
+> [[systemctl_list_units_target_description]]
 
 $ systemctl list-dependencies default.target
-> {systemctl_list_dependencies_default_description}
+> [[systemctl_list_dependencies_default_description]]
 
 $ systemctl list-dependencies basic.target
-> {systemctl_list_dependencies_basic_description}
+> [[systemctl_list_dependencies_basic_description]]
 
 $ systemctl list-dependencies sysinit.target
-> {systemctl_list_dependencies_sysinit_description}
+> [[systemctl_list_dependencies_sysinit_description]]
 
 $ systemctl list-dependencies multi-user.target
-> {systemctl_list_dependencies_multi_user_description}
+> [[systemctl_list_dependencies_multi_user_description]]
 
 $ systemctl list-dependencies graphical.target
-> {systemctl_list_dependencies_graphical_description}
+> [[systemctl_list_dependencies_graphical_description]]
 
 ## 🔄 Timer Management
 
 $ systemctl list-timers
-> {systemctl_list_timers_description}
+> [[systemctl_list_timers_description]]
 
 $ systemctl list-timers --all
-> {systemctl_list_timers_all_description}
+> [[systemctl_list_timers_all_description]]
 
 $ systemctl start <timer>
-> {systemctl_start_timer_description}
+> [[systemctl_start_timer_description]]
 
 $ systemctl stop <timer>
-> {systemctl_stop_timer_description}
+> [[systemctl_stop_timer_description]]
 
 $ systemctl enable <timer>
-> {systemctl_enable_timer_description}
+> [[systemctl_enable_timer_description]]
 
 $ systemctl disable <timer>
-> {systemctl_disable_timer_description}
+> [[systemctl_disable_timer_description]]
 
 ## 🛠️ Advanced Commands
 
 $ systemctl show-environment
-> {systemctl_show_environment_description}
+> [[systemctl_show_environment_description]]
 
 $ systemctl set-environment VAR=value
-> {systemctl_set_environment_description}
+> [[systemctl_set_environment_description]]
 
 $ systemctl unset-environment VAR
-> {systemctl_unset_environment_description}
+> [[systemctl_unset_environment_description]]
 
 $ systemctl import-environment
-> {systemctl_import_environment_description}
+> [[systemctl_import_environment_description]]
 
 $ systemctl reset-failed
-> {systemctl_reset_failed_description}
+> [[systemctl_reset_failed_description]]
 
 $ systemctl reset-failed <service>
-> {systemctl_reset_failed_service_description}
+> [[systemctl_reset_failed_service_description]]
 
 $ systemctl try-restart <service>
-> {systemctl_try_restart_description}
+> [[systemctl_try_restart_description]]
 
 $ systemctl reload-or-restart <service>
-> {systemctl_reload_or_restart_description}
+> [[systemctl_reload_or_restart_description]]
 
 $ systemctl try-reload-or-restart <service>
-> {systemctl_try_reload_or_restart_description}
+> [[systemctl_try_reload_or_restart_description]]
 
 $ systemctl kill <service>
-> {systemctl_kill_description}
+> [[systemctl_kill_description]]
 
 $ systemctl kill -s SIGTERM <service>
-> {systemctl_kill_sigterm_description}
+> [[systemctl_kill_sigterm_description]]
 
 $ systemctl kill -s SIGKILL <service>
-> {systemctl_kill_sigkill_description}
+> [[systemctl_kill_sigkill_description]]
 
 ## 📈 Performance & Monitoring
 
 $ systemctl show --property=MainPID <service>
-> {systemctl_show_mainpid_description}
+> [[systemctl_show_mainpid_description]]
 
 $ systemctl show --property=ExecStart <service>
-> {systemctl_show_execstart_description}
+> [[systemctl_show_execstart_description]]
 
 $ systemctl show --property=Restart <service>
-> {systemctl_show_restart_description}
+> [[systemctl_show_restart_description]]
 
 $ systemctl show --property=Type <service>
-> {systemctl_show_type_description}
+> [[systemctl_show_type_description]]
 
 $ systemctl show --property=User <service>
-> {systemctl_show_user_description}
+> [[systemctl_show_user_description]]
 
 $ systemctl show --property=Group <service>
-> {systemctl_show_group_description}
+> [[systemctl_show_group_description]]
 
 ## 🔒 Security & Permissions
 
 $ systemctl --user start <service>
-> {systemctl_user_start_description}
+> [[systemctl_user_start_description]]
 
 $ systemctl --user stop <service>
-> {systemctl_user_stop_description}
+> [[systemctl_user_stop_description]]
 
 $ systemctl --user enable <service>
-> {systemctl_user_enable_description}
+> [[systemctl_user_enable_description]]
 
 $ systemctl --user disable <service>
-> {systemctl_user_disable_description}
+> [[systemctl_user_disable_description]]
 
 $ systemctl --user status <service>
-> {systemctl_user_status_description}
+> [[systemctl_user_status_description]]
 
 $ systemctl --user list-units
-> {systemctl_user_list_units_description}
+> [[systemctl_user_list_units_description]]
 
 $ systemctl --user daemon-reload
-> {systemctl_user_daemon_reload_description} 
+> [[systemctl_user_daemon_reload_description]] 

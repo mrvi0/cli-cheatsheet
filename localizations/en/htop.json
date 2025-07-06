@@ -141,5 +141,6 @@
   "htop_gs_description": "Guest steal CPU time",
   "htop_gh_description": "Guest hardware interrupt CPU time",
   "htop_gc_description": "Guest software interrupt CPU time",
-  "htop_gw_description": "Guest I/O wait CPU time"
+  "htop_gw_description": "Guest I/O wait CPU time",
+  "htup_color_description": "Enable colored output"
 }

@@ -1,28 +1,28 @@
-# {vim_title}
+# [[vim_title]]
 
 $ vim filename
-> {vim_open_description}
+> [[vim_open_description]]
 
 $ :w
-> {vim_save_description}
+> [[vim_save_description]]
 
 $ :q
-> {vim_quit_description}
+> [[vim_quit_description]]
 
 $ :wq
-> {vim_save_quit_description}
+> [[vim_save_quit_description]]
 
 $ i
-> {vim_insert_description}
+> [[vim_insert_description]]
 
 $ Esc
-> {vim_exit_insert_description}
+> [[vim_exit_insert_description]]
 
 $ dd
-> {vim_delete_line_description}
+> [[vim_delete_line_description]]
 
 $ yy
-> {vim_copy_line_description}
+> [[vim_copy_line_description]]
 
 $ p
-> {vim_paste_description} 
+> [[vim_paste_description]] 

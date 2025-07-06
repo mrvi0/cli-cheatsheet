@@ -1,145 +1,145 @@
-# {tar_title}
+# [[tar_title]]
 
 ## 📦 Basic Archive Operations
 
 $ tar -cf archive.tar file1 file2
-> {tar_create_description}
+> [[tar_create_description]]
 
 $ tar -tf archive.tar
-> {tar_list_description}
+> [[tar_list_description]]
 
 $ tar -xf archive.tar
-> {tar_extract_description}
+> [[tar_extract_description]]
 
 $ tar -xf archive.tar -C /path/to/directory
-> {tar_extract_to_directory_description}
+> [[tar_extract_to_directory_description]]
 
 $ tar -xf archive.tar file1
-> {tar_extract_specific_file_description}
+> [[tar_extract_specific_file_description]]
 
 ## 🗜️ Compression
 
 $ tar -czf archive.tar.gz directory/
-> {tar_gzip_description}
+> [[tar_gzip_description]]
 
 $ tar -cjf archive.tar.bz2 directory/
-> {tar_bzip2_description}
+> [[tar_bzip2_description]]
 
 $ tar -cJf archive.tar.xz directory/
-> {tar_xz_description}
+> [[tar_xz_description]]
 
 $ tar -czf archive.tar.gz --exclude="*.tmp" directory/
-> {tar_exclude_description}
+> [[tar_exclude_description]]
 
 $ tar -czf archive.tar.gz --exclude-from=exclude.txt directory/
-> {tar_exclude_from_file_description}
+> [[tar_exclude_from_file_description]]
 
 ## 📋 Advanced Operations
 
 $ tar -czf archive.tar.gz --gzip --verbose directory/
-> {tar_verbose_description}
+> [[tar_verbose_description]]
 
 $ tar -czf archive.tar.gz --progress directory/
-> {tar_progress_description}
+> [[tar_progress_description]]
 
 $ tar -czf archive.tar.gz --owner=user --group=group directory/
-> {tar_owner_group_description}
+> [[tar_owner_group_description]]
 
 $ tar -czf archive.tar.gz --numeric-owner directory/
-> {tar_numeric_owner_description}
+> [[tar_numeric_owner_description]]
 
 $ tar -czf archive.tar.gz --preserve-permissions directory/
-> {tar_preserve_permissions_description}
+> [[tar_preserve_permissions_description]]
 
 $ tar -czf archive.tar.gz --preserve-order directory/
-> {tar_preserve_order_description}
+> [[tar_preserve_order_description]]
 
 ## 🔍 Archive Inspection
 
 $ tar -tvf archive.tar.gz
-> {tar_list_verbose_description}
+> [[tar_list_verbose_description]]
 
 $ tar -tvf archive.tar.gz | grep "\.txt$"
-> {tar_list_filter_description}
+> [[tar_list_filter_description]]
 
 $ tar -df archive.tar.gz file1
-> {tar_diff_description}
+> [[tar_diff_description]]
 
 $ tar -czf archive.tar.gz --wildcards "*.txt" directory/
-> {tar_wildcards_description}
+> [[tar_wildcards_description]]
 
 $ tar -czf archive.tar.gz --transform 's/\.txt$/.bak/' directory/
-> {tar_transform_description}
+> [[tar_transform_description]]
 
 ## 🔄 Incremental Backups
 
 $ tar -czf backup.tar.gz --listed-incremental=backup.snar directory/
-> {tar_incremental_description}
+> [[tar_incremental_description]]
 
 $ tar -czf backup.tar.gz --listed-incremental=backup.snar --level=0 directory/
-> {tar_incremental_level_description}
+> [[tar_incremental_level_description]]
 
 $ tar -czf backup.tar.gz --listed-incremental=backup.snar --level=1 directory/
-> {tar_incremental_level1_description}
+> [[tar_incremental_level1_description]]
 
 ## 🌐 Network Operations
 
 $ tar -czf - directory/ | ssh user@host "tar -xzf - -C /backup/"
-> {tar_ssh_pipe_description}
+> [[tar_ssh_pipe_description]]
 
 $ tar -czf - directory/ | nc -l 1234
-> {tar_netcat_send_description}
+> [[tar_netcat_send_description]]
 
 $ nc host 1234 | tar -xzf -
-> {tar_netcat_receive_description}
+> [[tar_netcat_receive_description]]
 
 ## 🛠️ Special Operations
 
 $ tar -czf archive.tar.gz --remove-files directory/
-> {tar_remove_after_description}
+> [[tar_remove_after_description]]
 
 $ tar -czf archive.tar.gz --one-top-level=extracted directory/
-> {tar_one_top_level_description}
+> [[tar_one_top_level_description]]
 
 $ tar -czf archive.tar.gz --strip-components=2 directory/
-> {tar_strip_components_description}
+> [[tar_strip_components_description]]
 
 $ tar -czf archive.tar.gz --absolute-names directory/
-> {tar_absolute_names_description}
+> [[tar_absolute_names_description]]
 
 $ tar -czf archive.tar.gz --dereference directory/
-> {tar_dereference_description}
+> [[tar_dereference_description]]
 
 $ tar -czf archive.tar.gz --hard-dereference directory/
-> {tar_hard_dereference_description}
+> [[tar_hard_dereference_description]]
 
 ## 📊 Archive Information
 
 $ tar -czf archive.tar.gz --totals directory/
-> {tar_totals_description}
+> [[tar_totals_description]]
 
 $ tar -czf archive.tar.gz --checkpoint=1000 directory/
-> {tar_checkpoint_description}
+> [[tar_checkpoint_description]]
 
 $ tar -czf archive.tar.gz --checkpoint-action=echo directory/
-> {tar_checkpoint_action_description}
+> [[tar_checkpoint_action_description]]
 
 $ tar -czf archive.tar.gz --warning=no-timestamp directory/
-> {tar_warning_description}
+> [[tar_warning_description]]
 
 ## 🔧 Examples
 
 $ tar -czf backup-$(date +%Y%m%d).tar.gz /home/user/
-> {tar_example_dated_backup_description}
+> [[tar_example_dated_backup_description]]
 
 $ tar -czf archive.tar.gz --exclude="*.log" --exclude="*.tmp" /var/www/
-> {tar_example_web_backup_description}
+> [[tar_example_web_backup_description]]
 
 $ tar -czf archive.tar.gz --transform 's|^|backup/|' directory/
-> {tar_example_prefix_description}
+> [[tar_example_prefix_description]]
 
 $ tar -czf archive.tar.gz --exclude="node_modules" --exclude=".git" project/
-> {tar_example_project_backup_description}
+> [[tar_example_project_backup_description]]
 
 $ tar -czf archive.tar.gz --exclude="*.pyc" --exclude="__pycache__" python_project/
-> {tar_example_python_backup_description} 
+> [[tar_example_python_backup_description]] 

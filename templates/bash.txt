@@ -1,13 +1,383 @@
-# {bash_title}
+# [[bash_title]]
 
-$ ls -l
-> {ls_description}
+## Файловая система
+$ ls -la
+> [[bash_ls_la_description]]
 
-$ cd /path/to/dir
-> {cd_description}
+$ ls -lh
+> [[bash_ls_lh_description]]
 
-$ grep 'pattern' file.txt
-> {grep_description}
+$ ls -t
+> [[bash_ls_t_description]]
 
+$ ls -R
+> [[bash_ls_r_description]]
+
+$ cd ~
+> [[bash_cd_home_description]]
+
+$ cd -
+> [[bash_cd_previous_description]]
+
+$ pwd
+> [[bash_pwd_description]]
+
+$ mkdir -p /path/to/dir
+> [[bash_mkdir_p_description]]
+
+$ rm -rf /path/to/dir
+> [[bash_rm_rf_description]]
+
+$ cp -r source/ dest/
+> [[bash_cp_r_description]]
+
+$ mv old_name new_name
+> [[bash_mv_description]]
+
+$ ln -s target link_name
+> [[bash_ln_s_description]]
+
+## Просмотр файлов
 $ cat file.txt
-> {cat_description} 
+> [[bash_cat_description]]
+
+$ less file.txt
+> [[bash_less_description]]
+
+$ head -n 10 file.txt
+> [[bash_head_description]]
+
+$ tail -n 10 file.txt
+> [[bash_tail_description]]
+
+$ tail -f log.txt
+> [[bash_tail_f_description]]
+
+$ more file.txt
+> [[bash_more_description]]
+
+$ nano file.txt
+> [[bash_nano_description]]
+
+$ vim file.txt
+> [[bash_vim_description]]
+
+## Поиск и фильтрация
+$ grep 'pattern' file.txt
+> [[bash_grep_description]]
+
+$ grep -i 'pattern' file.txt
+> [[bash_grep_i_description]]
+
+$ grep -r 'pattern' /dir/
+> [[bash_grep_r_description]]
+
+$ grep -v 'pattern' file.txt
+> [[bash_grep_v_description]]
+
+$ find /path -name "*.txt"
+> [[bash_find_name_description]]
+
+$ find /path -type f -mtime -7
+> [[bash_find_mtime_description]]
+
+$ find /path -size +100M
+> [[bash_find_size_description]]
+
+$ locate filename
+> [[bash_locate_description]]
+
+$ which command
+> [[bash_which_description]]
+
+$ whereis command
+> [[bash_whereis_description]]
+
+## Процессы
+$ ps aux
+> [[bash_ps_aux_description]]
+
+$ ps -ef
+> [[bash_ps_ef_description]]
+
+$ top
+> [[bash_top_description]]
+
+$ htop
+> [[bash_htop_description]]
+
+$ kill -9 PID
+> [[bash_kill_9_description]]
+
+$ killall process_name
+> [[bash_killall_description]]
+
+$ pkill process_name
+> [[bash_pkill_description]]
+
+$ jobs
+> [[bash_jobs_description]]
+
+$ fg
+> [[bash_fg_description]]
+
+$ bg
+> [[bash_bg_description]]
+
+$ nohup command &
+> [[bash_nohup_description]]
+
+## Системная информация
+$ df -h
+> [[bash_df_h_description]]
+
+$ du -sh /path/
+> [[bash_du_sh_description]]
+
+$ free -h
+> [[bash_free_h_description]]
+
+$ uname -a
+> [[bash_uname_a_description]]
+
+$ whoami
+> [[bash_whoami_description]]
+
+$ id
+> [[bash_id_description]]
+
+$ uptime
+> [[bash_uptime_description]]
+
+$ date
+> [[bash_date_description]]
+
+$ cal
+> [[bash_cal_description]]
+
+## Сеть
+$ ping google.com
+> [[bash_ping_description]]
+
+$ netstat -tuln
+> [[bash_netstat_tuln_description]]
+
+$ ss -tuln
+> [[bash_ss_tuln_description]]
+
+$ ifconfig
+> [[bash_ifconfig_description]]
+
+$ ip addr
+> [[bash_ip_addr_description]]
+
+$ wget url
+> [[bash_wget_description]]
+
+$ curl url
+> [[bash_curl_description]]
+
+$ ssh user@host
+> [[bash_ssh_description]]
+
+$ scp file user@host:/path/
+> [[bash_scp_description]]
+
+## Архивы и сжатие
+$ tar -czf archive.tar.gz /path/
+> [[bash_tar_czf_description]]
+
+$ tar -xzf archive.tar.gz
+> [[bash_tar_xzf_description]]
+
+$ zip -r archive.zip /path/
+> [[bash_zip_r_description]]
+
+$ unzip archive.zip
+> [[bash_unzip_description]]
+
+$ gzip file.txt
+> [[bash_gzip_description]]
+
+$ gunzip file.txt.gz
+> [[bash_gunzip_description]]
+
+## Права доступа
+$ chmod 755 file
+> [[bash_chmod_755_description]]
+
+$ chmod +x file
+> [[bash_chmod_x_description]]
+
+$ chown user:group file
+> [[bash_chown_description]]
+
+$ chgrp group file
+> [[bash_chgrp_description]]
+
+$ umask 022
+> [[bash_umask_description]]
+
+## Переменные и окружение
+$ echo $PATH
+> [[bash_echo_path_description]]
+
+$ export VAR=value
+> [[bash_export_description]]
+
+$ env
+> [[bash_env_description]]
+
+$ set
+> [[bash_set_description]]
+
+$ unset VAR
+> [[bash_unset_description]]
+
+## Перенаправление
+$ command > output.txt
+> [[bash_redirect_output_description]]
+
+$ command >> output.txt
+> [[bash_redirect_append_description]]
+
+$ command < input.txt
+> [[bash_redirect_input_description]]
+
+$ command 2> error.txt
+> [[bash_redirect_error_description]]
+
+$ command | grep pattern
+> [[bash_pipe_description]]
+
+$ command1 && command2
+> [[bash_and_description]]
+
+$ command1 || command2
+> [[bash_or_description]]
+
+## История и автодополнение
+$ history
+> [[bash_history_description]]
+
+$ !n
+> [[bash_history_n_description]]
+
+$ !!
+> [[bash_history_last_description]]
+
+$ !string
+> [[bash_history_string_description]]
+
+$ Ctrl+R
+> [[bash_ctrl_r_description]]
+
+$ Tab
+> [[bash_tab_description]]
+
+## Полезные утилиты
+$ sort file.txt
+> [[bash_sort_description]]
+
+$ uniq file.txt
+> [[bash_uniq_description]]
+
+$ wc -l file.txt
+> [[bash_wc_l_description]]
+
+$ cut -d: -f1 file.txt
+> [[bash_cut_description]]
+
+$ awk '{print $1}' file.txt
+> [[bash_awk_description]]
+
+$ sed 's/old/new/g' file.txt
+> [[bash_sed_description]]
+
+$ tr 'a-z' 'A-Z' < file.txt
+> [[bash_tr_description]]
+
+$ xargs command
+> [[bash_xargs_description]]
+
+## Мониторинг и логи
+$ dmesg
+> [[bash_dmesg_description]]
+
+$ journalctl -f
+> [[bash_journalctl_f_description]]
+
+$ tail -f /var/log/syslog
+> [[bash_tail_syslog_description]]
+
+$ watch -n 1 command
+> [[bash_watch_description]]
+
+$ strace command
+> [[bash_strace_description]]
+
+$ lsof
+> [[bash_lsof_description]]
+
+## Системное администрирование
+$ sudo command
+> [[bash_sudo_description]]
+
+$ su - username
+> [[bash_su_description]]
+
+$ passwd
+> [[bash_passwd_description]]
+
+$ useradd username
+> [[bash_useradd_description]]
+
+$ usermod -aG group user
+> [[bash_usermod_description]]
+
+$ systemctl start service
+> [[bash_systemctl_start_description]]
+
+$ systemctl status service
+> [[bash_systemctl_status_description]]
+
+## Полезные алиасы
+$ alias ll='ls -la'
+> [[bash_alias_ll_description]]
+
+$ alias la='ls -A'
+> [[bash_alias_la_description]]
+
+$ alias ..='cd ..'
+> [[bash_alias_cd_description]]
+
+$ alias grep='grep --color=auto'
+> [[bash_alias_grep_description]]
+
+$ alias df='df -h'
+> [[bash_alias_df_description]]
+
+$ alias du='du -h'
+> [[bash_alias_du_description]]
+
+## Функции bash
+$ function_name() { command; }
+> [[bash_function_description]]
+
+$ source ~/.bashrc
+> [[bash_source_description]]
+
+$ . ~/.bashrc
+> [[bash_dot_source_description]]
+
+$ bash -x script.sh
+> [[bash_debug_description]]
+
+$ set -e
+> [[bash_set_e_description]]
+
+$ set -u
+> [[bash_set_u_description]]
+
+$ set -o pipefail
+> [[bash_set_pipefail_description]] 

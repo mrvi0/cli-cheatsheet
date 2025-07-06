@@ -141,5 +141,6 @@
   "htop_gs_description": "Время CPU гостевой кражи",
   "htop_gh_description": "Время CPU гостевых аппаратных прерываний",
   "htop_gc_description": "Время CPU гостевых программных прерываний",
-  "htop_gw_description": "Время CPU гостевого ожидания I/O"
+  "htop_gw_description": "Время CPU гостевого ожидания I/O",
+  "htup_color_description": "Включить цветной вывод"
 }

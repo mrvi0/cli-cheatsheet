@@ -106,7 +106,7 @@ cli-cheatsheet/
 
 ### Быстрая установка (Рекомендуется)
 ```bash
-git clone https://github.com/yourname/cli-cheatsheet.git
+git clone https://github.com/mrvi0/cli-cheatsheet.git
 cd cli-cheatsheet
 sudo ln -s "$(pwd)/cheat.sh" /usr/local/bin/cheat
 ```
@@ -115,7 +115,7 @@ sudo ln -s "$(pwd)/cheat.sh" /usr/local/bin/cheat
 
 ### Ручная установка
 ```bash
-git clone https://github.com/yourname/cli-cheatsheet.git
+git clone https://github.com/mrvi0/cli-cheatsheet.git
 cd cli-cheatsheet
 chmod +x cheat.sh
 ./cheat.sh <тема>
