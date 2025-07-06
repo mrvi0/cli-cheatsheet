@@ -12,6 +12,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 
+## [2.1.0] - 2025-07-06
+
+### Added
+- **New `cheat update` command** for automatic utility updates
+  - Automatically fetches and pulls latest changes from git repository
+  - Checks if current directory is a git repository
+  - Verifies git is installed and available
+  - Shows update progress and number of new commits
+  - Provides helpful error messages for various scenarios
+  - Works seamlessly with symbolic links
+- **Real screenshots** added to documentation
+  - help.png - showing help command output and usage instructions
+  - git.png - demonstrating language switching functionality
+  - list.png - showing available topics and utilities
+  - search.png - demonstrating advanced search functionality
+  - Updated both English and Russian README files with actual screenshots
+
+### Fixed
+- **Path detection for symbolic links** - now works correctly when called via symlink from anywhere
+  - Uses `readlink -f` to get real script path
+  - Fixes empty topic list when running 'cheat list' outside project directory
+  - Improved script directory detection for better portability
+
+### Changed
+- **Updated documentation structure** for better maintainability
+  - Removed obsolete SCREENSHOT_GUIDE.md file
+  - Updated translation and contributing guides for modular structure
+  - Removed Python/venv references from CONTRIBUTING.md
+  - Updated file paths and examples for language-specific directories
+  - Added utility-specific translation guidelines
+- **Language configuration** updated to English by default
+- **Improved error handling** and user feedback for update command
+
 ## [2.0.0] - 2025-07-06
 
 ### Added
