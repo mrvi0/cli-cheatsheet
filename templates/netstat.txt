@@ -1,0 +1,112 @@
+# [[netstat_title]]
+
+$ netstat -tuln
+> [[netstat_basic_listening]]
+
+$ netstat -tuln | grep LISTEN
+> [[netstat_listening_ports]]
+
+$ netstat -tuln | grep :22
+> [[netstat_ssh_connections]]
+
+$ netstat -tuln | grep :80
+> [[netstat_http_connections]]
+
+$ netstat -tuln | grep :443
+> [[netstat_https_connections]]
+
+$ netstat -tuln | grep :3306
+> [[netstat_mysql_connections]]
+
+$ netstat -tuln | grep :5432
+> [[netstat_postgres_connections]]
+
+$ netstat -tuln | grep :6379
+> [[netstat_redis_connections]]
+
+$ netstat -tuln | grep :27017
+> [[netstat_mongodb_connections]]
+
+$ netstat -tuln | grep :8080
+> [[netstat_alt_http_connections]]
+
+$ netstat -tuln | grep :9000
+> [[netstat_php_fpm_connections]]
+
+$ netstat -an | grep ESTABLISHED
+> [[netstat_established_connections]]
+
+$ netstat -an | grep TIME_WAIT
+> [[netstat_time_wait_connections]]
+
+$ netstat -an | grep CLOSE_WAIT
+> [[netstat_close_wait_connections]]
+
+$ netstat -i
+> [[netstat_interface_statistics]]
+
+$ netstat -s
+> [[netstat_protocol_statistics]]
+
+$ netstat -r
+> [[netstat_routing_table]]
+
+$ netstat -g
+> [[netstat_multicast_groups]]
+
+$ netstat -p
+> [[netstat_process_info]]
+
+$ netstat -c
+> [[netstat_continuous_output]]
+
+$ netstat -l
+> [[netstat_listening_only]]
+
+$ netstat -u
+> [[netstat_udp_only]]
+
+$ netstat -t
+> [[netstat_tcp_only]]
+
+$ netstat -w
+> [[netstat_raw_sockets]]
+
+$ netstat -x
+> [[netstat_unix_sockets]]
+
+$ netstat -F
+> [[netstat_fib_routing]]
+
+$ netstat -C
+> [[netstat_cache_routing]]
+
+$ netstat -T
+> [[netstat_tcp_info]]
+
+$ netstat -e
+> [[netstat_extended_info]]
+
+$ netstat -o
+> [[netstat_timer_info]]
+
+$ netstat -M
+> [[netstat_masquerade_connections]]
+
+$ netstat -B
+> [[netstat_buffer_info]]
+
+$ netstat -S
+> [[netstat_summary_statistics]]
+
+$ netstat -Z
+> [[netstat_selinux_context]]
+
+$ netstat -v
+> [[netstat_verbose_output]]
+
+$ netstat -h
+> [[netstat_help]]
+
+$ netstat --version
+> [[netstat_version]] 

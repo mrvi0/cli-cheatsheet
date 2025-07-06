@@ -50,7 +50,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | awk | ✅ | ✅ | ❌ | ❌ | ❌ |
 | cron | ✅ | ✅ | ❌ | ❌ | ❌ |
 | sed | ✅ | ✅ | ❌ | ❌ | ❌ |
-| netstat | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| netstat | ✅ | ✅ | ❌ | ❌ | ❌ |
 | lsof | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | nmap | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | ufw | 🔄 | 🔄 | ❌ | ❌ | ❌ |
