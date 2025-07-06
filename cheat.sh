@@ -13,10 +13,14 @@ CYAN='\033[0;36m'
 BOLD='\033[1m'
 NC='\033[0m' # No Color
 
+# Get script directory
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+
 # Configuration
-CONFIG_FILE="config.json"
-LOCALIZATIONS_DIR="localizations"
-TEMPLATES_DIR="templates"
+CONFIG_FILE="$SCRIPT_DIR/config.json"
+LOCALIZATIONS_DIR="$SCRIPT_DIR/localizations"
+TEMPLATES_DIR="$SCRIPT_DIR/templates"
 DEFAULT_LANG="en"
 DEFAULT_THEME="dark"
 
@@ -285,20 +289,20 @@ show_help() {
     echo -e "${CYAN}${BOLD}cli-cheatsheet - Interactive terminal utility${NC}"
     echo ""
     echo "Usage:"
-    echo "  $0 <topic>           Show cheat sheet for topic"
-    echo "  $0 list              List all available topics"
-    echo "  $0 search <query>    Search in all cheat sheets"
-    echo "  $0 lang              Show available languages"
-    echo "  $0 lang <language>   Change language (en/ru)"
-    echo "  $0 help              Show this help"
+    echo "  cheat <topic>           Show cheat sheet for topic"
+    echo "  cheat list              List all available topics"
+    echo "  cheat search <query>    Search in all cheat sheets"
+    echo "  cheat lang              Show available languages"
+    echo "  cheat lang <language>   Change language (en/ru)"
+    echo "  cheat help              Show this help"
     echo ""
     echo "Examples:"
-    echo "  $0 git               Show git cheat sheet"
-    echo "  $0 bash              Show bash cheat sheet"
-    echo "  $0 search commit     Search for 'commit' in all sheets"
-    echo "  $0 lang              Show available languages"
-    echo "  $0 lang ru           Change language to Russian"
-    echo "  $0 lang en           Change language to English"
+    echo "  cheat git               Show git cheat sheet"
+    echo "  cheat bash              Show bash cheat sheet"
+    echo "  cheat search commit     Search for 'commit' in all sheets"
+    echo "  cheat lang              Show available languages"
+    echo "  cheat lang ru           Change language to Russian"
+    echo "  cheat lang en           Change language to English"
 }
 
 # Main function
