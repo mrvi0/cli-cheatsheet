@@ -12,234 +12,138 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 
-## [2.2.0] - 2025-07-06
-
-### Fixed
-- **Replaced hardcoded section headers with translatable keys** in all cheat sheets
-  - Updated templates for: find, git, tmux, docker, curl, systemctl, ssh, htop, tar, awk
-  - Added corresponding translation keys in English and Russian JSON files
-  - Ensured all section headers are now translatable and consistent
-  - Improved internationalization support across all utilities
-  - Fixed section headers that were previously hardcoded in Russian or English
-  - Enhanced user experience with proper language switching for all content
+## [2.6.0] - 2024-12-19
 
 ### Added
-- **Comprehensive cron cheat sheet** with scheduling, environment variables, and system administration
-  - Basic crontab commands (list, edit, remove, user management)
-  - Cron format explanation and examples
-  - Special symbols (@yearly, @monthly, @daily, @hourly, @reboot)
-  - Environment variables (SHELL, PATH, MAILTO, HOME)
-  - Logging and output redirection
-  - System cron directories and files
-  - Debugging and monitoring commands
-  - Security best practices
-  - Practical examples for common tasks
-  - Complete English and Russian translations
+- **feat(nmap)**: add compact nmap cheat sheet with country code info for geolocation scripts
+- Comprehensive nmap commands for network scanning and security testing
+- Support for ip-geolocation-ipapi scripts with country code examples
+- English and Russian translations for nmap cheat sheet
 
-## [2.1.0] - 2025-07-06
+## [2.5.0] - 2024-12-19
 
 ### Added
-- **New `cheat update` command** for automatic utility updates
-  - Automatically fetches and pulls latest changes from git repository
-  - Checks if current directory is a git repository
-  - Verifies git is installed and available
-  - Shows update progress and number of new commits
-  - Provides helpful error messages for various scenarios
-  - Works seamlessly with symbolic links
-- **Real screenshots** added to documentation
-  - help.png - showing help command output and usage instructions
-  - git.png - demonstrating language switching functionality
-  - list.png - showing available topics and utilities
-  - search.png - demonstrating advanced search functionality
-  - Updated both English and Russian README files with actual screenshots
+- **feat(lsof)**: add comprehensive lsof cheat sheet with translation support
+- Complete lsof commands for file and network connection monitoring
+- Support for process, user, and directory filtering
+- TCP/UDP connection state filtering
+- English and Russian translations for lsof cheat sheet
 
-### Fixed
-- **Path detection for symbolic links** - now works correctly when called via symlink from anywhere
-  - Uses `readlink -f` to get real script path
-  - Fixes empty topic list when running 'cheat list' outside project directory
-  - Improved script directory detection for better portability
+## [2.4.0] - 2024-12-19
+
+### Added
+- **feat(netstat)**: add compact netstat cheat sheet with translation support
+- Essential netstat commands for network connection monitoring
+- Port-specific filtering for common services (SSH, HTTP, MySQL, etc.)
+- Connection state filtering (ESTABLISHED, TIME_WAIT, CLOSE_WAIT)
+- English and Russian translations for netstat cheat sheet
+
+## [2.3.0] - 2024-12-19
+
+### Added
+- **feat(sed)**: add full sed cheat sheet with translation support and update docs
+- Comprehensive sed commands for text processing and file manipulation
+- Support for substitution, deletion, insertion, and transformation operations
+- Advanced features like capture groups, in-place editing, and character translation
+- English and Russian translations for sed cheat sheet
+
+## [2.2.0] - 2024-12-19
+
+### Added
+- **feat(update)**: add automatic update functionality
+- New `cheat update` command to fetch latest version via git
+- Support for automatic backup creation during updates
+- Progress indicators and error handling for update process
 
 ### Changed
-- **Updated documentation structure** for better maintainability
-  - Removed obsolete SCREENSHOT_GUIDE.md file
-  - Updated translation and contributing guides for modular structure
-  - Removed Python/venv references from CONTRIBUTING.md
-  - Updated file paths and examples for language-specific directories
-  - Added utility-specific translation guidelines
-- **Language configuration** updated to English by default
-- **Improved error handling** and user feedback for update command
-
-## [2.0.0] - 2025-07-06
-
-### Added
-- **Significantly expanded bash cheat sheet** with 123 comprehensive commands
-- Organized into 15 logical categories:
-  - File system operations (ls, cd, pwd, mkdir, rm, cp, mv, ln)
-  - File viewing (cat, less, head, tail, nano, vim)
-  - Search and filtering (grep, find, locate, which, whereis)
-  - Process management (ps, top, htop, kill, jobs, fg, bg)
-  - System information (df, du, free, uname, whoami, uptime)
-  - Network commands (ping, netstat, ss, ifconfig, wget, curl, ssh, scp)
-  - Archives and compression (tar, zip, gzip)
-  - File permissions (chmod, chown, chgrp, umask)
-  - Environment variables (export, env, set, unset)
-  - I/O redirection (>, >>, <, 2>, |, &&, ||)
-  - History and completion (history, !!, Ctrl+R, Tab)
-  - Text utilities (sort, uniq, wc, cut, awk, sed, tr, xargs)
-  - Monitoring and logs (dmesg, journalctl, watch, strace, lsof)
-  - System administration (sudo, su, passwd, useradd, systemctl)
-  - Useful aliases and bash functions
-
-### Changed
-- **BREAKING**: Changed translation key format from `{key}` to `[[key]]` to avoid conflicts with command syntax
-- **BREAKING**: Reorganized translation files structure for better performance
-  - Split large localization files into separate files per utility
-  - New structure: `localizations/{lang}/{utility}.json`
-  - Improved loading performance for large cheat sheets
-- Expanded bash template from 5 to 123 translation keys
-- Improved organization with clear section headers
-- Enhanced usability with comprehensive command coverage
-- **Fixed search functionality** to work with new `[[key]]` format
-- Search now properly shows both commands and descriptions for matches
+- **fix(translations)**: replace hardcoded Russian section headers with translatable keys
+- Updated all cheat sheet templates to use `[[key]]` format for section headers
+- Added corresponding English and Russian translations for all section headers
+- Improved consistency across all cheat sheets
 
 ### Fixed
-- Search function to display commands with descriptions
-- Translation key conflicts with command syntax (especially in awk)
-- Performance issues with large translation files
-- Missing translation keys in all cheat sheets
-- Empty descriptions in localization files
+- Section headers in cron and bash cheat sheets now support proper localization
+- All cheat sheets now use consistent translation key format
 
-### Technical Improvements
-- Replaced all `echo` calls with `printf '%s\n'` for better handling of special characters
-- Optimized translation loading for better performance
-- Improved search algorithm to find matches in commands, descriptions, keys, and translations
-- Better error handling and fallback mechanisms
-
-## [1.10.0] - 2025-07-06
+## [2.1.0] - 2024-12-19
 
 ### Added
-- **Significantly expanded bash cheat sheet** with 123 comprehensive commands
-- Organized into 15 logical categories:
-  - File system operations (ls, cd, pwd, mkdir, rm, cp, mv, ln)
-  - File viewing (cat, less, head, tail, nano, vim)
-  - Search and filtering (grep, find, locate, which, whereis)
-  - Process management (ps, top, htop, kill, jobs, fg, bg)
-  - System information (df, du, free, uname, whoami, uptime)
-  - Network commands (ping, netstat, ss, ifconfig, wget, curl, ssh, scp)
-  - Archives and compression (tar, zip, gzip)
-  - File permissions (chmod, chown, chgrp, umask)
-  - Environment variables (export, env, set, unset)
-  - I/O redirection (>, >>, <, 2>, |, &&, ||)
-  - History and completion (history, !!, Ctrl+R, Tab)
-  - Text utilities (sort, uniq, wc, cut, awk, sed, tr, xargs)
-  - Monitoring and logs (dmesg, journalctl, watch, strace, lsof)
-  - System administration (sudo, su, passwd, useradd, systemctl)
-  - Useful aliases and bash functions
-- Complete Russian and English translations for all new commands
-- Practical examples and common use cases for each command
-
-## [1.9.0] - 2025-07-06
-
-### Added
-- Comprehensive **awk** command cheat sheet with 50+ commands
-- English and Russian translations for all awk commands
-- Template: templates/awk.txt
+- **feat(cron)**: add comprehensive cron cheat sheet
+- Complete cron syntax and examples
+- Special time strings and shortcuts
+- Environment variables and logging options
+- English and Russian translations
 
 ### Changed
-- **Performance optimization**: Reorganized translation files structure
-  - Split large localization files into separate files per utility
-  - New structure: `localizations/{lang}/{utility}.json`
-  - Improved loading performance for large cheat sheets
-  - Better maintainability and organization
+- Updated README files to include cron in supported topics
+- Enhanced documentation with cron examples
 
-## [1.8.0] - 2025-07-06
+## [2.0.0] - 2024-12-19
 
 ### Added
-- Comprehensive **tar** command cheat sheet with detailed usage examples
-- English and Russian translations for all tar commands
-- Template: templates/tar.txt
-
-## [1.7.0] - 2025-07-06
-
-### Added
-- Comprehensive status table showing all cheat sheets and languages
-- Support for future languages: German (Deutsch), French (Français), Spanish (Español)
-- Clear development roadmap with planned cheat sheets
-- Improved project documentation structure
+- **feat(translations)**: implement comprehensive translation system
+- JSON-based translation files for English and Russian
+- Template system with placeholder substitution
+- Language switching via `cheat lang <language>`
+- Support for multiple languages with easy extensibility
 
 ### Changed
-- Replaced structure tree with status table in README files
-- Updated both English and Russian README files
-
-## [1.6.0] - 2025-07-06
-
-### Added
-- Comprehensive **find** command cheat sheet with file search patterns
-- **tmux** cheat sheet with session, window, and pane management
-- **htop** cheat sheet with process monitoring and keyboard shortcuts
-- **curl** cheat sheet with HTTP methods, headers, and authentication
-- **ssh** cheat sheet with key management, tunneling, and file transfer
-
-### Fixed
-- Duplicate translation keys in htop templates
-- Template formatting with proper line breaks
-- Search functionality with topic grouping
-
-### Improved
-- Translation lookup performance optimization
-- Search results display with color coding
-
-## [1.5.0] - 2025-07-06
+- **refactor(architecture)**: complete rewrite of translation system
+- Moved from hardcoded strings to template-based system
+- Implemented efficient translation lookup with associative arrays
+- Added support for complex placeholder substitution
+- Improved performance with optimized translation loading
 
 ### Added
-- **systemctl** cheat sheet with service management, timers, and system control
-- Enhanced search functionality to include new topics
-
-## [1.4.2-beta] - 2025-07-05
-
-### Fixed
-- Pagination system using temporary files
-- Search function to display commands with descriptions
-- Color output in search results
-- Performance optimization for large cheat sheets
-
-## [1.4.1] - 2025-07-05
-
-### Fixed
-- Search functionality to show commands with descriptions
-
-## [1.4.0] - 2025-07-05
+- **feat(search)**: enhanced search functionality
+- Search across all cheat sheets with grouped results
+- Support for searching in translated content
+- Improved search result formatting with color coding
 
 ### Added
-- Expanded Git and Docker cheat sheets with comprehensive commands
-
-## [1.3.0] - 2025-07-05
+- **feat(cheatsheets)**: comprehensive cheat sheet collection
+- bash: Shell scripting and command line operations
+- git: Version control and repository management
+- docker: Container management and orchestration
+- vim: Text editor commands and modes
+- systemctl: System service management
+- tmux: Terminal multiplexer
+- htop: Process monitoring
+- curl: HTTP client and API testing
+- ssh: Secure shell connections
+- find: File system search and operations
+- tar: Archive creation and extraction
+- awk: Text processing and data manipulation
 
 ### Changed
-- Reorganized documentation structure with language folders
-
-## [1.2.0] - 2025-07-05
-
-### Added
-- Comprehensive contributing documentation and GitHub templates
-
-## [1.1.0] - 2025-07-05
-
-### Changed
-- Migrated to centralized translation system with JSON files
-
-## [1.0.0] - 2025-07-05
+- **refactor(colors)**: improved color scheme and output formatting
+- Enhanced readability with better color contrast
+- Consistent color coding across all output types
+- Support for both light and dark themes
 
 ### Added
-- Initial release with basic cheat sheets
-- **bash** cheat sheet with basic commands
-- **git** cheat sheet with version control commands
-- **docker** cheat sheet with container management
-- **vim** cheat sheet with basic editor commands
-- Multi-language support (English/Russian)
-- Template-based system with placeholder substitution
+- **feat(config)**: configuration system
+- JSON-based configuration file
+- Persistent language and theme settings
+- Easy configuration management
+
+## [1.0.0] - 2024-12-19
+
+### Added
+- Initial release of cli-cheatsheet
+- Basic command reference functionality
+- Support for multiple topics
 - Color-coded output
-- Search functionality
-- Language switching capability
+- Simple help system
+
+[Unreleased]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.6.0...HEAD
+[2.6.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.5.0...v2.6.0
+[2.5.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.4.0...v2.5.0
+[2.4.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.3.0...v2.4.0
+[2.3.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.2.0...v2.3.0
+[2.2.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.1.0...v2.2.0
+[2.1.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/mrvi0/cli-cheatsheet/compare/v1.0.0...v2.0.0
+[1.0.0]: https://github.com/mrvi0/cli-cheatsheet/releases/tag/v1.0.0
 
 --- 
