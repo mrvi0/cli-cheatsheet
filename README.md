@@ -32,7 +32,22 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 - **Template-based system** with placeholder substitution
 - **Optimized performance** with efficient translation lookup
 
-## 📁 Structure
+## 📊 Cheat Sheets Status
+
+| Language | bash | git | docker | vim | systemctl | tmux | htop | curl | ssh | find | tar | awk | sed | cron | netstat | lsof | nmap | ufw | make | package managers |
+|----------|------|-----|--------|-----|-----------|------|------|------|-----|------|-----|-----|-----|------|---------|------|------|-----|------|-------------------|
+| 🇺🇸 English | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🇷🇺 Русский | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🇩🇪 Deutsch | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🇫🇷 Français | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| 🇪🇸 Español | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+**Legend:**
+- ✅ Available - Complete cheat sheet with translations
+- ❌ Not available - Cheat sheet or translations missing
+- 🔄 In progress - Currently being developed
+
+## 📁 Project Structure
 ```
 cli-cheatsheet/
 ├── cheat.sh              # Main script
@@ -219,6 +234,12 @@ Then add translations to `localizations/en.json` and `localizations/ru.json`:
 - Add empty lines between commands for better readability
 
 ## 🆕 Recent Updates
+
+### v1.7.0 - Status Table & Future Planning
+- ✅ Added comprehensive status table showing all cheat sheets and languages
+- ✅ Added support for future languages: German (Deutsch), French (Français), Spanish (Español)
+- ✅ Planned additional cheat sheets: tar, awk, sed, cron, netstat, lsof, nmap, ufw, make, package managers
+- ✅ Improved project documentation with clear development roadmap
 
 ### v1.6.0 - New Topics & Improvements
 - ✅ Added comprehensive **find** command cheat sheet
