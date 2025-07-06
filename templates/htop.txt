@@ -1,0 +1,477 @@
+# {htop_title}
+
+## 🚀 Starting htop
+
+$ htop
+> {htop_start_description}
+
+$ htop -u <username>
+> {htop_user_description}
+
+$ htop -p <pid1>,<pid2>
+> {htop_pid_description}
+
+$ htop -d <delay>
+> {htop_delay_description}
+
+$ htop -C
+> {htup_color_description}
+
+$ htop --no-color
+> {htop_no_color_description}
+
+## ⌨️ Navigation Keys
+
+$ htop (F1)
+> {htop_f1_description}
+
+$ htop (F2)
+> {htop_f2_description}
+
+$ htop (F3)
+> {htop_f3_description}
+
+$ htop (F4)
+> {htop_f4_description}
+
+$ htop (F5)
+> {htop_f5_description}
+
+$ htop (F6)
+> {htop_f6_description}
+
+$ htop (F7)
+> {htop_f7_description}
+
+$ htop (F8)
+> {htop_f8_description}
+
+$ htop (F9)
+> {htop_f9_description}
+
+$ htop (F10)
+> {htop_f10_description}
+
+## 📊 Process Management
+
+$ htop (Space)
+> {htop_space_description}
+
+$ htop (k)
+> {htop_kill_description}
+
+$ htop (r)
+> {htop_renice_description}
+
+$ htop (s)
+> {htop_strace_description}
+
+$ htop (l)
+> {htop_open_files_description}
+
+$ htop (I)
+> {htop_invert_sort_description}
+
+$ htop (H)
+> {htop_show_threads_description}
+
+$ hop (K)
+> {htop_hide_kernel_description}
+
+$ htop (U)
+> {htop_show_user_description}
+
+$ htop (P)
+> {htop_cpu_sort_description}
+
+$ htop (M)
+> {htop_memory_sort_description}
+
+$ htop (T)
+> {htop_time_sort_description}
+
+$ htop (p)
+> {htop_pid_sort_description}
+
+$ htop (n)
+> {htop_pid_sort_description}
+
+## 🔍 Search & Filter
+
+$ htop (/)
+> {htop_search_description}
+
+$ htop (\)
+> {htop_search_again_description}
+
+$ htop (t)
+> {htop_tree_view_description}
+
+$ htop (a)
+> {htop_affinity_description}
+
+$ htop (e)
+> {htop_environment_description}
+
+$ htop (i)
+> {htop_io_priority_description}
+
+$ htop (o)
+> {htop_filter_description}
+
+$ htop (O)
+> {htop_filter_description}
+
+$ htop (Ctrl+L)
+> {htop_clear_filter_description}
+
+## 📈 System Information
+
+$ htop (1)
+> {htop_cpu_usage_description}
+
+$ htop (2)
+> {htop_memory_usage_description}
+
+$ htop (3)
+> {htop_swap_usage_description}
+
+$ htop (4)
+> {htop_load_average_description}
+
+$ htop (5)
+> {htop_uptime_description}
+
+$ htop (6)
+> {htop_tasks_description}
+
+$ htop (7)
+> {htop_threads_show_description}
+
+$ htop (8)
+> {htop_load_description}
+
+$ htop (9)
+> {htop_io_rate_description}
+
+$ htop (0)
+> {htop_network_usage_description}
+
+## 🎯 Process Actions
+
+$ htop (F1)
+> {htop_help_description}
+
+$ htop (F2)
+> {htop_setup_description}
+
+$ htop (F3)
+> {htop_search_description}
+
+$ htop (F4)
+> {htop_filter_description}
+
+$ htop (F5)
+> {htop_tree_description}
+
+$ htop (F6)
+> {htop_sort_description}
+
+$ htop (F7)
+> {htop_nice_description}
+
+$ htop (F8)
+> {htop_nice_description}
+
+$ htop (F9)
+> {htop_kill_description}
+
+$ htop (F10)
+> {htop_quit_description}
+
+## 🔧 Configuration
+
+$ htop (F2) -> Setup
+> {htop_setup_menu_description}
+
+$ htop (F2) -> Columns
+> {htop_columns_description}
+
+$ htop (F2) -> Colors
+> {htop_colors_description}
+
+$ htop (F2) -> Display Options
+> {htop_display_options_description}
+
+$ htop (F2) -> Meters
+> {htop_meters_description}
+
+$ htop (F2) -> Mouse
+> {htop_mouse_description}
+
+$ htop (F2) -> Setup
+> {htop_setup_description}
+
+## 📱 Mouse Actions
+
+$ htop (Left Click)
+> {htop_left_click_description}
+
+$ htop (Right Click)
+> {htop_right_click_description}
+
+$ htop (Middle Click)
+> {htop_middle_click_description}
+
+$ htop (Scroll)
+> {htop_scroll_description}
+
+$ htop (Double Click)
+> {htop_double_click_description}
+
+## 🎨 Display Options
+
+$ htop (F2) -> Display Options -> Show CPU usage
+> {htop_show_cpu_description}
+
+$ htop (F2) -> Display Options -> Show memory usage
+> {htop_show_memory_description}
+
+$ htop (F2) -> Display Options -> Show load average
+> {htop_show_load_description}
+
+$ htop (F2) -> Display Options -> Show uptime
+> {htop_show_uptime_description}
+
+$ htop (F2) -> Display Options -> Show threads
+> {htop_show_threads_meter_description}
+
+$ htop (F2) -> Display Options -> Show tree view
+> {htop_show_tree_description}
+
+## 🔄 Sorting Options
+
+$ htop (F6) -> CPU%
+> {htop_sort_cpu_description}
+
+$ htop (F6) -> MEM%
+> {htop_sort_mem_description}
+
+$ htop (F6) -> TIME+
+> {htop_sort_time_description}
+
+$ htop (F6) -> PID
+> {htop_sort_pid_description}
+
+$ htop (F6) -> USER
+> {htop_sort_user_description}
+
+$ htop (F6) -> STATE
+> {htop_sort_state_description}
+
+$ htop (F6) -> PPID
+> {htop_sort_ppid_description}
+
+$ htop (F6) -> PRI
+> {htop_sort_pri_description}
+
+$ htop (F6) -> NI
+> {htop_sort_ni_description}
+
+$ htop (F6) -> VIRT
+> {htop_sort_virt_description}
+
+$ htop (F6) -> RES
+> {htop_sort_res_description}
+
+$ htop (F6) -> SHR
+> {htop_sort_shr_description}
+
+$ htop (F6) -> S
+> {htop_sort_s_description}
+
+$ htop (F6) -> Command
+> {htop_sort_command_description}
+
+## 🎯 Process States
+
+$ htop (R)
+> {htop_running_description}
+
+$ htop (S)
+> {htop_sleeping_description}
+
+$ htop (D)
+> {htop_disk_sleep_description}
+
+$ htop (Z)
+> {htop_zombie_description}
+
+$ htop (T)
+> {htop_stopped_description}
+
+$ htop (t)
+> {htop_tracing_description}
+
+$ htop (X)
+> {htop_dead_description}
+
+$ htop (x)
+> {htop_dead_description}
+
+$ htop (K)
+> {htop_wakekill_description}
+
+$ htop (W)
+> {htop_waking_description}
+
+$ htop (P)
+> {htop_parked_description}
+
+$ htop (I)
+> {htop_idle_description}
+
+## 📊 Memory Information
+
+$ htop (F1) -> Memory
+> {htop_memory_info_description}
+
+$ htop (F1) -> Swap
+> {htop_swap_info_description}
+
+$ htop (F1) -> Cache
+> {htop_cache_info_description}
+
+$ htop (F1) -> Buffers
+> {htop_buffers_info_description}
+
+$ htop (F1) -> Shared
+> {htop_shared_info_description}
+
+$ htop (F1) -> Available
+> {htop_available_info_description}
+
+$ htop (F1) -> Used
+> {htop_used_info_description}
+
+$ htop (F1) -> Free
+> {htop_free_info_description}
+
+## 🔧 Advanced Features
+
+$ htop (F1) -> Help
+> {htop_help_full_description}
+
+$ htop (F1) -> About
+> {htop_about_description}
+
+$ htop (F1) -> License
+> {htop_license_description}
+
+$ htop (F1) -> Credits
+> {htop_credits_description}
+
+$ htop (F1) -> Version
+> {htop_version_description}
+
+$ htop (F1) -> Build
+> {htop_build_description}
+
+$ htop (F1) -> Compiler
+> {htop_compiler_description}
+
+$ htop (F1) -> Platform
+> {htop_platform_description}
+
+$ htop (F1) -> Hostname
+> {htop_hostname_description}
+
+$ htop (F1) -> Release
+> {htop_release_description}
+
+$ htop (F1) -> Machine
+> {htop_machine_description}
+
+$ htop (F1) -> Processor
+> {htop_processor_description}
+
+$ htop (F1) -> Cores
+> {htop_cores_description}
+
+$ htop (F1) -> Threads
+> {htop_threads_count_description}
+
+$ htop (F1) -> Load
+> {htop_load_full_description}
+
+$ htop (F1) -> Uptime
+> {htop_uptime_full_description}
+
+$ htop (F1) -> Tasks
+> {htop_tasks_full_description}
+
+$ htop (F1) -> Threads
+> {htop_threads_full_description}
+
+$ htop (F1) -> Running
+> {htop_running_full_description}
+
+$ htop (F1) -> Sleeping
+> {htop_sleeping_full_description}
+
+$ htop (F1) -> Stopped
+> {htop_stopped_full_description}
+
+$ htop (F1) -> Zombie
+> {htop_zombie_full_description}
+
+$ htop (F1) -> Cpu(s)
+> {htop_cpus_full_description}
+
+$ htop (F1) -> Us
+> {htop_us_description}
+
+$ htop (F1) -> Sy
+> {htop_sy_description}
+
+$ htop (F1) -> Ni
+> {htop_ni_description}
+
+$ htop (F1) -> Id
+> {htop_id_description}
+
+$ htop (F1) -> Wa
+> {htop_wa_description}
+
+$ htop (F1) -> Hi
+> {htop_hi_description}
+
+$ htop (F1) -> Si
+> {htop_si_description}
+
+$ htop (F1) -> St
+> {htop_st_description}
+
+$ htop (F1) -> Gu
+> {htop_gu_description}
+
+$ htop (F1) -> Gn
+> {htop_gn_description}
+
+$ htop (F1) -> Gj
+> {htop_gj_description}
+
+$ htop (F1) -> Gt
+> {htop_gt_description}
+
+$ htop (F1) -> Gs
+> {htop_gs_description}
+
+$ htop (F1) -> Gh
+> {htop_gh_description}
+
+$ htop (F1) -> Gc
+> {htop_gc_description}
+
+$ htop (F1) -> Gw
+> {htop_gw_description} 
