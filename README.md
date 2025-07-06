@@ -131,6 +131,25 @@ chmod +x cheat.sh
 ./cheat.sh <topic>
 ```
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="docs/images/main-features.png" alt="Main Features" width="600"/>
+  <p><em>Main functionality and colorful output</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/language-switching.png" alt="Language Switching" width="600"/>
+  <p><em>Multi-language support with Russian and English</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/search-functionality.png" alt="Search Functionality" width="600"/>
+  <p><em>Advanced search across all cheat sheets</em></p>
+</div>
+
+*📸 [View all screenshots](docs/images/README.md) | [Screenshot guidelines](docs/images/README.md#guidelines-for-screenshots)*
+
 ## 📖 Usage Examples
 
 ### Show cheat sheet
