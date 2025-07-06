@@ -1,0 +1,12 @@
+{
+  "vim_title": "Vim Cheat Sheet",
+  "vim_open_description": "Open file in vim",
+  "vim_save_description": "Save file",
+  "vim_quit_description": "Quit vim",
+  "vim_save_quit_description": "Save and quit",
+  "vim_insert_description": "Enter insert mode",
+  "vim_exit_insert_description": "Exit insert mode",
+  "vim_delete_line_description": "Delete current line",
+  "vim_copy_line_description": "Copy current line",
+  "vim_paste_description": "Paste"
+}
