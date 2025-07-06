@@ -1,6 +1,6 @@
 # [[cron_title]]
 
-## Основные команды
+## [[cron_basic_commands]]
 $ crontab -l
 > [[cron_crontab_l_description]]
 
@@ -16,7 +16,7 @@ $ crontab -u username -l
 $ crontab file.txt
 > [[cron_crontab_file_description]]
 
-## Формат cron
+## [[cron_format]]
 $ * * * * * command
 > [[cron_format_description]]
 
@@ -32,7 +32,7 @@ $ 0 0 * * 0 /path/to/backup.sh
 $ 0 0 1 * * /path/to/monthly.sh
 > [[cron_example_monthly_description]]
 
-## Специальные символы
+## [[cron_special_symbols]]
 $ @yearly command
 > [[cron_yearly_description]]
 
@@ -54,7 +54,7 @@ $ @hourly command
 $ @reboot command
 > [[cron_reboot_description]]
 
-## Примеры расписаний
+## [[cron_schedule_examples]]
 $ 0 12 * * * echo "Lunch time"
 > [[cron_example_noon_description]]
 
@@ -70,7 +70,7 @@ $ 0 0 1 1 * /usr/bin/yearly.sh
 $ 59 23 31 12 * /usr/bin/nye.sh
 > [[cron_example_nye_description]]
 
-## Переменные окружения
+## [[cron_environment_variables]]
 $ SHELL=/bin/bash
 > [[cron_shell_description]]
 
@@ -83,7 +83,7 @@ $ MAILTO=user@example.com
 $ HOME=/home/user
 > [[cron_home_description]]
 
-## Логирование
+## [[cron_logging]]
 $ 0 2 * * * /path/to/script.sh >> /var/log/script.log 2>&1
 > [[cron_logging_description]]
 
@@ -93,7 +93,7 @@ $ 0 2 * * * /path/to/script.sh > /dev/null 2>&1
 $ 0 2 * * * /path/to/script.sh | logger -t myapp
 > [[cron_logger_description]]
 
-## Системные cron файлы
+## [[cron_system_files]]
 $ /etc/crontab
 > [[cron_system_crontab_description]]
 
@@ -112,7 +112,7 @@ $ /etc/cron.monthly/
 $ /etc/cron.weekly/
 > [[cron_system_weekly_description]]
 
-## Проверка и отладка
+## [[cron_debugging]]
 $ systemctl status cron
 > [[cron_status_description]]
 
@@ -125,7 +125,7 @@ $ grep CRON /var/log/syslog
 $ tail -f /var/log/cron
 > [[cron_tail_log_description]]
 
-## Безопасность
+## [[cron_security]]
 $ crontab -l | grep -v "^#"
 > [[cron_list_no_comments_description]]
 
@@ -135,7 +135,7 @@ $ chmod 600 /tmp/crontab
 $ sudo crontab -u root -l
 > [[cron_root_crontab_description]]
 
-## Полезные примеры
+## [[cron_useful_examples]]
 $ 0 3 * * * find /tmp -type f -mtime +7 -delete
 > [[cron_cleanup_tmp_description]]
 

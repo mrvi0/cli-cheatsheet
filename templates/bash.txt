@@ -1,6 +1,6 @@
 # [[bash_title]]
 
-## Файловая система
+## [[bash_file_system]]
 $ ls -la
 > [[bash_ls_la_description]]
 
@@ -37,7 +37,7 @@ $ mv old_name new_name
 $ ln -s target link_name
 > [[bash_ln_s_description]]
 
-## Просмотр файлов
+## [[bash_file_viewing]]
 $ cat file.txt
 > [[bash_cat_description]]
 
@@ -62,7 +62,7 @@ $ nano file.txt
 $ vim file.txt
 > [[bash_vim_description]]
 
-## Поиск и фильтрация
+## [[bash_search_filtering]]
 $ grep 'pattern' file.txt
 > [[bash_grep_description]]
 
@@ -93,7 +93,7 @@ $ which command
 $ whereis command
 > [[bash_whereis_description]]
 
-## Процессы
+## [[bash_processes]]
 $ ps aux
 > [[bash_ps_aux_description]]
 
@@ -127,7 +127,7 @@ $ bg
 $ nohup command &
 > [[bash_nohup_description]]
 
-## Системная информация
+## [[bash_system_info]]
 $ df -h
 > [[bash_df_h_description]]
 
@@ -155,7 +155,7 @@ $ date
 $ cal
 > [[bash_cal_description]]
 
-## Сеть
+## [[bash_network]]
 $ ping google.com
 > [[bash_ping_description]]
 
@@ -183,7 +183,7 @@ $ ssh user@host
 $ scp file user@host:/path/
 > [[bash_scp_description]]
 
-## Архивы и сжатие
+## [[bash_archives_compression]]
 $ tar -czf archive.tar.gz /path/
 > [[bash_tar_czf_description]]
 
@@ -202,7 +202,7 @@ $ gzip file.txt
 $ gunzip file.txt.gz
 > [[bash_gunzip_description]]
 
-## Права доступа
+## [[bash_file_permissions]]
 $ chmod 755 file
 > [[bash_chmod_755_description]]
 
@@ -218,7 +218,7 @@ $ chgrp group file
 $ umask 022
 > [[bash_umask_description]]
 
-## Переменные и окружение
+## [[bash_environment_variables]]
 $ echo $PATH
 > [[bash_echo_path_description]]
 
@@ -234,7 +234,7 @@ $ set
 $ unset VAR
 > [[bash_unset_description]]
 
-## Перенаправление
+## [[bash_io_redirection]]
 $ command > output.txt
 > [[bash_redirect_output_description]]
 
@@ -256,7 +256,7 @@ $ command1 && command2
 $ command1 || command2
 > [[bash_or_description]]
 
-## История и автодополнение
+## [[bash_history_completion]]
 $ history
 > [[bash_history_description]]
 
@@ -275,7 +275,7 @@ $ Ctrl+R
 $ Tab
 > [[bash_tab_description]]
 
-## Полезные утилиты
+## [[bash_text_utilities]]
 $ sort file.txt
 > [[bash_sort_description]]
 
@@ -300,7 +300,7 @@ $ tr 'a-z' 'A-Z' < file.txt
 $ xargs command
 > [[bash_xargs_description]]
 
-## Мониторинг и логи
+## [[bash_monitoring_logs]]
 $ dmesg
 > [[bash_dmesg_description]]
 
@@ -319,7 +319,7 @@ $ strace command
 $ lsof
 > [[bash_lsof_description]]
 
-## Системное администрирование
+## [[bash_system_administration]]
 $ sudo command
 > [[bash_sudo_description]]
 
@@ -341,7 +341,7 @@ $ systemctl start service
 $ systemctl status service
 > [[bash_systemctl_status_description]]
 
-## Полезные алиасы
+## [[bash_useful_aliases]]
 $ alias ll='ls -la'
 > [[bash_alias_ll_description]]
 
@@ -360,7 +360,7 @@ $ alias df='df -h'
 $ alias du='du -h'
 > [[bash_alias_du_description]]
 
-## Функции bash
+## [[bash_functions]]
 $ function_name() { command; }
 > [[bash_function_description]]
 
