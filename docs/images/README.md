@@ -2,73 +2,26 @@
 
 This directory contains screenshots demonstrating the functionality of cli-cheatsheet.
 
-## Screenshots to Create
+## Available Screenshots
 
-### 1. `main-features.png` - Основной функционал
-**Описание:** Показывает основные возможности утилиты
-**Команды для скриншота:**
-```bash
-./cheat.sh help
-./cheat.sh list
-./cheat.sh git
-```
+### `help.png` - Help Command
+Shows the output of `cheat help` command with usage instructions and examples.
 
-### 2. `language-switching.png` - Переключение языков
-**Описание:** Демонстрирует переключение между языками
-**Команды для скриншота:**
-```bash
-./cheat.sh lang ru
-./cheat.sh git
-./cheat.sh lang en
-./cheat.sh git
-```
+### `git.png` - Git Commands and Language Switching  
+Demonstrates Git cheat sheet with language switching between English and Russian.
 
-### 3. `search-functionality.png` - Функция поиска
-**Описание:** Показывает поиск по командам и описаниям
-**Команды для скриншота:**
-```bash
-./cheat.sh search commit
-./cheat.sh search status
-```
+### `list.png` - Topic List
+Shows the output of `cheat list` command displaying all available topics and utilities.
 
-### 4. `multiple-utilities.png` - Различные утилиты
-**Описание:** Демонстрирует разнообразие поддерживаемых утилит
-**Команды для скриншота:**
-```bash
-./cheat.sh docker
-./cheat.sh vim
-./cheat.sh curl
-```
+### `search.png` - Search Functionality
+Demonstrates the search feature with `cheat search` command showing results across multiple cheat sheets.
 
-### 5. `colorized-output.png` - Цветной вывод
-**Описание:** Показывает красивый цветной вывод с подсветкой
-**Команды для скриншота:**
-```bash
-./cheat.sh bash
-./cheat.sh tmux
-```
+## Screenshot Details
 
-## Guidelines for Screenshots
+All screenshots are taken with:
+- Dark terminal theme for better readability
+- Monospace font for consistent appearance
+- Colorful output highlighting different elements
+- Clear demonstration of key features
 
-### Terminal Setup
-- Use a dark theme terminal (preferably with a modern look)
-- Use a readable font (e.g., JetBrains Mono, Fira Code)
-- Set terminal size to 80x24 or similar
-- Use a clean background
-
-### Content Focus
-- Show the most impressive and useful features
-- Include both English and Russian output
-- Demonstrate the color scheme and formatting
-- Show clear, readable text
-
-### File Naming
-- Use descriptive names: `feature-name.png`
-- Keep file sizes reasonable (compress if needed)
-- Use PNG format for best quality
-
-### Screenshot Tips
-- Capture the most relevant part of the output
-- Ensure text is clearly readable
-- Show enough context to understand the feature
-- Avoid cluttered terminal history 
+These screenshots help users understand the tool's capabilities at a glance and encourage them to try cli-cheatsheet. 

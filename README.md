@@ -134,21 +134,24 @@ chmod +x cheat.sh
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="docs/images/main-features.png" alt="Main Features" width="600"/>
-  <p><em>Main functionality and colorful output</em></p>
+  <img src="docs/images/help.png" alt="Help Command" width="600"/>
+  <p><em>Help command output and usage instructions</em></p>
 </div>
 
 <div align="center">
-  <img src="docs/images/language-switching.png" alt="Language Switching" width="600"/>
-  <p><em>Multi-language support with Russian and English</em></p>
+  <img src="docs/images/git.png" alt="Git Commands and Language Switching" width="600"/>
+  <p><em>Git cheat sheet with language switching example</em></p>
 </div>
 
 <div align="center">
-  <img src="docs/images/search-functionality.png" alt="Search Functionality" width="600"/>
+  <img src="docs/images/list.png" alt="Topic List" width="600"/>
+  <p><em>Available topics and utilities list</em></p>
+</div>
+
+<div align="center">
+  <img src="docs/images/search.png" alt="Search Functionality" width="600"/>
   <p><em>Advanced search across all cheat sheets</em></p>
 </div>
-
-*📸 [View all screenshots](docs/images/README.md) | [Screenshot guidelines](docs/images/README.md#guidelines-for-screenshots)*
 
 ## 📖 Usage Examples
 
