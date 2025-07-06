@@ -1,0 +1,12 @@
+{
+  "vim_title": "Vim Шпаргалка",
+  "vim_open_description": "Открыть файл в vim",
+  "vim_save_description": "Сохранить файл",
+  "vim_quit_description": "Выйти из vim",
+  "vim_save_quit_description": "Сохранить и выйти",
+  "vim_insert_description": "Войти в режим вставки",
+  "vim_exit_insert_description": "Выйти из режима вставки",
+  "vim_delete_line_description": "Удалить текущую строку",
+  "vim_copy_line_description": "Скопировать текущую строку",
+  "vim_paste_description": "Вставить"
+}

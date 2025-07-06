@@ -92,20 +92,38 @@ change_lang() {
 substitute_translations() {
     local template_file="$1"
     local lang_file="$2"
+    local topic="$3"
+    local lang="$4"
     
-    if [[ ! -f "$template_file" ]] || [[ ! -f "$lang_file" ]]; then
+    if [[ ! -f "$template_file" ]]; then
         return 1
     fi
     
     # Load all translations into associative array for faster lookup
     declare -A translations
-    while IFS=':' read -r key value; do
-        if [[ -n "$key" && -n "$value" ]]; then
-            # Remove quotes and escape sequences
-            value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
-            translations["$key"]="$value"
+    
+    # Try to load from new structure first (separate files per utility)
+    local utility_lang_file="$LOCALIZATIONS_DIR/$lang/$topic.json"
+    if [[ -f "$utility_lang_file" ]]; then
+        while IFS=':' read -r key value; do
+            if [[ -n "$key" && -n "$value" ]]; then
+                # Remove quotes and escape sequences
+                value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
+                translations["$key"]="$value"
+            fi
+        done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$utility_lang_file" 2>/dev/null)
+    else
+        # Fallback to old structure (single file)
+        if [[ -f "$lang_file" ]]; then
+            while IFS=':' read -r key value; do
+                if [[ -n "$key" && -n "$value" ]]; then
+                    # Remove quotes and escape sequences
+                    value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
+                    translations["$key"]="$value"
+                fi
+            done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
         fi
-    done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
+    fi
     
     # Read template and substitute translations
     while IFS= read -r line; do
@@ -173,7 +191,7 @@ show_cheat() {
             # Regular text
             echo "$line"
         fi
-    done < <(substitute_translations "$template_file" "$lang_file")
+    done < <(substitute_translations "$template_file" "$lang_file" "$topic" "$lang")
 }
 
 # Search in cheat sheets
@@ -197,13 +215,30 @@ search_cheats() {
     
     # Load all translations into associative array for faster lookup
     declare -A translations
-    while IFS=':' read -r key value; do
-        if [[ -n "$key" && -n "$value" ]]; then
-            # Remove quotes and escape sequences
-            value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
-            translations["$key"]="$value"
+    
+    # Load translations from all utility files
+    for utility_file in "$LOCALIZATIONS_DIR/$lang"/*.json; do
+        if [[ -f "$utility_file" ]]; then
+            while IFS=':' read -r key value; do
+                if [[ -n "$key" && -n "$value" ]]; then
+                    # Remove quotes and escape sequences
+                    value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
+                    translations["$key"]="$value"
+                fi
+            done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$utility_file" 2>/dev/null)
         fi
-    done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
+    done
+    
+    # Fallback to old structure if no utility files found
+    if [[ ${#translations[@]} -eq 0 ]] && [[ -f "$lang_file" ]]; then
+        while IFS=':' read -r key value; do
+            if [[ -n "$key" && -n "$value" ]]; then
+                # Remove quotes and escape sequences
+                value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
+                translations["$key"]="$value"
+            fi
+        done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
+    fi
     
     # Find matching keys first
     local matching_keys=()
@@ -229,6 +264,8 @@ search_cheats() {
             curl_*) topic="curl" ;;
             ssh_*) topic="ssh" ;;
             find_*) topic="find" ;;
+            tar_*) topic="tar" ;;
+            awk_*) topic="awk" ;;
             *) continue ;;
         esac
         

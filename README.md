@@ -47,7 +47,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | ssh | ✅ | ✅ | ❌ | ❌ | ❌ |
 | find | ✅ | ✅ | ❌ | ❌ | ❌ |
 | tar | ✅ | ✅ | ❌ | ❌ | ❌ |
-| awk | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| awk | ✅ | ✅ | ❌ | ❌ | ❌ |
 | sed | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | cron | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | netstat | 🔄 | 🔄 | ❌ | ❌ | ❌ |
@@ -67,21 +67,49 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 cli-cheatsheet/
 ├── cheat.sh              # Main script
 ├── config.json           # Configuration
-├── localizations/        # Translation files
-│   ├── en.json          # English translations
-│   └── ru.json          # Russian translations
+├── localizations/        # Translation files by language
+│   ├── en/              # English translations
+│   │   ├── bash.json    # Bash translations
+│   │   ├── git.json     # Git translations
+│   │   ├── docker.json  # Docker translations
+│   │   ├── vim.json     # Vim translations
+│   │   ├── systemctl.json # Systemctl translations
+│   │   ├── tmux.json    # Tmux translations
+│   │   ├── htop.json    # Htop translations
+│   │   ├── curl.json    # Curl translations
+│   │   ├── ssh.json     # SSH translations
+│   │   ├── find.json    # Find translations
+│   │   ├── tar.json     # Tar translations
+│   │   └── awk.json     # AWK translations
+│   └── ru/              # Russian translations
+│       ├── bash.json    # Bash translations
+│       ├── git.json     # Git translations
+│       ├── docker.json  # Docker translations
+│       ├── vim.json     # Vim translations
+│       ├── systemctl.json # Systemctl translations
+│       ├── tmux.json    # Tmux translations
+│       ├── htop.json    # Htop translations
+│       ├── curl.json    # Curl translations
+│       ├── ssh.json     # SSH translations
+│       ├── find.json    # Find translations
+│       ├── tar.json     # Tar translations
+│       └── awk.json     # AWK translations
 ├── templates/            # Cheat sheet templates
 │   ├── bash.txt         # Bash template
 │   ├── git.txt          # Git template
 │   ├── docker.txt       # Docker template
+│   ├── vim.txt          # Vim template
 │   ├── systemctl.txt    # Systemctl template
 │   ├── tmux.txt         # Tmux template
 │   ├── htop.txt         # Htop template
 │   ├── curl.txt         # Curl template
 │   ├── ssh.txt          # SSH template
-│   └── find.txt         # Find template
+│   ├── find.txt         # Find template
+│   ├── tar.txt          # Tar template
+│   └── awk.txt          # AWK template
 └── docs/                # Documentation
-    └── README.ru.md     # Russian documentation
+    └── ru/              # Russian documentation
+        └── README.md    # Russian README
 ```
 
 ## 🛠️ Installation
@@ -208,9 +236,10 @@ Edit `config.json`:
 ```
 
 ### Add New Language
-1. Create file: `localizations/your_lang.json`
-2. Add translations with keys matching templates
-3. Use `cheat lang your_lang` to switch
+1. Create directory: `localizations/your_lang/`
+2. Create translation files for each utility: `localizations/your_lang/utility.json`
+3. Add translations with keys matching templates
+4. Use `cheat lang your_lang` to switch
 
 ## 🎨 Color Scheme
 - **Headers** (`#`) - Cyan bold
@@ -247,10 +276,6 @@ Then add translations to `localizations/en.json` and `localizations/ru.json`:
 - Descriptions start with `>`
 - Headers start with `#`
 - Add empty lines between commands for better readability
-
-
-
-
 
 ## 📚 Documentation
 

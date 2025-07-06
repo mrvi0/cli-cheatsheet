@@ -102,4 +102,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - English and Russian translations for all tar commands
 - Template: templates/tar.txt
 
+## [1.9.0] - 2025-07-06
+
+### Added
+- Comprehensive **awk** command cheat sheet with 50+ commands
+- English and Russian translations for all awk commands
+- Template: templates/awk.txt
+
+### Changed
+- **Performance optimization**: Reorganized translation files structure
+  - Split large localization files into separate files per utility
+  - New structure: `localizations/{lang}/{utility}.json`
+  - Improved loading performance for large cheat sheets
+  - Better maintainability and organization
+
 --- 
