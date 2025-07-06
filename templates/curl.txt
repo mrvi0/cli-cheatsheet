@@ -1,0 +1,443 @@
+# {curl_title}
+
+## 🌐 Basic HTTP Requests
+
+$ curl <url>
+> {curl_basic_description}
+
+$ curl -X GET <url>
+> {curl_get_description}
+
+$ curl -X POST <url>
+> {curl_post_description}
+
+$ curl -X PUT <url>
+> {curl_put_description}
+
+$ curl -X DELETE <url>
+> {curl_delete_description}
+
+$ curl -X PATCH <url>
+> {curl_patch_description}
+
+$ curl -X HEAD <url>
+> {curl_head_description}
+
+$ curl -X OPTIONS <url>
+> {curl_options_description}
+
+## 📤 Sending Data
+
+$ curl -d "data" <url>
+> {curl_data_description}
+
+$ curl -d @file.txt <url>
+> {curl_data_file_description}
+
+$ curl --data-binary @file.bin <url>
+> {curl_data_binary_description}
+
+$ curl -F "field=value" <url>
+> {curl_form_description}
+
+$ curl -F "file=@local.txt" <url>
+> {curl_form_file_description}
+
+$ curl -F "file=@local.txt;filename=remote.txt" <url>
+> {curl_form_file_rename_description}
+
+$ curl -F "file=@local.txt;type=text/plain" <url>
+> {curl_form_file_type_description}
+
+$ curl -F "field=value" -F "file=@local.txt" <url>
+> {curl_form_multiple_description}
+
+## 📋 Headers
+
+$ curl -H "Content-Type: application/json" <url>
+> {curl_header_content_type_description}
+
+$ curl -H "Authorization: Bearer token" <url>
+> {curl_header_auth_description}
+
+$ curl -H "User-Agent: MyApp/1.0" <url>
+> {curl_header_user_agent_description}
+
+$ curl -H "Accept: application/json" <url>
+> {curl_header_accept_description}
+
+$ curl -H "X-Custom-Header: value" <url>
+> {curl_header_custom_description}
+
+$ curl --header "Content-Type: application/json" <url>
+> {curl_header_long_description}
+
+$ curl -A "MyApp/1.0" <url>
+> {curl_user_agent_short_description}
+
+$ curl -e "https://referrer.com" <url>
+> {curl_referer_description}
+
+## 🔐 Authentication
+
+$ curl -u username:password <url>
+> {curl_auth_basic_description}
+
+$ curl -u username <url>
+> {curl_auth_basic_prompt_description}
+
+$ curl --user username:password <url>
+> {curl_auth_basic_long_description}
+
+$ curl -H "Authorization: Bearer <token>" <url>
+> {curl_auth_bearer_description}
+
+$ curl -H "X-API-Key: <key>" <url>
+> {curl_auth_api_key_description}
+
+$ curl --cookie "session=value" <url>
+> {curl_auth_cookie_description}
+
+$ curl -b "session=value" <url>
+> {curl_auth_cookie_short_description}
+
+$ curl -c cookies.txt <url>
+> {curl_auth_cookie_save_description}
+
+$ curl -b cookies.txt <url>
+> {curl_auth_cookie_load_description}
+
+## 📁 File Operations
+
+$ curl -O <url>
+> {curl_download_filename_description}
+
+$ curl -o filename.txt <url>
+> {curl_download_custom_description}
+
+$ curl -C - <url>
+> {curl_download_resume_description}
+
+$ curl -r 0-1023 <url>
+> {curl_download_range_description}
+
+$ curl -r 1024- <url>
+> {curl_download_range_from_description}
+
+$ curl -r -1024 <url>
+> {curl_download_range_end_description}
+
+$ curl --limit-rate 1m <url>
+> {curl_download_limit_description}
+
+$ curl --max-time 30 <url>
+> {curl_download_timeout_description}
+
+$ curl --connect-timeout 10 <url>
+> {curl_connect_timeout_description}
+
+## 🔍 Output & Verbose
+
+$ curl -v <url>
+> {curl_verbose_description}
+
+$ curl --verbose <url>
+> {curl_verbose_long_description}
+
+$ curl -i <url>
+> {curl_include_headers_description}
+
+$ curl -I <url>
+> {curl_head_only_description}
+
+$ curl -w "@format.txt" <url>
+> {curl_write_out_description}
+
+$ curl -w "%{http_code}" <url>
+> {curl_write_out_http_code_description}
+
+$ curl -w "%{time_total}" <url>
+> {curl_write_out_time_description}
+
+$ curl -w "%{size_download}" <url>
+> {curl_write_out_size_description}
+
+$ curl -w "%{speed_download}" <url>
+> {curl_write_out_speed_description}
+
+$ curl -s <url>
+> {curl_silent_description}
+
+$ curl --silent <url>
+> {curl_silent_long_description}
+
+$ curl -S <url>
+> {curl_show_error_description}
+
+## 🔄 Redirects & Following
+
+$ curl -L <url>
+> {curl_follow_redirects_description}
+
+$ curl --location <url>
+> {curl_follow_redirects_long_description}
+
+$ curl -L --max-redirs 5 <url>
+> {curl_max_redirects_description}
+
+$ curl --location-trusted <url>
+> {curl_location_trusted_description}
+
+$ curl --location-trusted-temp <url>
+> {curl_location_trusted_temp_description}
+
+## 🔒 SSL/TLS
+
+$ curl -k <url>
+> {curl_insecure_description}
+
+$ curl --insecure <url>
+> {curl_insecure_long_description}
+
+$ curl --cacert cert.pem <url>
+> {curl_cacert_description}
+
+$ curl --cert cert.pem <url>
+> {curl_cert_description}
+
+$ curl --key key.pem <url>
+> {curl_key_description}
+
+$ curl --cert cert.pem --key key.pem <url>
+> {curl_cert_key_description}
+
+$ curl -E cert.pem <url>
+> {curl_cert_short_description}
+
+$ curl --cacert cert.pem --cert cert.pem --key key.pem <url>
+> {curl_ssl_full_description}
+
+## 🌍 Proxies
+
+$ curl --proxy http://proxy:port <url>
+> {curl_proxy_description}
+
+$ curl --proxy http://user:pass@proxy:port <url>
+> {curl_proxy_auth_description}
+
+$ curl --socks5 proxy:port <url>
+> {curl_socks5_description}
+
+$ curl --socks4 proxy:port <url>
+> {curl_socks4_description}
+
+$ curl --proxy-user user:pass <url>
+> {curl_proxy_user_description}
+
+$ curl --noproxy "localhost,127.0.0.1" <url>
+> {curl_noproxy_description}
+
+## 📊 JSON Operations
+
+$ curl -H "Content-Type: application/json" -d '{"key":"value"}' <url>
+> {curl_json_basic_description}
+
+$ curl -H "Content-Type: application/json" -d @data.json <url>
+> {curl_json_file_description}
+
+$ curl -H "Accept: application/json" <url>
+> {curl_json_accept_description}
+
+$ curl -H "Content-Type: application/json" -H "Accept: application/json" -d '{"key":"value"}' <url>
+> {curl_json_full_description}
+
+## 🔧 Advanced Options
+
+$ curl --compressed <url>
+> {curl_compressed_description}
+
+$ curl --gzip <url>
+> {curl_gzip_description}
+
+$ curl --deflate <url>
+> {curl_deflate_description}
+
+$ curl --http1.1 <url>
+> {curl_http1_1_description}
+
+$ curl --http2 <url>
+> {curl_http2_description}
+
+$ curl --http3 <url>
+> {curl_http3_description}
+
+$ curl --tcp-nodelay <url>
+> {curl_tcp_nodelay_description}
+
+$ curl --tcp-fastopen <url>
+> {curl_tcp_fastopen_description}
+
+$ curl --resolve host:port:address <url>
+> {curl_resolve_description}
+
+$ curl --connect-to host:port:address:port <url>
+> {curl_connect_to_description}
+
+## 📝 Examples
+
+$ curl -X POST -H "Content-Type: application/json" -d '{"name":"John","age":30}' https://api.example.com/users
+> {curl_example_post_json_description}
+
+$ curl -u username:password -H "Accept: application/json" https://api.example.com/data
+> {curl_example_auth_json_description}
+
+$ curl -F "file=@document.pdf" -F "description=My document" https://upload.example.com/files
+> {curl_example_upload_description}
+
+$ curl -H "Authorization: Bearer token123" -X DELETE https://api.example.com/users/123
+> {curl_example_delete_description}
+
+$ curl -L -o download.zip https://example.com/file.zip
+> {curl_example_download_description}
+
+$ curl -v -H "User-Agent: MyApp/1.0" https://api.example.com/status
+> {curl_example_verbose_description}
+
+$ curl -w "@curl-format.txt" -o /dev/null -s https://example.com
+> {curl_example_benchmark_description}
+
+$ curl -k --cert client.pem --key client.key https://secure.example.com
+> {curl_example_client_cert_description}
+
+$ curl --proxy http://proxy.company.com:8080 --proxy-user user:pass https://external.example.com
+> {curl_example_proxy_description}
+
+$ curl -H "Content-Type: multipart/form-data" -F "image=@photo.jpg" -F "caption=My photo" https://api.example.com/photos
+> {curl_example_multipart_description}
+
+$ curl -r 0-1023 -o part1.bin https://example.com/large-file.bin
+> {curl_example_partial_download_description}
+
+## 🔍 Debugging
+
+$ curl --trace output.txt <url>
+> {curl_trace_description}
+
+$ curl --trace-ascii output.txt <url>
+> {curl_trace_ascii_description}
+
+$ curl --trace-time <url>
+> {curl_trace_time_description}
+
+$ curl --progress-bar <url>
+> {curl_progress_bar_description}
+
+$ curl --progress-meter <url>
+> {curl_progress_meter_description}
+
+$ curl --stderr output.txt <url>
+> {curl_stderr_description}
+
+$ curl --dump-header headers.txt <url>
+> {curl_dump_header_description}
+
+$ curl --dump-header - <url>
+> {curl_dump_header_stdout_description}
+
+## ⚙️ Configuration
+
+$ curl --config config.txt <url>
+> {curl_config_description}
+
+$ curl -K config.txt <url>
+> {curl_config_short_description}
+
+$ curl --config - <url>
+> {curl_config_stdin_description}
+
+$ curl --config @config.txt <url>
+> {curl_config_file_description}
+
+$ curl --config @- <url>
+> {curl_config_stdin_file_description}
+
+## 🔄 Multiple URLs
+
+$ curl url1 url2 url3
+> {curl_multiple_urls_description}
+
+$ curl -Z url1 url2 url3
+> {curl_multiple_urls_parallel_description}
+
+$ curl --parallel-max 10 url1 url2 url3
+> {curl_parallel_max_description}
+
+$ curl --parallel-immediate url1 url2 url3
+> {curl_parallel_immediate_description}
+
+$ curl --parallel-tcp url1 url2 url3
+> {curl_parallel_tcp_description}
+
+## 📊 Performance
+
+$ curl --max-time 30 <url>
+> {curl_max_time_description}
+
+$ curl --connect-timeout 10 <url>
+> {curl_connect_timeout_description}
+
+$ curl --retry 3 <url>
+> {curl_retry_description}
+
+$ curl --retry-delay 5 <url>
+> {curl_retry_delay_description}
+
+$ curl --retry-max-time 60 <url>
+> {curl_retry_max_time_description}
+
+$ curl --limit-rate 1m <url>
+> {curl_limit_rate_description}
+
+$ curl --max-filesize 1000000 <url>
+> {curl_max_filesize_description}
+
+$ curl --speed-limit 1000 <url>
+> {curl_speed_limit_description}
+
+$ curl --speed-time 10 <url>
+> {curl_speed_time_description}
+
+## 🔧 Network Options
+
+$ curl --interface eth0 <url>
+> {curl_interface_description}
+
+$ curl --local-port 8080 <url>
+> {curl_local_port_description}
+
+$ curl --local-port 8080-8090 <url>
+> {curl_local_port_range_description}
+
+$ curl --dns-servers 8.8.8.8,8.8.4.4 <url>
+> {curl_dns_servers_description}
+
+$ curl --dns-interface eth0 <url>
+> {curl_dns_interface_description}
+
+$ curl --dns-ipv4-addr 192.168.1.1 <url>
+> {curl_dns_ipv4_addr_description}
+
+$ curl --dns-ipv6-addr 2001:db8::1 <url>
+> {curl_dns_ipv6_addr_description}
+
+$ curl --connect-timeout 10 <url>
+> {curl_connect_timeout_description}
+
+$ curl --max-time 30 <url>
+> {curl_max_time_description}
+
+$ curl --keepalive-time 60 <url>
+> {curl_keepalive_time_description}
+
+$ curl --max-time 30 --connect-timeout 10 <url>
+> {curl_timeout_combined_description} 
