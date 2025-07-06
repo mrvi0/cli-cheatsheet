@@ -194,12 +194,6 @@ show_cheat() {
 search_cheats() {
     local query="$1"
     local lang="$2"
-    local lang_file="$LOCALIZATIONS_DIR/$lang.json"
-    
-    # Fallback to default language
-    if [[ ! -f "$lang_file" ]]; then
-        lang_file="$LOCALIZATIONS_DIR/$DEFAULT_LANG.json"
-    fi
     
     if [[ ! -d "$TEMPLATES_DIR" ]]; then
         echo -e "${RED}No cheat sheets found${NC}"
@@ -209,24 +203,21 @@ search_cheats() {
     echo -e "${MAGENTA}${BOLD}Searching for: $query${NC}"
     echo "---"
     
-    # Load all translations into associative array for faster lookup
-    declare -A translations
-    
-    # Load translations from all utility files
-    for utility_file in "$LOCALIZATIONS_DIR/$lang"/*.json; do
-        if [[ -f "$utility_file" ]]; then
-            while IFS=':' read -r key value; do
-                if [[ -n "$key" && -n "$value" ]]; then
-                    # Remove quotes and escape sequences
-                    value=$(echo "$value" | sed 's/^"//;s/"$//;s/\\"/"/g;s/\\\\/\\/g')
-                    translations["$key"]="$value"
-                fi
-            done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$utility_file" 2>/dev/null)
+    # Search through all templates
+    for template_file in "$TEMPLATES_DIR"/*.txt; do
+        if [[ ! -f "$template_file" ]]; then
+            continue
         fi
-    done
-    
-    # Fallback to old structure if no utility files found
-    if [[ ${#translations[@]} -eq 0 ]] && [[ -f "$lang_file" ]]; then
+        
+        local topic=$(basename "$template_file" .txt)
+        local lang_file="$LOCALIZATIONS_DIR/$lang/$topic.json"
+        
+        if [[ ! -f "$lang_file" ]]; then
+            continue
+        fi
+        
+        # Load translations for this topic
+        declare -A translations
         while IFS=':' read -r key value; do
             if [[ -n "$key" && -n "$value" ]]; then
                 # Remove quotes and escape sequences
@@ -234,125 +225,117 @@ search_cheats() {
                 translations["$key"]="$value"
             fi
         done < <(jq -r 'to_entries[] | "\(.key):\(.value)"' "$lang_file" 2>/dev/null)
-    fi
-    
-    # Find matching keys first
-    local matching_keys=()
-    for key in "${!translations[@]}"; do
-        if echo "$key" | grep -qi "$query" || echo "${translations[$key]}" | grep -qi "$query"; then
-            matching_keys+=("$key")
-        fi
-    done
-    
-    # Group keys by topic
-    declare -A topic_matches
-    for key in "${matching_keys[@]}"; do
-        local topic=""
-        case "$key" in
-            git_*) topic="git" ;;
-            docker_*) topic="docker" ;;
-            bash_*) topic="bash" ;;
-            vim_*) topic="vim" ;;
-            systemctl_*) topic="systemctl" ;;
-            journalctl_*) topic="systemctl" ;;
-            tmux_*) topic="tmux" ;;
-            htop_*) topic="htop" ;;
-            curl_*) topic="curl" ;;
-            ssh_*) topic="ssh" ;;
-            find_*) topic="find" ;;
-            tar_*) topic="tar" ;;
-            awk_*) topic="awk" ;;
-            *) continue ;;
-        esac
         
-        if [[ -n "$topic" ]]; then
-            topic_matches["$topic"]="${topic_matches[$topic]} $key"
-        fi
-    done
-    
-    # Show results for each topic
-    for topic in "${!topic_matches[@]}"; do
-        echo -e "${CYAN}${BOLD}$topic:${NC}"
-        local keys=(${topic_matches[$topic]})
-        local count=0
+        # Search in template and translations
+        local found_matches=false
+        local command_buffer=""
+        local description_buffer=""
         
-        for key in "${keys[@]}"; do
-            if [[ $count -ge 3 ]]; then
-                break
-            fi
+        while IFS= read -r line; do
+            # Check if line contains the search query
+            local line_lower="${line,,}"
+            local query_lower="${query,,}"
             
-            # Find the command in template
-            local template_file="$TEMPLATES_DIR/$topic.txt"
-            if [[ -f "$template_file" ]]; then
-                local found_command=false
-                while IFS= read -r line; do
-                    if [[ "$line" =~ \{$key\} ]]; then
-                        # Substitute the key
-                        local substituted_line="${line//\{$key\}/${translations[$key]}}"
-                        
-                        # If this is a description line, find the command above it
-                        if [[ "$line" =~ ^\> ]]; then
-                            # Look for the command line above this description
-                            local command_line=$(grep -B1 "^$line$" "$template_file" | head -1)
-                            if [[ "$command_line" =~ ^\$ ]]; then
-                                local substituted_command="${command_line//\{$key\}/${translations[$key]}}"
-                                echo -e "${GREEN}$substituted_command${NC}"
-                            fi
+            if [[ "$line_lower" =~ $query_lower ]]; then
+                # This line contains the search term
+                if [[ "$line" =~ ^\$ ]]; then
+                    # Command line
+                    command_buffer="$line"
+                elif [[ "$line" =~ ^\> ]]; then
+                    # Description line
+                    description_buffer="$line"
+                    
+                    # If we have both command and description, show them
+                    if [[ -n "$command_buffer" && -n "$description_buffer" ]]; then
+                        if [[ "$found_matches" == false ]]; then
+                            echo -e "${CYAN}${BOLD}$topic:${NC}"
+                            found_matches=true
                         fi
                         
-                        # Apply colors based on line type
-                        if [[ "$line" =~ ^\> ]]; then
-                            echo -e "${YELLOW}$substituted_line${NC}"
-                        elif [[ "$line" =~ ^\$ ]]; then
-                            echo -e "${GREEN}$substituted_line${NC}"
-                        elif [[ "$line" =~ ^# ]]; then
-                            echo -e "${CYAN}${BOLD}$substituted_line${NC}"
-                        else
-                            echo "$substituted_line"
-                        fi
+                        # Substitute translations in command
+                        local substituted_command="$command_buffer"
+                        while [[ "$substituted_command" =~ \[\[([^\]]+)\]\] ]]; do
+                            local key="${BASH_REMATCH[1]}"
+                            local value="${translations[$key]:-\[\[$key\]\]}"
+                            substituted_command="${substituted_command//\[\[$key\]\]/$value}"
+                        done
                         
-                        found_command=true
-                        break
+                        # Substitute translations in description
+                        local substituted_description="$description_buffer"
+                        while [[ "$substituted_description" =~ \[\[([^\]]+)\]\] ]]; do
+                            local key="${BASH_REMATCH[1]}"
+                            local value="${translations[$key]:-\[\[$key\]\]}"
+                            substituted_description="${substituted_description//\[\[$key\]\]/$value}"
+                        done
+                        
+                        echo -e "${GREEN}$substituted_command${NC}"
+                        echo -e "${YELLOW}$substituted_description${NC}"
+                        echo ""
+                        
+                        # Reset buffers
+                        command_buffer=""
+                        description_buffer=""
                     fi
-                done < "$template_file"
-                
-                # If we didn't find the key in descriptions, look for it in commands
-                if [[ "$found_command" == false ]]; then
-                    while IFS= read -r line; do
-                        if [[ "$line" =~ \{$key\} ]]; then
-                            local substituted_line="${line//\{$key\}/${translations[$key]}}"
-                            
-                            # Apply colors based on line type
-                            if [[ "$line" =~ ^\> ]]; then
-                                echo -e "${YELLOW}$substituted_line${NC}"
-                            elif [[ "$line" =~ ^\$ ]]; then
-                                echo -e "${GREEN}$substituted_line${NC}"
-                            elif [[ "$line" =~ ^# ]]; then
-                                echo -e "${CYAN}${BOLD}$substituted_line${NC}"
-                            else
-                                echo "$substituted_line"
-                            fi
-                            
-                            # Show next line if it's a description
-                            local next_line=$(grep -A1 "^$line$" "$template_file" | tail -1)
-                            if [[ "$next_line" =~ ^\> ]]; then
-                                local substituted_next_line="$next_line"
-                                while [[ "$substituted_next_line" =~ \{([^}]+)\} ]]; do
-                                    local next_key="${BASH_REMATCH[1]}"
-                                    local next_value="${translations[$next_key]:-\{$next_key\}}"
-                                    substituted_next_line="${substituted_next_line//\{$next_key\}/$next_value}"
-                                done
-                                echo -e "${YELLOW}$substituted_next_line${NC}"
-                            fi
-                            break
-                        fi
-                    done < "$template_file"
                 fi
+            else
+                # Check if this line contains a translation key that matches the query
+                while [[ "$line" =~ \[\[([^\]]+)\]\] ]]; do
+                    local key="${BASH_REMATCH[1]}"
+                    local value="${translations[$key]}"
+                    
+                    if [[ -n "$value" ]]; then
+                        local value_lower="${value,,}"
+                        if [[ "$value_lower" =~ $query_lower ]]; then
+                            # Translation value contains the search term
+                            if [[ "$line" =~ ^\$ ]]; then
+                                # Command line
+                                command_buffer="$line"
+                            elif [[ "$line" =~ ^\> ]]; then
+                                # Description line
+                                description_buffer="$line"
+                                
+                                # If we have both command and description, show them
+                                if [[ -n "$command_buffer" && -n "$description_buffer" ]]; then
+                                    if [[ "$found_matches" == false ]]; then
+                                        echo -e "${CYAN}${BOLD}$topic:${NC}"
+                                        found_matches=true
+                                    fi
+                                    
+                                    # Substitute translations in command
+                                    local substituted_command="$command_buffer"
+                                    while [[ "$substituted_command" =~ \[\[([^\]]+)\]\] ]]; do
+                                        local key="${BASH_REMATCH[1]}"
+                                        local value="${translations[$key]:-\[\[$key\]\]}"
+                                        substituted_command="${substituted_command//\[\[$key\]\]/$value}"
+                                    done
+                                    
+                                    # Substitute translations in description
+                                    local substituted_description="$description_buffer"
+                                    while [[ "$substituted_description" =~ \[\[([^\]]+)\]\] ]]; do
+                                        local key="${BASH_REMATCH[1]}"
+                                        local value="${translations[$key]:-\[\[$key\]\]}"
+                                        substituted_description="${substituted_description//\[\[$key\]\]/$value}"
+                                    done
+                                    
+                                    echo -e "${GREEN}$substituted_command${NC}"
+                                    echo -e "${YELLOW}$substituted_description${NC}"
+                                    echo ""
+                                    
+                                    # Reset buffers
+                                    command_buffer=""
+                                    description_buffer=""
+                                fi
+                            fi
+                        fi
+                    fi
+                done
             fi
-            count=$((count + 1))
-        done
-        echo ""
+        done < "$template_file"
     done
+    
+    if [[ "$found_matches" == false ]]; then
+        echo -e "${YELLOW}No matches found for: $query${NC}"
+    fi
 }
 
 # Show help
