@@ -60,15 +60,11 @@ This project and everyone participating in it is governed by our Code of Conduct
    cd cli-cheatsheet
    ```
 
-2. **Create a virtual environment** (optional but recommended)
+2. **Check requirements**
    ```bash
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install dependencies**
-   ```bash
-   # No external dependencies required - pure bash!
+   # Ensure you have bash and jq installed
+   bash --version
+   jq --version
    ```
 
 4. **Test your setup**
@@ -93,9 +89,9 @@ $ another command
 ```
 
 ### 2. Add Translations
-Add translations to all language files:
+Add translations to all language directories:
 
-**localizations/en.json:**
+**localizations/en/your_topic.json:**
 ```json
 {
   "your_topic_title": "Your Topic Cheat Sheet",
@@ -104,7 +100,7 @@ Add translations to all language files:
 }
 ```
 
-**localizations/ru.json:**
+**localizations/ru/your_topic.json:**
 ```json
 {
   "your_topic_title": "Шпаргалка по вашей теме",
@@ -122,14 +118,18 @@ Add translations to all language files:
 
 ## 🌍 Adding New Languages
 
-1. **Create translation file**
+1. **Create language directory**
    ```bash
-   touch localizations/your_lang.json
+   mkdir localizations/your_lang
    ```
 
-2. **Add translations for all keys**
-   - Copy from `localizations/en.json`
-   - Translate all values
+2. **Copy translation files**
+   ```bash
+   cp localizations/en/*.json localizations/your_lang/
+   ```
+
+3. **Translate all files**
+   - Translate values in each utility file
    - Keep keys unchanged
 
 3. **Test the new language**
@@ -152,7 +152,7 @@ Add translations to all language files:
 
 ### File Naming
 - Templates: `templates/topic.txt`
-- Translations: `localizations/lang.json`
+- Translations: `localizations/lang/topic.json`
 - Documentation: `docs/README.lang.md`
 
 ### JSON Format
