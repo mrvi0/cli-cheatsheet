@@ -1,0 +1,219 @@
+# [[package_managers_title]]
+
+## [[apt_section_title]] (Debian/Ubuntu)
+
+$ apt update
+> [[apt_update]]
+
+$ apt upgrade
+> [[apt_upgrade]]
+
+$ apt install package_name
+> [[apt_install]]
+
+$ apt remove package_name
+> [[apt_remove]]
+
+$ apt purge package_name
+> [[apt_purge]]
+
+$ apt search keyword
+> [[apt_search]]
+
+$ apt show package_name
+> [[apt_show]]
+
+$ apt list --installed
+> [[apt_list_installed]]
+
+$ apt list --upgradable
+> [[apt_list_upgradable]]
+
+$ apt autoremove
+> [[apt_autoremove]]
+
+$ apt clean
+> [[apt_clean]]
+
+$ apt autoclean
+> [[apt_autoclean]]
+
+## [[dnf_section_title]] (Fedora/RHEL/CentOS 8+)
+
+$ dnf update
+> [[dnf_update]]
+
+$ dnf upgrade
+> [[dnf_upgrade]]
+
+$ dnf install package_name
+> [[dnf_install]]
+
+$ dnf remove package_name
+> [[dnf_remove]]
+
+$ dnf search keyword
+> [[dnf_search]]
+
+$ dnf info package_name
+> [[dnf_info]]
+
+$ dnf list installed
+> [[dnf_list_installed]]
+
+$ dnf list available
+> [[dnf_list_available]]
+
+$ dnf autoremove
+> [[dnf_autoremove]]
+
+$ dnf clean all
+> [[dnf_clean_all]]
+
+$ dnf repolist
+> [[dnf_repolist]]
+
+## [[yum_section_title]] (RHEL/CentOS 7)
+
+$ yum update
+> [[yum_update]]
+
+$ yum install package_name
+> [[yum_install]]
+
+$ yum remove package_name
+> [[yum_remove]]
+
+$ yum search keyword
+> [[yum_search]]
+
+$ yum info package_name
+> [[yum_info]]
+
+$ yum list installed
+> [[yum_list_installed]]
+
+$ yum list available
+> [[yum_list_available]]
+
+$ yum clean all
+> [[yum_clean_all]]
+
+$ yum repolist
+> [[yum_repolist]]
+
+## [[pacman_section_title]] (Arch Linux)
+
+$ pacman -Syu
+> [[pacman_syu]]
+
+$ pacman -S package_name
+> [[pacman_install]]
+
+$ pacman -R package_name
+> [[pacman_remove]]
+
+$ pacman -Rs package_name
+> [[pacman_remove_deps]]
+
+$ pacman -Rns package_name
+> [[pacman_remove_config]]
+
+$ pacman -Ss keyword
+> [[pacman_search]]
+
+$ pacman -Si package_name
+> [[pacman_info]]
+
+$ pacman -Q
+> [[pacman_list_installed]]
+
+$ pacman -Qu
+> [[pacman_list_upgradable]]
+
+$ pacman -Sc
+> [[pacman_clean_cache]]
+
+$ pacman -Scc
+> [[pacman_clean_all]]
+
+## [[zypper_section_title]] (openSUSE)
+
+$ zypper update
+> [[zypper_update]]
+
+$ zypper install package_name
+> [[zypper_install]]
+
+$ zypper remove package_name
+> [[zypper_remove]]
+
+$ zypper search keyword
+> [[zypper_search]]
+
+$ zypper info package_name
+> [[zypper_info]]
+
+$ zypper packages --installed
+> [[zypper_list_installed]]
+
+$ zypper packages --updatable
+> [[zypper_list_upgradable]]
+
+$ zypper clean
+> [[zypper_clean]]
+
+$ zypper repos
+> [[zypper_repos]]
+
+## [[snap_section_title]] (Snap Packages)
+
+$ snap install package_name
+> [[snap_install]]
+
+$ snap remove package_name
+> [[snap_remove]]
+
+$ snap list
+> [[snap_list]]
+
+$ snap search keyword
+> [[snap_search]]
+
+$ snap info package_name
+> [[snap_info]]
+
+$ snap refresh
+> [[snap_refresh]]
+
+$ snap refresh package_name
+> [[snap_refresh_package]]
+
+$ snap revert package_name
+> [[snap_revert]]
+
+## [[flatpak_section_title]] (Flatpak)
+
+$ flatpak install package_name
+> [[flatpak_install]]
+
+$ flatpak uninstall package_name
+> [[flatpak_uninstall]]
+
+$ flatpak list
+> [[flatpak_list]]
+
+$ flatpak search keyword
+> [[flatpak_search]]
+
+$ flatpak info package_name
+> [[flatpak_info]]
+
+$ flatpak update
+> [[flatpak_update]]
+
+$ flatpak run package_name
+> [[flatpak_run]]
+
+$ flatpak remote-add flathub https://flathub.org/repo/flathub.flatpakrepo
+> [[flatpak_add_flathub]] 

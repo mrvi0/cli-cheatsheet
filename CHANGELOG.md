@@ -12,9 +12,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Essential UFW commands for firewall management and configuration
 - Support for rule management, logging, and application profiles
 - English and Russian translations for UFW cheat sheet
+- **feat(package-managers)**: add comprehensive package managers cheat sheet with translation support
+- Covers APT, DNF, YUM, Pacman, Zypper, Snap, and Flatpak
+- Essential commands for package installation, removal, and management
+- English and Russian translations for package managers cheat sheet
 
 ### Planned
-- Add cheat sheets for: make, iptables, package managers
+- Add cheat sheets for: make, iptables
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 

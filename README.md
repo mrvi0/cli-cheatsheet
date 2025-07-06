@@ -56,7 +56,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | ufw | ✅ | ✅ | ❌ | ❌ | ❌ |
 | make | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | iptables | 🔄 | 🔄 | ❌ | ❌ | ❌ |
-| package managers | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| package-managers | ✅ | ✅ | ❌ | ❌ | ❌ |
 
 **Legend:**
 - ✅ Available - Complete cheat sheet with translations
