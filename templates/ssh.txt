@@ -1,0 +1,444 @@
+# {ssh_title}
+
+## 🔗 Basic Connection
+
+$ ssh user@host
+> {ssh_basic_description}
+
+$ ssh -p 2222 user@host
+> {ssh_port_description}
+
+$ ssh -i ~/.ssh/id_rsa user@host
+> {ssh_key_description}
+
+$ ssh -v user@host
+> {ssh_verbose_description}
+
+$ ssh -vv user@host
+> {ssh_verbose_2_description}
+
+$ ssh -vvv user@host
+> {ssh_verbose_3_description}
+
+$ ssh -o ConnectTimeout=10 user@host
+> {ssh_connect_timeout_description}
+
+$ ssh -o ServerAliveInterval=60 user@host
+> {ssh_keepalive_description}
+
+$ ssh -o StrictHostKeyChecking=no user@host
+> {ssh_no_host_check_description}
+
+$ ssh -o UserKnownHostsFile=/dev/null user@host
+> {ssh_no_known_hosts_description}
+
+## 🔑 Key Management
+
+$ ssh-keygen -t rsa -b 4096
+> {ssh_keygen_rsa_description}
+
+$ ssh-keygen -t ed25519
+> {ssh_keygen_ed25519_description}
+
+$ ssh-keygen -t ecdsa -b 521
+> {ssh_keygen_ecdsa_description}
+
+$ ssh-keygen -f ~/.ssh/id_rsa
+> {ssh_keygen_file_description}
+
+$ ssh-keygen -C "email@example.com"
+> {ssh_keygen_comment_description}
+
+$ ssh-keygen -N ""
+> {ssh_keygen_no_passphrase_description}
+
+$ ssh-keygen -p -f ~/.ssh/id_rsa
+> {ssh_keygen_change_passphrase_description}
+
+$ ssh-copy-id user@host
+> {ssh_copy_id_description}
+
+$ ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
+> {ssh_copy_id_file_description}
+
+$ ssh-copy-id -p 2222 user@host
+> {ssh_copy_id_port_description}
+
+$ ssh-add ~/.ssh/id_rsa
+> {ssh_add_description}
+
+$ ssh-add -l
+> {ssh_add_list_description}
+
+$ ssh-add -d ~/.ssh/id_rsa
+> {ssh_add_delete_description}
+
+$ ssh-add -D
+> {ssh_add_delete_all_description}
+
+## 🔧 Configuration
+
+$ ssh -F ~/.ssh/config user@host
+> {ssh_config_file_description}
+
+$ ssh -o "HostKeyAlgorithms +ssh-rsa" user@host
+> {ssh_hostkey_algorithms_description}
+
+$ ssh -o "KexAlgorithms +diffie-hellman-group1-sha1" user@host
+> {ssh_kex_algorithms_description}
+
+$ ssh -o "Ciphers +aes128-cbc" user@host
+> {ssh_ciphers_description}
+
+$ ssh -o "MACs +hmac-sha1" user@host
+> {ssh_macs_description}
+
+$ ssh -o "PubkeyAuthentication=no" user@host
+> {ssh_no_pubkey_description}
+
+$ ssh -o "PasswordAuthentication=no" user@host
+> {ssh_no_password_description}
+
+$ ssh -o "PreferredAuthentications=publickey" user@host
+> {ssh_preferred_auth_description}
+
+$ ssh -o "IdentitiesOnly=yes" user@host
+> {ssh_identities_only_description}
+
+## 🌐 Tunneling & Port Forwarding
+
+$ ssh -L 8080:localhost:80 user@host
+> {ssh_local_forward_description}
+
+$ ssh -L 8080:internal-server:80 user@host
+> {ssh_local_forward_internal_description}
+
+$ ssh -R 8080:localhost:80 user@host
+> {ssh_remote_forward_description}
+
+$ ssh -D 1080 user@host
+> {ssh_dynamic_forward_description}
+
+$ ssh -L 8080:localhost:80 -R 8081:localhost:81 user@host
+> {ssh_multiple_forward_description}
+
+$ ssh -f -N -L 8080:localhost:80 user@host
+> {ssh_background_tunnel_description}
+
+$ ssh -f -N -D 1080 user@host
+> {ssh_background_socks_description}
+
+$ ssh -W host:port user@host
+> {ssh_proxy_command_description}
+
+$ ssh -J user@jumphost user@destination
+> {ssh_jump_host_description}
+
+$ ssh -J user1@host1,user2@host2 user@destination
+> {ssh_multiple_jump_description}
+
+## 📁 File Transfer
+
+$ scp file.txt user@host:/path/
+> {scp_upload_description}
+
+$ scp user@host:/path/file.txt ./
+> {scp_download_description}
+
+$ scp -r directory/ user@host:/path/
+> {scp_recursive_description}
+
+$ scp -P 2222 file.txt user@host:/path/
+> {scp_port_description}
+
+$ scp -i ~/.ssh/id_rsa file.txt user@host:/path/
+> {scp_key_description}
+
+$ scp -C file.txt user@host:/path/
+> {scp_compress_description}
+
+$ scp -v file.txt user@host:/path/
+> {scp_verbose_description}
+
+$ scp -p file.txt user@host:/path/
+> {scp_preserve_description}
+
+$ rsync -avz directory/ user@host:/path/
+> {rsync_basic_description}
+
+$ rsync -avz -e "ssh -p 2222" directory/ user@host:/path/
+> {rsync_port_description}
+
+$ rsync -avz --delete directory/ user@host:/path/
+> {rsync_delete_description}
+
+$ rsync -avz --exclude="*.tmp" directory/ user@host:/path/
+> {rsync_exclude_description}
+
+$ rsync -avz --progress directory/ user@host:/path/
+> {rsync_progress_description}
+
+$ sftp user@host
+> {sftp_basic_description}
+
+$ sftp -P 2222 user@host
+> {sftp_port_description}
+
+$ sftp -i ~/.ssh/id_rsa user@host
+> {sftp_key_description}
+
+## 🔍 Connection & Debugging
+
+$ ssh -T user@host
+> {ssh_test_connection_description}
+
+$ ssh -o BatchMode=yes user@host
+> {ssh_batch_mode_description}
+
+$ ssh -o ExitOnForwardFailure=yes -L 8080:localhost:80 user@host
+> {ssh_exit_on_forward_failure_description}
+
+$ ssh -o RequestTTY=yes user@host
+> {ssh_request_tty_description}
+
+$ ssh -o ForceCommand="ls -la" user@host
+> {ssh_force_command_description}
+
+$ ssh -o PermitLocalCommand=yes -o LocalCommand="echo 'Connected'" user@host
+> {ssh_local_command_description}
+
+$ ssh -o LogLevel=DEBUG user@host
+> {ssh_log_level_description}
+
+$ ssh -o SyslogFacility=AUTH user@host
+> {ssh_syslog_facility_description}
+
+$ ssh -o Compression=yes user@host
+> {ssh_compression_description}
+
+$ ssh -o TCPKeepAlive=yes user@host
+> {ssh_tcp_keepalive_description}
+
+## 🔒 Security Options
+
+$ ssh -o PermitRootLogin=no user@host
+> {ssh_no_root_description}
+
+$ ssh -o MaxAuthTries=3 user@host
+> {ssh_max_auth_tries_description}
+
+$ ssh -o PubkeyAuthentication=yes user@host
+> {ssh_pubkey_auth_description}
+
+$ ssh -o PasswordAuthentication=no user@host
+> {ssh_no_password_auth_description}
+
+$ ssh -o ChallengeResponseAuthentication=no user@host
+> {ssh_no_challenge_description}
+
+$ ssh -o UsePAM=no user@host
+> {ssh_no_pam_description}
+
+$ ssh -o AllowAgentForwarding=no user@host
+> {ssh_no_agent_forwarding_description}
+
+$ ssh -o AllowTcpForwarding=no user@host
+> {ssh_no_tcp_forwarding_description}
+
+$ ssh -o X11Forwarding=no user@host
+> {ssh_no_x11_forwarding_description}
+
+$ ssh -o PermitTunnel=no user@host
+> {ssh_no_tunnel_description}
+
+## 🖥️ X11 Forwarding
+
+$ ssh -X user@host
+> {ssh_x11_forwarding_description}
+
+$ ssh -Y user@host
+> {ssh_x11_trusted_description}
+
+$ ssh -o ForwardX11=yes user@host
+> {ssh_forward_x11_description}
+
+$ ssh -o ForwardX11Trusted=yes user@host
+> {ssh_forward_x11_trusted_description}
+
+$ ssh -o XAuthLocation=/usr/bin/xauth user@host
+> {ssh_xauth_location_description}
+
+## 🔄 Multiplexing
+
+$ ssh -M -S ~/.ssh/control-%h-%p-%r user@host
+> {ssh_master_description}
+
+$ ssh -S ~/.ssh/control-%h-%p-%r user@host
+> {ssh_control_socket_description}
+
+$ ssh -O check -S ~/.ssh/control-%h-%p-%r user@host
+> {ssh_control_check_description}
+
+$ ssh -O exit -S ~/.ssh/control-%h-%p-%r user@host
+> {ssh_control_exit_description}
+
+$ ssh -O forward -L 8080:localhost:80 -S ~/.ssh/control-%h-%p-%r user@host
+> {ssh_control_forward_description}
+
+## 📊 Performance
+
+$ ssh -o Compression=yes user@host
+> {ssh_compression_performance_description}
+
+$ ssh -o IPQoS=throughput user@host
+> {ssh_ipqos_throughput_description}
+
+$ ssh -o IPQoS=lowdelay user@host
+> {ssh_ipqos_lowdelay_description}
+
+$ ssh -o TCPKeepAlive=yes user@host
+> {ssh_tcp_keepalive_performance_description}
+
+$ ssh -o ServerAliveInterval=60 user@host
+> {ssh_server_alive_interval_description}
+
+$ ssh -o ServerAliveCountMax=3 user@host
+> {ssh_server_alive_count_max_description}
+
+$ ssh -o ControlMaster=auto user@host
+> {ssh_control_master_description}
+
+$ ssh -o ControlPath=~/.ssh/control-%h-%p-%r user@host
+> {ssh_control_path_description}
+
+$ ssh -o ControlPersist=10m user@host
+> {ssh_control_persist_description}
+
+## 🔧 Advanced Options
+
+$ ssh -o ProxyCommand="nc -X connect -x proxy:1080 %h %p" user@host
+> {ssh_proxy_command_nc_description}
+
+$ ssh -o ProxyCommand="ssh user@jumphost -W %h:%p" user@destination
+> {ssh_proxy_command_ssh_description}
+
+$ ssh -o ProxyCommand="socat - PROXY:proxy:%h:%p,proxyport=1080" user@host
+> {ssh_proxy_command_socat_description}
+
+$ ssh -o ProxyCommand="corkscrew proxy 1080 %h %p" user@host
+> {ssh_proxy_command_corkscrew_description}
+
+$ ssh -o ProxyCommand="connect -S proxy:1080 %h %p" user@host
+> {ssh_proxy_command_connect_description}
+
+$ ssh -o ProxyCommand="proxytunnel -p proxy:8080 -d %h:%p" user@host
+> {ssh_proxy_command_proxytunnel_description}
+
+$ ssh -o ProxyCommand="ssh user@proxy -W %h:%p" user@host
+> {ssh_proxy_command_ssh_proxy_description}
+
+$ ssh -o ProxyCommand="ssh user@proxy nc %h %p" user@host
+> {ssh_proxy_command_ssh_nc_description}
+
+$ ssh -o ProxyCommand="ssh user@proxy socat STDIO TCP:%h:%p" user@host
+> {ssh_proxy_command_ssh_socat_description}
+
+$ ssh -o ProxyCommand="ssh user@proxy -W %h:%p" user@host
+> {ssh_proxy_command_ssh_w_description}
+
+## 📝 Examples
+
+$ ssh -i ~/.ssh/id_rsa -p 2222 -L 8080:localhost:80 user@host
+> {ssh_example_complex_description}
+
+$ ssh -J user@jumphost -L 8080:localhost:80 user@destination
+> {ssh_example_jump_tunnel_description}
+
+$ ssh -o "ProxyCommand ssh user@proxy -W %h:%p" -L 8080:localhost:80 user@host
+> {ssh_example_proxy_tunnel_description}
+
+$ ssh -f -N -D 1080 -o "ServerAliveInterval=60" user@host
+> {ssh_example_background_socks_description}
+
+$ scp -r -P 2222 -i ~/.ssh/id_rsa directory/ user@host:/path/
+> {scp_example_complex_description}
+
+$ rsync -avz -e "ssh -p 2222 -i ~/.ssh/id_rsa" directory/ user@host:/path/
+> {rsync_example_complex_description}
+
+$ ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null" user@host
+> {ssh_example_automation_description}
+
+$ ssh -o "BatchMode=yes" -o "ConnectTimeout=10" user@host "ls -la"
+> {ssh_example_script_description}
+
+$ ssh -o "RequestTTY=yes" -o "ForceCommand=sudo -u root /bin/bash" user@host
+> {ssh_example_sudo_description}
+
+$ ssh -o "PermitLocalCommand=yes" -o "LocalCommand=notify-send 'SSH Connected'" user@host
+> {ssh_example_notification_description}
+
+## 🔍 Troubleshooting
+
+$ ssh -vvv user@host
+> {ssh_troubleshoot_verbose_description}
+
+$ ssh -o LogLevel=DEBUG3 user@host
+> {ssh_troubleshoot_debug_description}
+
+$ ssh -o PreferredAuthentications=publickey,password user@host
+> {ssh_troubleshoot_auth_description}
+
+$ ssh -o PubkeyAuthentication=no user@host
+> {ssh_troubleshoot_no_pubkey_description}
+
+$ ssh -o PasswordAuthentication=yes user@host
+> {ssh_troubleshoot_password_description}
+
+$ ssh -o KbdInteractiveAuthentication=yes user@host
+> {ssh_troubleshoot_kbd_description}
+
+$ ssh -o ChallengeResponseAuthentication=yes user@host
+> {ssh_troubleshoot_challenge_description}
+
+$ ssh -o GSSAPIAuthentication=yes user@host
+> {ssh_troubleshoot_gssapi_description}
+
+$ ssh -o HostbasedAuthentication=yes user@host
+> {ssh_troubleshoot_hostbased_description}
+
+$ ssh -o PubkeyAuthentication=yes user@host
+> {ssh_troubleshoot_pubkey_description}
+
+$ ssh -o RSAAuthentication=yes user@host
+> {ssh_troubleshoot_rsa_description}
+
+$ ssh -o DSAAuthentication=yes user@host
+> {ssh_troubleshoot_dsa_description}
+
+$ ssh -o ECDSAAuthentication=yes user@host
+> {ssh_troubleshoot_ecdsa_description}
+
+$ ssh -o Ed25519Authentication=yes user@host
+> {ssh_troubleshoot_ed25519_description}
+
+$ ssh -o KbdInteractiveAuthentication=no user@host
+> {ssh_troubleshoot_no_kbd_description}
+
+$ ssh -o GSSAPIAuthentication=no user@host
+> {ssh_troubleshoot_no_gssapi_description}
+
+$ ssh -o HostbasedAuthentication=no user@host
+> {ssh_troubleshoot_no_hostbased_description}
+
+$ ssh -o RSAAuthentication=no user@host
+> {ssh_troubleshoot_no_rsa_description}
+
+$ ssh -o DSAAuthentication=no user@host
+> {ssh_troubleshoot_no_dsa_description}
+
+$ ssh -o ECDSAAuthentication=no user@host
+> {ssh_troubleshoot_no_ecdsa_description}
+
+$ ssh -o Ed25519Authentication=no user@host
+> {ssh_troubleshoot_no_ed25519_description} 
