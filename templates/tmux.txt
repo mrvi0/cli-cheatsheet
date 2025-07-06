@@ -1,0 +1,230 @@
+# {tmux_title}
+
+## 📋 Session Management
+
+$ tmux new-session -s <session-name>
+> {tmux_new_session_description}
+
+$ tmux new-session -d -s <session-name>
+> {tmux_new_session_detached_description}
+
+$ tmux attach-session -t <session-name>
+> {tmux_attach_session_description}
+
+$ tmux attach -t <session-name>
+> {tmux_attach_short_description}
+
+$ tmux detach-client
+> {tmux_detach_client_description}
+
+$ tmux list-sessions
+> {tmux_list_sessions_description}
+
+$ tmux ls
+> {tmux_ls_description}
+
+$ tmux kill-session -t <session-name>
+> {tmux_kill_session_description}
+
+$ tmux kill-server
+> {tmux_kill_server_description}
+
+$ tmux rename-session -t <old-name> <new-name>
+> {tmux_rename_session_description}
+
+## 🪟 Window Management
+
+$ tmux new-window -n <window-name>
+> {tmux_new_window_description}
+
+$ tmux new-window -n <window-name> <command>
+> {tmux_new_window_command_description}
+
+$ tmux select-window -t <window-name>
+> {tmux_select_window_description}
+
+$ tmux rename-window <new-name>
+> {tmux_rename_window_description}
+
+$ tmux kill-window -t <window-name>
+> {tmux_kill_window_description}
+
+$ tmux list-windows
+> {tmux_list_windows_description}
+
+$ tmux move-window -s <source> -t <target>
+> {tmux_move_window_description}
+
+## 📐 Pane Management
+
+$ tmux split-window
+> {tmux_split_window_description}
+
+$ tmux split-window -h
+> {tmux_split_window_h_description}
+
+$ tmux split-window -v
+> {tmux_split_window_v_description}
+
+$ tmux select-pane -D
+> {tmux_select_pane_down_description}
+
+$ tmux select-pane -U
+> {tmux_select_pane_up_description}
+
+$ tmux select-pane -L
+> {tmux_select_pane_left_description}
+
+$ tmux select-pane -R
+> {tmux_select_pane_right_description}
+
+$ tmux resize-pane -D <lines>
+> {tmux_resize_pane_down_description}
+
+$ tmux resize-pane -U <lines>
+> {tmux_resize_pane_up_description}
+
+$ tmux resize-pane -L <columns>
+> {tmux_resize_pane_left_description}
+
+$ tmux resize-pane -R <columns>
+> {tmux_resize_pane_right_description}
+
+$ tmux kill-pane
+> {tmux_kill_pane_description}
+
+$ tmux swap-pane -D
+> {tmux_swap_pane_down_description}
+
+$ tmux swap-pane -U
+> {tmux_swap_pane_up_description}
+
+## ⌨️ Key Bindings (Prefix: Ctrl+b)
+
+$ tmux bind-key <key> <command>
+> {tmux_bind_key_description}
+
+$ tmux unbind-key <key>
+> {tmux_unbind_key_description}
+
+$ tmux list-keys
+> {tmux_list_keys_description}
+
+## 📋 Copy Mode
+
+$ tmux copy-mode
+> {tmux_copy_mode_description}
+
+$ tmux save-buffer <filename>
+> {tmux_save_buffer_description}
+
+$ tmux show-buffer
+> {tmux_show_buffer_description}
+
+$ tmux delete-buffer -b <buffer-name>
+> {tmux_delete_buffer_description}
+
+$ tmux list-buffers
+> {tmux_list_buffers_description}
+
+## 🔧 Configuration
+
+$ tmux source-file ~/.tmux.conf
+> {tmux_source_file_description}
+
+$ tmux show-options
+> {tmux_show_options_description}
+
+$ tmux set-option -g <option> <value>
+> {tmux_set_option_description}
+
+$ tmux set-window-option -g <option> <value>
+> {tmux_set_window_option_description}
+
+$ tmux show-environment
+> {tmux_show_environment_description}
+
+$ tmux set-environment <name> <value>
+> {tmux_set_environment_description}
+
+## 📊 Status Bar
+
+$ tmux set-option -g status-left <string>
+> {tmux_status_left_description}
+
+$ tmux set-option -g status-right <string>
+> {tmux_status_right_description}
+
+$ tmux set-option -g status-style <style>
+> {tmux_status_style_description}
+
+$ tmux set-option -g window-status-format <format>
+> {tmux_window_status_format_description}
+
+$ tmux set-option -g window-status-current-format <format>
+> {tmux_window_status_current_format_description}
+
+## 🔗 Synchronization
+
+$ tmux set-window-option synchronize-panes on
+> {tmux_sync_panes_on_description}
+
+$ tmux set-window-option synchronize-panes off
+> {tmux_sync_panes_off_description}
+
+$ tmux set-window-option synchronize-panes
+> {tmux_sync_panes_toggle_description}
+
+## 📝 Common Key Bindings
+
+$ tmux list-keys | grep -E "(prefix|bind)"
+> {tmux_list_prefix_keys_description}
+
+## 🎨 Colors & Themes
+
+$ tmux set-option -g default-terminal "screen-256color"
+> {tmux_default_terminal_description}
+
+$ tmux set-option -g status-bg <color>
+> {tmux_status_bg_description}
+
+$ tmux set-option -g status-fg <color>
+> {tmux_status_fg_description}
+
+$ tmux set-option -g pane-border-style <style>
+> {tmux_pane_border_style_description}
+
+$ tmux set-option -g pane-active-border-style <style>
+> {tmux_pane_active_border_style_description}
+
+## 🔄 Advanced Features
+
+$ tmux capture-pane -S -E
+> {tmux_capture_pane_description}
+
+$ tmux capture-pane -p
+> {tmux_capture_pane_print_description}
+
+$ tmux display-message <message>
+> {tmux_display_message_description}
+
+$ tmux display-time <milliseconds>
+> {tmux_display_time_description}
+
+$ tmux refresh-client -S
+> {tmux_refresh_client_description}
+
+$ tmux suspend-client
+> {tmux_suspend_client_description}
+
+$ tmux has-session -t <session-name>
+> {tmux_has_session_description}
+
+$ tmux switch-client -t <session-name>
+> {tmux_switch_client_description}
+
+$ tmux send-keys -t <target> <keys>
+> {tmux_send_keys_description}
+
+$ tmux send-prefix -t <target>
+> {tmux_send_prefix_description} 
