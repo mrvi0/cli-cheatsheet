@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 
-## [1.7.0] - 2024-12-19
+## [1.7.0] - 2025-07-06
 
 ### Added
 - Comprehensive status table showing all cheat sheets and languages
@@ -24,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced structure tree with status table in README files
 - Updated both English and Russian README files
 
-## [1.6.0] - 2024-12-19
+## [1.6.0] - 2025-07-06
 
 ### Added
 - Comprehensive **find** command cheat sheet with file search patterns
@@ -42,20 +42,46 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Translation lookup performance optimization
 - Search results display with color coding
 
-## [1.5.0] - 2024-12-19
+## [1.5.0] - 2025-07-06
 
 ### Added
 - **systemctl** cheat sheet with service management, timers, and system control
 - Enhanced search functionality to include new topics
 
-## [1.4.x] - 2024-12-19
+## [1.4.2-beta] - 2025-07-05
 
 ### Fixed
+- Pagination system using temporary files
 - Search function to display commands with descriptions
 - Color output in search results
 - Performance optimization for large cheat sheets
 
-## [1.0.0] - 2024-12-19
+## [1.4.1] - 2025-07-05
+
+### Fixed
+- Search functionality to show commands with descriptions
+
+## [1.4.0] - 2025-07-05
+
+### Added
+- Expanded Git and Docker cheat sheets with comprehensive commands
+
+## [1.3.0] - 2025-07-05
+
+### Changed
+- Reorganized documentation structure with language folders
+
+## [1.2.0] - 2025-07-05
+
+### Added
+- Comprehensive contributing documentation and GitHub templates
+
+## [1.1.0] - 2025-07-05
+
+### Changed
+- Migrated to centralized translation system with JSON files
+
+## [1.0.0] - 2025-07-05
 
 ### Added
 - Initial release with basic cheat sheets
