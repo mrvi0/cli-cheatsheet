@@ -45,7 +45,7 @@ Call `cheat <topic>` to display a concise and useful cheat sheet for commands (b
 | cron | ✅ | ✅ | ❌ | ❌ | ❌ |
 | htop | ✅ | ✅ | ❌ | ❌ | ❌ |
 | tmux | ✅ | ✅ | ❌ | ❌ | ❌ |
-| ps | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| ps | ✅ | ✅ | ❌ | ❌ | ❌ |
 | kill | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | top | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | iotop | 🔄 | 🔄 | ❌ | ❌ | ❌ |
@@ -180,7 +180,8 @@ cli-cheatsheet/
 │       ├── ssh.json     # SSH translations
 │       ├── find.json    # Find translations
 │       ├── tar.json     # Tar translations
-│       └── awk.json     # AWK translations
+│       ├── awk.json     # AWK translations
+│       └── ps.json      # PS translations
 ├── templates/            # Cheat sheet templates
 │   ├── bash.txt         # Bash template
 │   ├── git.txt          # Git template
@@ -193,7 +194,8 @@ cli-cheatsheet/
 │   ├── ssh.txt          # SSH template
 │   ├── find.txt         # Find template
 │   ├── tar.txt          # Tar template
-│   └── awk.txt          # AWK template
+│   ├── awk.txt          # AWK template
+│   └── ps.txt           # PS template
 └── docs/                # Documentation
     └── ru/              # Russian documentation
         └── README.md    # Russian README
@@ -272,6 +274,7 @@ Available topics:
   - find
   - git
   - htop
+  - ps
   - sed
   - ssh
   - systemctl
@@ -339,6 +342,7 @@ Usage:
 Examples:
   cheat git               Show git cheat sheet
   cheat bash              Show bash cheat sheet
+  cheat ps                Show ps cheat sheet
   cheat search commit     Search for 'commit' in all sheets
   cheat lang ru           Change language to Russian
   cheat lang en           Change language to English

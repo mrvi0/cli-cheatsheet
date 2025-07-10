@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **feat(ps)**: add comprehensive PS (Process Status) cheat sheet with translation support
+- Complete PS commands for process monitoring and management
+- Support for output formatting, filtering, tree view, and system information
+- Advanced options for thread monitoring and security information
+- English and Russian translations for PS cheat sheet
+- Copy English translations to other language directories for user translation
 - **feat(ufw)**: add comprehensive UFW firewall cheat sheet with translation support
 - Essential UFW commands for firewall management and configuration
 - Support for rule management, logging, and application profiles
@@ -26,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated both English and Russian README files with improved structure
 
 ### Planned
-- Add cheat sheets for: make, ps, kill, grep, rsync, dig, jq
+- Add cheat sheets for: make, kill, grep, rsync, dig, jq
 - Add language support for: German (Deutsch), French (Français), Spanish (Español)
 - Expand vim cheat sheet with more commands and modes
 - Reorganize cheat sheets into logical categories (System, Network, Security, etc.)

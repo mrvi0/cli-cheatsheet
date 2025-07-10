@@ -1,0 +1,128 @@
+# [[ps_title]]
+
+## [[ps_basic_usage]]
+
+$ ps
+> [[ps_basic_description]]
+
+$ ps aux
+> [[ps_aux_description]]
+
+$ ps -ef
+> [[ps_ef_description]]
+
+$ ps -e
+> [[ps_e_description]]
+
+$ ps -A
+> [[ps_A_description]]
+
+## [[ps_output_formatting]]
+
+$ ps -o pid,ppid,cmd
+> [[ps_o_description]]
+
+$ ps -o pid,ppid,user,comm,pcpu,pmem
+> [[ps_o_extended_description]]
+
+$ ps -o pid,ppid,user,comm,pcpu,pmem --sort=-pcpu
+> [[ps_sort_description]]
+
+$ ps -o pid,ppid,user,comm,pcpu,pmem --sort=-pmem
+> [[ps_sort_mem_description]]
+
+$ ps -o pid,ppid,user,comm,etime
+> [[ps_etime_description]]
+
+## [[ps_filtering]]
+
+$ ps -u username
+> [[ps_u_description]]
+
+$ ps -p pid1,pid2,pid3
+> [[ps_p_description]]
+
+$ ps -C process_name
+> [[ps_C_description]]
+
+$ ps -f -p pid
+> [[ps_f_p_description]]
+
+$ ps -L -p pid
+> [[ps_L_p_description]]
+
+## [[ps_tree_view]]
+
+$ ps -ejH
+> [[ps_ejH_description]]
+
+$ ps axjf
+> [[ps_axjf_description]]
+
+$ ps -eo pid,ppid,cmd --forest
+> [[ps_forest_description]]
+
+$ pstree
+> [[pstree_description]]
+
+$ pstree -p
+> [[pstree_p_description]]
+
+## [[ps_system_info]]
+
+$ ps -eo pid,ppid,user,comm,pcpu,pmem,etime --sort=-pcpu | head -10
+> [[ps_top_cpu_description]]
+
+$ ps -eo pid,ppid,user,comm,pcpu,pmem,etime --sort=-pmem | head -10
+> [[ps_top_mem_description]]
+
+$ ps -eo pid,ppid,user,comm,etime --sort=-etime | head -10
+> [[ps_longest_running_description]]
+
+$ ps -eo pid,ppid,user,comm,state
+> [[ps_state_description]]
+
+## [[ps_advanced_options]]
+
+$ ps -T
+> [[ps_T_description]]
+
+$ ps -M
+> [[ps_M_description]]
+
+$ ps -ww
+> [[ps_ww_description]]
+
+$ ps -H
+> [[ps_H_description]]
+
+$ ps -N
+> [[ps_N_description]]
+
+## [[ps_combinations]]
+
+$ ps aux | grep process_name
+> [[ps_grep_description]]
+
+$ ps -eo pid,ppid,user,comm,pcpu,pmem --sort=-pcpu | grep -v grep
+> [[ps_grep_v_description]]
+
+$ ps -eo pid,ppid,user,comm,etime --sort=-etime | head -5
+> [[ps_head_description]]
+
+$ ps -eo pid,ppid,user,comm,pcpu,pmem --sort=-pcpu | awk '$5 > 10'
+> [[ps_awk_description]]
+
+## [[ps_common_patterns]]
+
+$ ps aux | grep -E "(apache|nginx|httpd)"
+> [[ps_web_servers_description]]
+
+$ ps -eo pid,ppid,user,comm,pcpu,pmem --sort=-pcpu | head -10 | column -t
+> [[ps_column_description]]
+
+$ ps -eo pid,ppid,user,comm,etime --sort=-etime | grep -v "00:00"
+> [[ps_running_long_description]]
+
+$ ps -eo pid,ppid,user,comm,state | grep -E "(Z|X)"
+> [[ps_zombie_description]] 

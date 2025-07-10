@@ -12,7 +12,7 @@
 
 ## ✨ Функционал
 - `cheat <тема>` — выводит текстовую шпаргалку по ключу
-- **Расширенная поддержка тем**: `cheat git`, `cheat bash`, `cheat docker`, `cheat systemctl`, `cheat tmux`, `cheat htop`, `cheat curl`, `cheat ssh`, `cheat find`
+- **Расширенная поддержка тем**: `cheat git`, `cheat bash`, `cheat docker`, `cheat systemctl`, `cheat tmux`, `cheat htop`, `cheat curl`, `cheat ssh`, `cheat find`, `cheat ps`
 - **Цветной вывод** (заголовки, команды, описания)
 - **Автодополнение или вывод всех тем**: `cheat list`
 - **Продвинутая функция поиска**: `cheat search <запрос>` с группировкой результатов по темам
@@ -32,7 +32,7 @@
 | cron | ✅ | ✅ | ❌ | ❌ | ❌ |
 | htop | ✅ | ✅ | ❌ | ❌ | ❌ |
 | tmux | ✅ | ✅ | ❌ | ❌ | ❌ |
-| ps | 🔄 | 🔄 | ❌ | ❌ | ❌ |
+| ps | ✅ | ✅ | ❌ | ❌ | ❌ |
 | kill | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | top | 🔄 | 🔄 | ❌ | ❌ | ❌ |
 | iotop | 🔄 | 🔄 | ❌ | ❌ | ❌ |
@@ -167,7 +167,8 @@ cli-cheatsheet/
 │       ├── ssh.json     # Переводы для ssh
 │       ├── find.json    # Переводы для find
 │       ├── tar.json     # Переводы для tar
-│       └── awk.json     # Переводы для awk
+│       ├── awk.json     # Переводы для awk
+│       └── ps.json      # Переводы для ps
 ├── templates/            # Шаблоны шпаргалок
 │   ├── bash.txt         # Шаблон bash
 │   ├── git.txt          # Шаблон git
@@ -180,7 +181,8 @@ cli-cheatsheet/
 │   ├── ssh.txt          # Шаблон ssh
 │   ├── find.txt         # Шаблон find
 │   ├── tar.txt          # Шаблон tar
-│   └── awk.txt          # Шаблон awk
+│   ├── awk.txt          # Шаблон awk
+│   └── ps.txt           # Шаблон ps
 └── docs/                # Документация
     └── ru/              # Русская документация
         └── README.md    # Русский README
@@ -259,6 +261,7 @@ Available topics:
   - find
   - git
   - htop
+  - ps
   - sed
   - ssh
   - systemctl
@@ -326,6 +329,7 @@ Usage:
 Examples:
   cheat git               Show git cheat sheet
   cheat bash              Show bash cheat sheet
+  cheat ps                Show ps cheat sheet
   cheat search commit     Search for 'commit' in all sheets
   cheat lang ru           Change language to Russian
   cheat lang en           Change language to English
